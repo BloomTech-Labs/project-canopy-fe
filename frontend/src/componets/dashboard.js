@@ -1,12 +1,28 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
+import Map from './mapComponents/map.js';
+import { getData } from '../actions/mapActions.js';
 
-const Dashboard = () => {
-
+const Dashboard = (props) => {
+    const { dataPoints } = props;
+    useEffect(() => {
+        props.getData();
+    }, [])
     return(
         <>
-        <h1>Dashboard Test</h1>
+        {dataPoints.length > 0 ?
+        <Map dataPoints={dataPoints}/>
+        :
+        <h1>Please wait, data is loading...</h1>
+        }
         </>
     )
 };
 
-export default Dashboard;
+const mapStateToProps = (state) => {
+    return {
+        dataPoints: state.dataPoints
+    }
+};
+
+export default connect(mapStateToProps, {getData})(Dashboard);
