@@ -8,13 +8,10 @@ const Dashboard = (props) => {
     useEffect(() => {
         props.getData();
     }, [])
+    
     return(
         <>
-        {dataPoints.length > 0 ?
         <Map dataPoints={dataPoints}/>
-        :
-        <h1>Please wait, data is loading...</h1>
-        }
         </>
     )
 };
