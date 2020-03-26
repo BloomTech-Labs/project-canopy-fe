@@ -1,17 +1,27 @@
 import { GET_DATA } from '../actions/mapActions.js';
 
-// setting up blind state boilerplate
-// We don't know what we are expecting exactly yet, so we are setting up an example to be quickly modified.
-
+// initialState set up in geoJSON boilerplate format, data in geojson format should be pushed into the "features" array
 const initialState = {
-    dataPoints: []
+    dataPoints: {
+        "type": "FeatureCollection",
+        "crs": {
+            "type": "name",
+            "properties": {
+                "name": "dataPoints"
+            }
+        },
+        "features": []
+    }
 };
 
 export const mapReducer = (state = initialState, action) => {
     switch (action.type){
         case GET_DATA:
             return {
-                dataPoints: action.payload
+                dataPoints: {
+                    ...state.dataPoints, 
+                    features:action.payload
+                }
             }
         default:
             return state;
