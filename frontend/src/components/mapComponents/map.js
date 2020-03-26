@@ -1,9 +1,9 @@
 import React, { useState, useRef } from 'react';
 import ReactMapGL, { Source, Layer } from 'react-map-gl';
 import { connect } from 'react-redux';
-import { congoPoints, 
-    clusterCountLayer, 
-    clusterLayer } from './mapLayers/congoPointLayer.js';
+// import { congoPoints, 
+//     clusterCountLayer, 
+//     clusterLayer } from './mapLayers/congoPointLayer.js';
 import { heatmapLayer,
 speciesPoints } from './mapLayers/congoHeatMapLayer.js'
 

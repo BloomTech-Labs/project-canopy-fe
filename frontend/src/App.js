@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import { Route, Switch } from 'react-router-dom';
 
-import Dashboard from './componets/dashboard.js';
+import Dashboard from './components/dashboard.js';
 
 function App() {
   return (

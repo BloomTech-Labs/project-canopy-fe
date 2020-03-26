@@ -1,4 +1,5 @@
-import { GET_DATA } from '../actions/mapActions.js';
+import { GET_DATA,
+    UNIQUE_BINOMIAL } from '../actions/mapActions.js';
 
 // initialState set up in geoJSON boilerplate format, data in geojson format should be pushed into the "features" array
 const initialState = {
@@ -11,7 +12,8 @@ const initialState = {
             }
         },
         "features": []
-    }
+    },
+    searchBinomial: []
 };
 
 export const mapReducer = (state = initialState, action) => {
@@ -21,7 +23,15 @@ export const mapReducer = (state = initialState, action) => {
                 dataPoints: {
                     ...state.dataPoints, 
                     features:action.payload
-                }
+                },
+                searchBinomial: state.searchBinomial
+            }
+        case UNIQUE_BINOMIAL:
+            return {
+                dataPoints:{
+                    ...state.dataPoints
+                },
+                searchBinomial: action.payload
             }
         default:
             return state;
