@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import ReactMapGL, { Source, Layer } from 'react-map-gl';
 import { connect } from 'react-redux';
-import congoPoints from './mapLayers/congoPointLayer.js';
+import { congoPoints, 
+    clusterCountLayer, 
+    clusterLayer } from './mapLayers/congoPointLayer.js';
 
 
 
@@ -15,6 +17,8 @@ const Map = (props) => {
         width: '100vw',
         height: '100vh',
     });
+
+    const mapRef = useRef();
    
     return (
         <div>
@@ -27,7 +31,16 @@ const Map = (props) => {
                 }}
             >
                 {dataPoints.features.length > 0 ?
-                    <Source type="geojson" data={dataPoints}>
+                    <Source 
+                    type="geojson" 
+                    data={dataPoints}
+                    cluster={true}
+                    clusterMaxZoom={14}
+                    clusterRadius={50}
+                    ref={mapRef}
+                    >
+                        <Layer {...clusterLayer} />
+                        <Layer {...clusterCountLayer} />
                         <Layer {...congoPoints} />
                     </Source>
                     : null
