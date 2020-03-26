@@ -6,7 +6,8 @@ import congoPoints from './mapLayers/congoPointLayer.js';
 
 
 const Map = (props) => {
-    const { dataPoints } = props
+    const { dataPoints } = props;
+    // Sets the starting position of the mapview and controls state to allow for scrolling and zooming in addition to how much of the screen the map takes up
     const [ viewport, setViewport ] = useState({
         longitude: 17.8277,
         latitude: 0,
@@ -25,7 +26,7 @@ const Map = (props) => {
                     setViewport(viewport);
                 }}
             >
-                {dataPoints.length > 0 ?
+                {dataPoints.features.length > 0 ?
                     <Source type="geojson" data={dataPoints}>
                         <Layer {...congoPoints} />
                     </Source>
