@@ -4,7 +4,8 @@ import { connect } from 'react-redux';
 import { congoPoints, 
     clusterCountLayer, 
     clusterLayer } from './mapLayers/congoPointLayer.js';
-
+import { heatmapLayer,
+speciesPoints } from './mapLayers/congoHeatMapLayer.js'
 
 
 const Map = (props) => {
@@ -14,7 +15,7 @@ const Map = (props) => {
         longitude: 17.8277,
         latitude: 0,
         zoom: 4.5,
-        width: '100vw',
+        width: 'calc(100vw - 450px)',
         height: '100vh',
     });
 
@@ -34,14 +35,16 @@ const Map = (props) => {
                     <Source 
                     type="geojson" 
                     data={dataPoints}
-                    cluster={true}
-                    clusterMaxZoom={14}
-                    clusterRadius={50}
+                    // cluster={true}
+                    // clusterMaxZoom={14}
+                    // clusterRadius={50}
                     ref={mapRef}
                     >
-                        <Layer {...clusterLayer} />
+                        {/* <Layer {...clusterLayer} />
                         <Layer {...clusterCountLayer} />
-                        <Layer {...congoPoints} />
+                        <Layer {...congoPoints} /> */}
+                        <Layer {...heatmapLayer} />
+                        <Layer {...speciesPoints} />
                     </Source>
                     : null
                 }

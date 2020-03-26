@@ -1,6 +1,5 @@
 export const congoPoints =  {
     'type': 'circle',
-    // 'minzoom': 7,
     filter: ['!', ['has', 'point_count']],
     'paint': {
         'circle-radius': 7,
@@ -13,7 +12,6 @@ export const congoPoints =  {
 export const clusterLayer = {
     id: 'clusters',
     type: 'circle',
-    // source: 'earthquakes',
     filter: ['has', 'point_count'],
     paint: {
       'circle-color': ['step', ['get', 'point_count'], '#51bbd6', 100, '#f1f075', 750, '#f28cb1'],
@@ -23,7 +21,6 @@ export const clusterLayer = {
   export const clusterCountLayer = {
     id: 'cluster-count',
     type: 'symbol',
-    // source: 'earthquakes',
     filter: ['has', 'point_count'],
     layout: {
       'text-field': '{point_count_abbreviated}',
