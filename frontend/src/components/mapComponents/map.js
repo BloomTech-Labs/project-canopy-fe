@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import ReactMapGL, { Source, Layer } from 'react-map-gl';
+import styled from 'styled-components';
 import { connect } from 'react-redux';
 import { heatmapLayer,
 speciesPoints } from './mapLayers/congoHeatMapLayer.js'
@@ -12,8 +13,10 @@ const Map = (props) => {
         longitude: 17.8277,
         latitude: 0,
         zoom: 4.5,
-        width: 'calc(100vw - 450px)',
-        height: '100vh',
+        width: '100%',
+        height: '100%'
+        // width: 'calc(100vw - 450px)',
+        // height: '100vh',
     });
 
     const data = filteredPoints.features.length > 0 ? filteredPoints : dataPoints;
@@ -21,7 +24,7 @@ const Map = (props) => {
     const mapRef = useRef();
    
     return (
-        <div>
+        <MapCont>
             <ReactMapGL 
                 {...viewport}
                 mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
@@ -42,7 +45,7 @@ const Map = (props) => {
                     : null
                 }
             </ReactMapGL>
-        </div>
+        </MapCont>
     )
 };
 
@@ -54,4 +57,9 @@ const mapStateToProps = (state) => {
 };
 
 export default connect(mapStateToProps, {})(Map);
+
+const MapCont = styled.div`
+    height: 700px;
+    width: 80%;
+`;
 

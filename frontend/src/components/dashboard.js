@@ -8,8 +8,12 @@ import MapSearch from './mapComponents/mapSearch.js';
 const Dashboard = (props) => {
     const { getData, uniqueBinomial } = props;
     useEffect(() => {
-        // only way that we could get the uniqueBinomial action to fire from the getData action was by passing it in as a parameter.
-        getData(uniqueBinomial);
+        // the best way to create a list of unique binomal names without it affected search persformance was to fire the uniqueBinomal action in a .then after the getData() fetches the data
+        console.log('this is getData', getData)
+        getData()
+            .then(geojsonPoints => {
+                uniqueBinomial(geojsonPoints)
+            })
     }, [])
 
     return(

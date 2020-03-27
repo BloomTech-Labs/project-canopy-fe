@@ -6,8 +6,8 @@ export const UNIQUE_BINOMIAL = 'UNIQUE_BINOMIAL';
 export const FILTER_POINTS = 'FILTER_POINTS';
 
 
-export const getData = (unique) => dispatch => {
-    Axios.get('http://localhost:5000/point_data/congo_coordinates')
+export const getData = () => dispatch => {
+   return Axios.get('https://projectcanopybackend.herokuapp.com/point_data/congo_coordinates')
     .then(res => {
         console.log(res)
             // changes the data to geoJSON formatting
@@ -24,12 +24,12 @@ export const getData = (unique) => dispatch => {
                     }
                 }
             });
-            // this is the uniqueBinomial action
-            unique(geojsonPoints);
             dispatch({ type: GET_DATA, payload: geojsonPoints })
+            return geojsonPoints
         })
         .catch(err => {
-            console.log('could not retrieve data', err)
+            console.log('could not retrieve data', err);
+            return [];
         })
 };
 
@@ -40,7 +40,7 @@ export const uniqueBinomial = (datapoints) => dispatch => {
     })
     // filtering for unique binomial names
     const binomialsUnique = binomialNames.filter((name, i) => {
-        return binomialNames.indexOf(name) == i
+        return binomialNames.indexOf(name) === i
     });
 
     dispatch({ type: UNIQUE_BINOMIAL, payload: binomialsUnique })
