@@ -6,16 +6,16 @@ import Map from './mapComponents/map.js';
 import MapSearch from './mapComponents/mapSearch.js';
 
 const Dashboard = (props) => {
-    const { dataPoints } = props;
+    const { getData, uniqueBinomial } = props;
     useEffect(() => {
         // only way that we could get the uniqueBinomial action to fire from the getData action was by passing it in as a parameter.
-        props.getData(props.uniqueBinomial);
+        getData(uniqueBinomial);
     }, [])
 
     return(
         <DashCont>
             <MapSearch />
-            <Map dataPoints={dataPoints}/>
+            <Map />
         </DashCont>
     )
 };

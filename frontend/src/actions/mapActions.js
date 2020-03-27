@@ -2,7 +2,8 @@ import Axios from 'axios';
 
 // We don't know what we are expecting exactly yet, so we are setting up an example to be quickly modified.
 export const GET_DATA = 'GET_DATA';
-export const UNIQUE_BINOMIAL ="UNIQUE_BINOMIAL";
+export const UNIQUE_BINOMIAL = 'UNIQUE_BINOMIAL';
+export const FILTER_POINTS = 'FILTER_POINTS';
 
 
 export const getData = (unique) => dispatch => {
@@ -43,4 +44,10 @@ export const uniqueBinomial = (datapoints) => dispatch => {
     });
 
     dispatch({ type: UNIQUE_BINOMIAL, payload: binomialsUnique })
+};
+
+export const filterPoints = (filterBinomial, datapoints) => dispatch => {
+    const filtered = datapoints.features.filter(point => point.properties.binomial === filterBinomial)
+ 
+    dispatch({ type: FILTER_POINTS, payload: filtered })
 };

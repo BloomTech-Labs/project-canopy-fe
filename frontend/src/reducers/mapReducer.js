@@ -1,5 +1,6 @@
 import { GET_DATA,
-    UNIQUE_BINOMIAL } from '../actions/mapActions.js';
+    UNIQUE_BINOMIAL, 
+    FILTER_POINTS} from '../actions/mapActions.js';
 
 // initialState set up in geoJSON boilerplate format, data in geojson format should be pushed into the "features" array
 const initialState = {
@@ -13,7 +14,17 @@ const initialState = {
         },
         "features": []
     },
-    searchBinomial: []
+    searchBinomial: [],
+    filteredPoints: {
+        "type": "FeatureCollection",
+        "crs": {
+            "type": "name",
+            "properties": {
+                "name": "filteredPoints"
+            }
+        },
+        "features": []
+    }
 };
 
 export const mapReducer = (state = initialState, action) => {
@@ -22,16 +33,33 @@ export const mapReducer = (state = initialState, action) => {
             return {
                 dataPoints: {
                     ...state.dataPoints, 
-                    features:action.payload
+                    features: action.payload
                 },
-                searchBinomial: state.searchBinomial
+                searchBinomial: state.searchBinomial,
+                filteredPoints: {
+                    ...state.filteredPoints
+                }
             }
         case UNIQUE_BINOMIAL:
             return {
-                dataPoints:{
+                dataPoints: {
                     ...state.dataPoints
                 },
-                searchBinomial: action.payload
+                searchBinomial: action.payload,
+                filteredPoints: {
+                    ...state.filteredPoints
+                }
+            }
+        case FILTER_POINTS:
+            return {
+                dataPoints: {
+                    ...state.dataPoints
+                },
+                searchBinomial: state.searchBinomial,
+                filteredPoints: {
+                    ...state.filteredPoints,
+                    features: action.payload
+                }
             }
         default:
             return state;

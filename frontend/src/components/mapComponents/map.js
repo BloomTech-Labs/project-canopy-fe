@@ -1,15 +1,12 @@
 import React, { useState, useRef } from 'react';
 import ReactMapGL, { Source, Layer } from 'react-map-gl';
 import { connect } from 'react-redux';
-// import { congoPoints, 
-//     clusterCountLayer, 
-//     clusterLayer } from './mapLayers/congoPointLayer.js';
 import { heatmapLayer,
 speciesPoints } from './mapLayers/congoHeatMapLayer.js'
 
 
 const Map = (props) => {
-    const { dataPoints } = props;
+    const { dataPoints, filteredPoints } = props;
     // Sets the starting position of the mapview and controls state to allow for scrolling and zooming in addition to how much of the screen the map takes up
     const [ viewport, setViewport ] = useState({
         longitude: 17.8277,
@@ -18,6 +15,8 @@ const Map = (props) => {
         width: 'calc(100vw - 450px)',
         height: '100vh',
     });
+
+    const data = filteredPoints.features.length > 0 ? filteredPoints : dataPoints;
 
     const mapRef = useRef();
    
@@ -34,15 +33,9 @@ const Map = (props) => {
                 {dataPoints.features.length > 0 ?
                     <Source 
                     type="geojson" 
-                    data={dataPoints}
-                    // cluster={true}
-                    // clusterMaxZoom={14}
-                    // clusterRadius={50}
+                    data={data}
                     ref={mapRef}
                     >
-                        {/* <Layer {...clusterLayer} />
-                        <Layer {...clusterCountLayer} />
-                        <Layer {...congoPoints} /> */}
                         <Layer {...heatmapLayer} />
                         <Layer {...speciesPoints} />
                     </Source>
@@ -55,7 +48,8 @@ const Map = (props) => {
 
 const mapStateToProps = (state) => {
     return {
-        dataPoints: state.dataPoints
+        dataPoints: state.dataPoints,
+        filteredPoints: state.filteredPoints
     }
 };
 
