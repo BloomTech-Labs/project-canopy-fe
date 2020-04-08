@@ -1,91 +1,85 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import {Layout, Menu} from 'antd';
+import 'antd/dist/antd.css';
 import styled from 'styled-components';
 
+// Imports all of the image assets
 import treeLogo from './assets/treeLogo.svg';
 import dashboardLight from './assets/light/dashboard.svg';
 import mapLight from './assets/light//map.svg';
 import pawLight from './assets/light/paw.svg';
 import treeLight from './assets/light/Tree.svg';
-
 import dashboardGreen from './assets/green/dashboard.svg';
 import mapGreen from './assets/green/map.svg';
 import pawGreen from './assets/green/paw.svg';
 import treeGreen from './assets/green/Tree.svg';
 
+const {Sider} = Layout;
+
 export const Nav = () =>{
     return (
-        <NavCont>
+        <Sider
+        style={{
+            height: '100vh',
+            backgroundColor:'white'
+          }}
+        >
             <LogoCont>
                 <img src={treeLogo} />
                 <h1>Project Canopy</h1>
             </LogoCont>    
-
             <NavItems>
-                <Link className="navItem" id="dashboard">
+                <Link to={`/`} className="navItem" id="dashboard">
                     <img src={dashboardLight} class="image_on" /> 
                     <img src={dashboardGreen} class="image_off"/>
                     Dashboard
                 </Link>
-                <Link className="navItem" id="map">
+                <Link to={`/maps`} className="navItem" id="map">
                     <img src={mapLight} class="image_on" /> 
                     <img src={mapGreen} class="image_off"/>
                     Map
                 </Link>
-                <Link className="navItem" id="paw">
+                <Link to={`/species`} className="navItem" id="paw">
                     <img src={pawLight} class="image_on" /> 
                     <img src={pawGreen} class="image_off"/> 
                     Species
                 </Link>
-                <Link className="navItem" id="tree">
+                <Link to={`/about`} className="navItem" id="tree">
                     <img src={treeLight} class="image_on" /> 
                     <img src={treeGreen} class="image_off"/>
                     About
                 </Link>
             </NavItems>
-
             <NavFooter>
                 <footer>© Project Canopy 2020</footer>
             </NavFooter>
-        </NavCont>
+        </Sider>
     )
 };
 
-const NavCont = styled.div`
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    width:15%;
-    height:100vh;
-    background-color:white;
-`;
-
 const LogoCont = styled.div`
     display:flex;
-    width:100%;
-    height: 20vh;
+    height: 20%;
     flex-direction:column;
     align-items:center;
     justify-content:center;
     border-bottom:1px solid #D5D5D5;
     h1 {
         font-weight: bold;
-        font-size: 24px;
+        font-size: 1.7em;
         line-height: 31px;
     }
 `;
 
 const NavItems = styled.div`
     display:flex;
+    height:30%;
     flex-direction:column;
     justify-content:space-evenly;
     align-items:center;
-    width:100%;
-    height:34vh;
-    padding-top:2vh;
-    padding-bottom:40vh;
     a {
-        font-size: 24px;
+        font-size: 1.3rem;
         line-height: 31px;
         color:#9F9F9F;
         text-decoration:none;
@@ -117,11 +111,11 @@ const NavItems = styled.div`
 `;
 
 const NavFooter = styled.div`
-    display:flex;
-    justify-content:center;
-    align-items:center;
+    text-align:center;
     width:100%;
-    height:4vh;
+    position:absolute;
+    bottom:0;
+    padding:2.5% 0 2.5%;
     border-top: 1px solid #D5D5D5;
     footer {
         font-size: 12px;
