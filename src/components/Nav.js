@@ -22,7 +22,8 @@ export const Nav = () =>{
         <Sider
         style={{
             height: '100vh',
-            backgroundColor:'white'
+            backgroundColor:'white',
+            width:'20vw'
           }}
         >
             <LogoCont>

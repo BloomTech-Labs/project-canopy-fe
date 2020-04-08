@@ -1,10 +1,13 @@
 import React, { useEffect } from 'react';
 import 'antd/dist/antd.css';
-import {Layout, Row} from 'antd';
+import {Layout} from 'antd';
 import styled from 'styled-components';
 import {SearchBar} from './Search';
 import {Overview} from './Overview'
-const {Header, Footer, Content} = Layout;
+import {AreaCard} from './AreaCards';
+import {dummyData} from '../dummy';
+
+const {Header, Content} = Layout;
 
 export const Dashboard = () => {
     return(
@@ -15,6 +18,22 @@ export const Dashboard = () => {
         
             <Content>
                 <Overview />
+                <div style={{margin:'25px 50px', display:'flex', flexWrap:'wrap', justifyContent:'space-between'}}>
+                    {dummyData.map((e) => {
+                        return (
+                            <AreaCard 
+                            countryName={e.countryName} 
+                            threatenedSpecies={e.threatenedSpecies} 
+                            protectedSpecies={e.protectedSpecies} 
+                            nonProtectedSpecies={e.nonProtectedSpecies} 
+                            knownThreats={e.knownThreats}
+                            hotspotHabitats={e.hotspotHabitats}
+                             />
+                        ) 
+                    })}
+                    
+                </div>
+                
             </Content>  
         </div>
     )

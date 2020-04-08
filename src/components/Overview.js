@@ -2,7 +2,6 @@ import React from 'react';
 import 'antd/dist/antd.css'
 import { PageHeader, Statistic, Row, Col } from 'antd';
 import popTrend1 from './assets/popTrend1.svg';
-import popTrend2 from './assets/popTrend2.svg';
 import styled from 'styled-components';
 
 const flip = {
