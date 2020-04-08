@@ -4,12 +4,9 @@ import { Route, Switch } from 'react-router-dom';
 import {Layout, Row, Col} from 'antd';
 import styled from 'styled-components';
 
-import Dashboard from './components/Dashboard.js';
+import {Dashboard} from './components/Dashboard.js';
 import {Nav} from './components/Nav'
 
-
-
-const {Header, Sider, Content, Footer} = Layout;
 
 function App() {
   return (
