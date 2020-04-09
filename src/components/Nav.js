@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import {Layout, Menu} from 'antd';
+import {Layout} from 'antd';
 import 'antd/dist/antd.css';
 import styled from 'styled-components';
 
@@ -32,23 +32,23 @@ export const Nav = () =>{
             </LogoCont>    
             <NavItems>
                 <Link to={`/`} className="navItem" id="dashboard">
-                    <img src={dashboardLight} class="image_on" /> 
-                    <img src={dashboardGreen} class="image_off"/>
+                    <img src={dashboardLight} className="image_on" /> 
+                    <img src={dashboardGreen} className="image_off"/>
                     Dashboard
                 </Link>
                 <Link to={`/maps`} className="navItem" id="map">
-                    <img src={mapLight} class="image_on" /> 
-                    <img src={mapGreen} class="image_off"/>
+                    <img src={mapLight} className="image_on" /> 
+                    <img src={mapGreen} className="image_off"/>
                     Map
                 </Link>
                 <Link to={`/species`} className="navItem" id="paw">
-                    <img src={pawLight} class="image_on" /> 
-                    <img src={pawGreen} class="image_off"/> 
+                    <img src={pawLight} className="image_on" /> 
+                    <img src={pawGreen} className="image_off"/> 
                     Species
                 </Link>
                 <Link to={`/about`} className="navItem" id="tree">
-                    <img src={treeLight} class="image_on" /> 
-                    <img src={treeGreen} class="image_off"/>
+                    <img src={treeLight} className="image_on" /> 
+                    <img src={treeGreen} className="image_off"/>
                     About
                 </Link>
             </NavItems>

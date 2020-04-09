@@ -1,7 +1,6 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import 'antd/dist/antd.css';
 import {Layout} from 'antd';
-import styled from 'styled-components';
 import {SearchBar} from './Search';
 import {Overview} from './Overview'
 import {AreaCard} from './AreaCards';
@@ -21,7 +20,7 @@ export const Dashboard = () => {
                 <div style={{margin:'25px 50px', display:'flex', flexWrap:'wrap', justifyContent:'space-between'}}>
                     {dummyData.map((e) => {
                         return (
-                            <AreaCard 
+                            <AreaCard key={Math.random()*99999999999999}
                             countryName={e.countryName} 
                             threatenedSpecies={e.threatenedSpecies} 
                             protectedSpecies={e.protectedSpecies} 

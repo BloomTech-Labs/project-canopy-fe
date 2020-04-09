@@ -1,9 +1,15 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import 'antd/dist/antd.css';
 import { Table } from 'antd';
+import {connect} from 'react-redux';
+import {getThreatenedCounts} from '../actions/index'
 
-
-export const TableSetup = () => {
+const TableSetup = (props) => {
+  useEffect(()=>{
+    props.getThreatenedCounts()
+    console.log(props.threatenedCounts);
+  },[])
+  console.log(props.threatenedCounts);
     const columns = [
         {
           title: 'Country Name',
@@ -68,7 +74,12 @@ export const TableSetup = () => {
       
 }
 
-
+const mapStateToProps=state=>{
+  return {
+    threatenedCounts:state.threatenedCounts
+  }
+}
+export default connect(mapStateToProps,{getThreatenedCounts})(TableSetup);
 // POST ("country")
 
 // returns
