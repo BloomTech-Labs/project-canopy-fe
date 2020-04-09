@@ -4,8 +4,14 @@ import { Route, Switch } from 'react-router-dom';
 import { Layout, Row, Col } from 'antd';
 import styled from 'styled-components';
 
+<<<<<<< HEAD
 import { Dashboard } from './components/Dashboard.js';
 import { Nav } from './components/Nav';
+=======
+import {Dashboard} from './components/dashboard.js';
+import {Nav} from './components/Nav'
+
+>>>>>>> 35cf9d079bde62cdabd777a57d4fa36502952d90
 
 function App() {
   return (
