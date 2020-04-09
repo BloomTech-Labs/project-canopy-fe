@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
-import Table, { TableSetup } from './Table'
 
 const Dashboard = (props) => {
     useEffect(() => {
@@ -10,7 +9,6 @@ const Dashboard = (props) => {
 
     return(
         <DashCont>  
-           <TableSetup />
         </DashCont>
     )
 };
