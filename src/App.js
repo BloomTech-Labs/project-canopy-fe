@@ -1,34 +1,29 @@
 import React from 'react';
-import './App.css';
+import 'antd/dist/antd.css';
 import { Route, Switch } from 'react-router-dom';
+import {Layout, Row, Col} from 'antd';
 import styled from 'styled-components';
 
-import Dashboard from './components/dashboard.js';
+import {Dashboard} from './components/dashboard.js';
 import {Nav} from './components/Nav'
+
 
 function App() {
   return (
-    <div>
+    
+      <Layout>
+          <Nav />
+          <Layout style={{backgroundColor:'#F0F0F0', height:'100vh'}}>      
+              
+                <Dashboard />
+              
+          </Layout> 
 
-      <Switch>
-        <Route exact path='/'>
-          <Container>
-            <Nav />
-            <Dashboard />
-          </Container>
-        </Route>
-      </Switch>
-
-    </div>
+      </Layout> 
+ 
+    
   );
 }
-
-const Container = styled.div`
-    display:flex;
-    width:100%;
-    height:100vh;
-`;
-
 
 export default App;
 

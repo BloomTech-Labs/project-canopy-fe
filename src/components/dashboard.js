@@ -1,21 +1,41 @@
 import React, { useEffect } from 'react';
-import { connect } from 'react-redux';
+import 'antd/dist/antd.css';
+import {Layout} from 'antd';
 import styled from 'styled-components';
+import {SearchBar} from './Search';
+import {Overview} from './Overview'
+import {AreaCard} from './AreaCards';
+import {dummyData} from '../dummy';
 
-const Dashboard = (props) => {
-    useEffect(() => {
-        
-    }, [])
+const {Header, Content} = Layout;
 
+export const Dashboard = () => {
     return(
-        <DashCont>  
-        </DashCont>
+        <div>
+            <Header style={{backgroundColor:'#F0F0F0'}}> 
+                <SearchBar />
+            </Header>
+        
+            <Content>
+                <Overview />
+                <div style={{margin:'25px 50px', display:'flex', flexWrap:'wrap', justifyContent:'space-between'}}>
+                    {dummyData.map((e) => {
+                        return (
+                            <AreaCard 
+                            countryName={e.countryName} 
+                            threatenedSpecies={e.threatenedSpecies} 
+                            protectedSpecies={e.protectedSpecies} 
+                            nonProtectedSpecies={e.nonProtectedSpecies} 
+                            knownThreats={e.knownThreats}
+                            hotspotHabitats={e.hotspotHabitats}
+                             />
+                        ) 
+                    })}
+                    
+                </div>
+                
+            </Content>  
+        </div>
     )
 };
 
-export default Dashboard
-
-const DashCont = styled.div`
-    display:flex;
-    width:84.1%;
-`;
