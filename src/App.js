@@ -1,20 +1,31 @@
 import React from 'react';
-import './App.css';
+import 'antd/dist/antd.css';
 import { Route, Switch } from 'react-router-dom';
+import {Layout} from 'antd';
 
-import Dashboard from './components/dashboard.js';
+import {Dashboard} from './components/Dashboard.js';
+import {Nav} from './components/Nav'
+
 
 function App() {
   return (
-    <div>
+    
+    <Layout>
+        <Nav />
 
-      <Switch>
-        <Route exact path='/'>
-          <Dashboard />
-        </Route>
-      </Switch>
+        <Layout style={{backgroundColor:'#F0F0F0', height:'100vh'}}>
+          <Switch>
+            
+            <Route>
+              <Dashboard /> 
+            </Route>
 
-    </div>
+          </Switch>                    
+        </Layout> 
+
+    </Layout> 
+ 
+    
   );
 }
 

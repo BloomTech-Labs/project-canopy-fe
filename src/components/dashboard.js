@@ -1,40 +1,39 @@
-import React, { useEffect } from 'react';
-import { connect } from 'react-redux';
-import styled from 'styled-components';
-import { getData, uniqueBinomial } from '../actions/mapActions.js';
-import Map from './mapComponents/map.js';
-import MapSearch from './mapComponents/mapSearch.js';
+import React from 'react';
+import 'antd/dist/antd.css';
+import {Layout} from 'antd';
+import {SearchBar} from './Search';
+import {Overview} from './Overview'
+import {AreaCard} from './AreaCards';
+import {dummyData} from '../dummy';
 
-const Dashboard = (props) => {
-    const { getData, uniqueBinomial } = props;
-    useEffect(() => {
-        // the best way to create a list of unique binomal names without it affected search persformance was to fire the uniqueBinomal action in a .then after the getData() fetches the data
-        console.log('this is getData', getData)
-        getData()
-            .then(geojsonPoints => {
-                uniqueBinomial(geojsonPoints)
-            })
-    }, [])
+const {Header, Content} = Layout;
 
+export const Dashboard = () => {
     return(
-        <DashCont>
-            <MapSearch />
-            <Map />
-        </DashCont>
+        <div>
+            <Header style={{backgroundColor:'#F0F0F0'}}> 
+                <SearchBar />
+            </Header>
+        
+            <Content>
+                <Overview />
+                <div style={{margin:'25px 50px', display:'flex', flexWrap:'wrap', justifyContent:'space-between'}}>
+                    {dummyData.map((e) => {
+                        return (
+                            <AreaCard 
+                            countryName={e.countryName} 
+                            threatenedSpecies={e.threatenedSpecies} 
+                            protectedSpecies={e.protectedSpecies} 
+                            nonProtectedSpecies={e.nonProtectedSpecies} 
+                            knownThreats={e.knownThreats}
+                            hotspotHabitats={e.hotspotHabitats}
+                             />
+                        ) 
+                    })}
+
+                </div> 
+            </Content>  
+        </div>
     )
 };
 
-const mapStateToProps = (state) => {
-    return {
-        dataPoints: state.dataPoints
-    }
-};
-
-export default connect(mapStateToProps, {
-    getData,
-    uniqueBinomial
-})(Dashboard);
-
-const DashCont = styled.div`
-    display:flex;
-`;
