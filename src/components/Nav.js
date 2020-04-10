@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import {Layout, Menu} from 'antd';
+import {Layout} from 'antd';
 import 'antd/dist/antd.css';
 import styled from 'styled-components';
 
@@ -20,35 +20,34 @@ const {Sider} = Layout;
 export const Nav = () =>{
     return (
         <Sider
-        style={{
-            height: '100vh',
-            backgroundColor:'white',
-            width:'20vw'
-          }}
+            style={{
+                height: '100vh',
+                backgroundColor:'white'
+            }}
         >
             <LogoCont>
-                <img src={treeLogo} />
+                <img src={treeLogo} alt='logo'/>
                 <h1>Project Canopy</h1>
             </LogoCont>    
             <NavItems>
                 <Link to={`/`} className="navItem" id="dashboard">
-                    <img src={dashboardLight} class="image_on" /> 
-                    <img src={dashboardGreen} class="image_off"/>
+                    <img src={dashboardLight} alt='dashboard' class="image_on" /> 
+                    <img src={dashboardGreen} alt='dashboard' class="image_off"/>
                     Dashboard
                 </Link>
                 <Link to={`/maps`} className="navItem" id="map">
-                    <img src={mapLight} class="image_on" /> 
-                    <img src={mapGreen} class="image_off"/>
+                    <img src={mapLight} alt='map' class="image_on" /> 
+                    <img src={mapGreen} alt='map' class="image_off"/>
                     Map
                 </Link>
                 <Link to={`/species`} className="navItem" id="paw">
-                    <img src={pawLight} class="image_on" /> 
-                    <img src={pawGreen} class="image_off"/> 
+                    <img src={pawLight} alt='species' class="image_on" /> 
+                    <img src={pawGreen} alt='species' class="image_off"/> 
                     Species
                 </Link>
                 <Link to={`/about`} className="navItem" id="tree">
-                    <img src={treeLight} class="image_on" /> 
-                    <img src={treeGreen} class="image_off"/>
+                    <img src={treeLight} alt='About' class="image_on" /> 
+                    <img src={treeGreen} alt='About' class="image_off"/>
                     About
                 </Link>
             </NavItems>

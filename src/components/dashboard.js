@@ -1,7 +1,6 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import 'antd/dist/antd.css';
 import {Layout} from 'antd';
-import styled from 'styled-components';
 import {SearchBar} from './Search';
 import {Overview} from './Overview'
 import {AreaCard} from './AreaCards';
@@ -31,9 +30,8 @@ export const Dashboard = () => {
                              />
                         ) 
                     })}
-                    
-                </div>
-                
+
+                </div> 
             </Content>  
         </div>
     )
