@@ -7,12 +7,11 @@ import {getThreatenedCounts,getThreatenedCountsByHabitat,getThreatenedCountsByCo
 const TableSetup = (props) => {
   useEffect(()=>{
     props.getThreatenedCountsByHabitat()
+    props.getThreatenedCountsByCountry()
     console.log(props.getThreatenedCountsByHabitat)
     console.log('////////////////////////////////////////////')
-    props.getThreatenedCountsByCountry()
     console.log(props.getThreatenedCountsByCountry)
   },[])
-  console.log(props.threatenedCounts);
     const columns = [
         {
           title: 'Country Name',
