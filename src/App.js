@@ -3,7 +3,7 @@ import 'antd/dist/antd.css';
 import { Route, Switch } from 'react-router-dom';
 import {Layout} from 'antd';
 
-import {Dashboard} from './components/Dashboard.js';
+import {Dashboard} from './components/dashboard.js';
 import {Nav} from './components/Nav'
 
 
