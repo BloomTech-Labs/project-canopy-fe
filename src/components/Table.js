@@ -1,26 +1,32 @@
-import React,{useEffect} from 'react';
+import React,{useEffect, useState} from 'react';
 import 'antd/dist/antd.css';
 import { Table } from 'antd';
 import {connect} from 'react-redux';
 import {getThreatenedCounts,getThreatenedCountsByHabitat,getThreatenedCountsByCountry} from '../actions/index'
 
 const TableSetup = (props) => {
-  useEffect(()=>{
-    props.getThreatenedCountsByHabitat()
+  const [country, setCountry] = useState([])
+  useEffect(() => {
+    props.getThreatenedCounts()
     props.getThreatenedCountsByCountry()
-    console.log(props.getThreatenedCountsByHabitat)
-    console.log('////////////////////////////////////////////')
-    console.log(props.getThreatenedCountsByCountry)
+    props.getThreatenedCountsByHabitat()
   },[])
+  
+  console.log('This is country',country)
+  console.log('this is props threat data', props.threatenedCountsByCountry.data)
+  // threats = props.threatenedCountsByCountry.data
+  // threats.map(country => {
+  //   setCountry(country)
+  // })
     const columns = [
         {
           title: 'Country Name',
-          dataIndex: 'CountryName',
+          dataIndex: 'country',
           key: 'CountryName',
         },
         {
           title: 'Classes',
-          dataIndex: 'class',
+          dataIndex: 'className',
           key:'class',
         },
         {
@@ -30,37 +36,38 @@ const TableSetup = (props) => {
         },
       ];
       
-      const data = [
-        {
-          key: '1',
-          CountryName: 'Congo',
-          children: [
-              {
-                class: 'INSECTA',
-                totalThreatened:  '178',
-              },
-              {
-                class: "VERTEBRATE",
-                totalThreatened: '167',
-              },             
-          ]
-        },
-        {
-          key: '2',
-          CountryName: 'Zimbabwe',
-          children: [
-              {
-                class: 'APHROPODA',
-                totalThreatened: '300',
-              },
+      const data = props.threatenedCountsByCountry.data 
+      // [
+      //   {
+      //     key: '1',
+      //     CountryName: 'Congo',
+      //     children: [
+      //         {
+      //           class: 'INSECTA',
+      //           totalThreatened:  '178',
+      //         },
+      //         {
+      //           class: "VERTEBRATE",
+      //           totalThreatened: '167',
+      //         },             
+      //     ]
+      //   },
+      //   {
+      //     key: '2',
+      //     CountryName: 'Zimbabwe',
+      //     children: [
+      //         {
+      //           class: 'APHROPODA',
+      //           totalThreatened: '300',
+      //         },
 
-              {
-                class: "VERTEBRATE",
-                totalThreatened: '176',
-              },
-          ],
-        },
-      ];
+      //         {
+      //           class: "VERTEBRATE",
+      //           totalThreatened: '176',
+      //         },
+      //     ],
+      //   },
+      // ];
     
       return(
         <div>
@@ -76,7 +83,7 @@ const TableSetup = (props) => {
       
 }
 
-const mapStateToProps=state=>{
+const mapStateToProps = state => {
   return {
     threatenedCounts:state.threatenedCounts,
     threatenedCountsByHabitat:state.threatenedCountsByHabitat,
