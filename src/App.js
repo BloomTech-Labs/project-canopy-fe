@@ -7,8 +7,7 @@ import {Nav} from './components/Nav'
 import { Route, Switch } from 'react-router-dom';
 
 
-import { Dashboard } from './components/dashboard.js';
-import { Nav } from './components/Nav';
+
 
 function App() {
   return (

@@ -18,9 +18,10 @@ export const Dashboard = () => {
             <Content>
                 <Overview />
                 <div style={{margin:'25px 50px', display:'flex', flexWrap:'wrap', justifyContent:'space-between'}}>
-                    {dummyData.map((e) => {
+                    {dummyData.map((e, i) => {
                         return (
-                            <AreaCard key={Math.random()*99999999999999}
+                            <AreaCard
+                            key={i} 
                             countryName={e.countryName} 
                             threatenedSpecies={e.threatenedSpecies} 
                             protectedSpecies={e.protectedSpecies} 
