@@ -32,7 +32,7 @@ export const Overview = () => {
                         <Statistic title="Threats" value={2586} style={flip} valueStyle={{fontSize:'2rem', fontWeight:'bold'}} />
                     </Col>
                     <Col span={4}>
-                        <Statistic title={<img src={popTrend1} />}  value={'Population Trend'} style={{textAlign:'center', marginTop:'4px'}} valueStyle={{fontSize:'1em', color:'rgba(0, 0, 0, 0.45)', marginBottom:'8px'}}/>  
+                        <Statistic title={<img alt='population trends' src={popTrend1} />}  value={'Population Trend'} style={{textAlign:'center', marginTop:'4px'}} valueStyle={{fontSize:'1em', color:'rgba(0, 0, 0, 0.45)', marginBottom:'8px'}}/>  
                     </Col>
                 </Row>
             </PageHeader>       

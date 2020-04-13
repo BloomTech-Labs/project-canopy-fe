@@ -20,35 +20,34 @@ const {Sider} = Layout;
 export const Nav = () =>{
     return (
         <Sider
-        style={{
-            height: '100vh',
-            backgroundColor:'white',
-            width:'20vw'
-          }}
+            style={{
+                height: '100vh',
+                backgroundColor:'white'
+            }}
         >
             <LogoCont>
-                <img src={treeLogo} />
+                <img src={treeLogo} alt='logo'/>
                 <h1>Project Canopy</h1>
             </LogoCont>    
             <NavItems>
                 <Link to={`/`} className="navItem" id="dashboard">
-                    <img src={dashboardLight} className="image_on" /> 
-                    <img src={dashboardGreen} className="image_off"/>
+                    <img src={dashboardLight} alt='dashboard' class="image_on" /> 
+                    <img src={dashboardGreen} alt='dashboard' class="image_off"/>
                     Dashboard
                 </Link>
                 <Link to={`/maps`} className="navItem" id="map">
-                    <img src={mapLight} className="image_on" /> 
-                    <img src={mapGreen} className="image_off"/>
+                    <img src={mapLight} alt='map' class="image_on" /> 
+                    <img src={mapGreen} alt='map' class="image_off"/>
                     Map
                 </Link>
                 <Link to={`/species`} className="navItem" id="paw">
-                    <img src={pawLight} className="image_on" /> 
-                    <img src={pawGreen} className="image_off"/> 
+                    <img src={pawLight} alt='species' class="image_on" /> 
+                    <img src={pawGreen} alt='species' class="image_off"/> 
                     Species
                 </Link>
                 <Link to={`/about`} className="navItem" id="tree">
-                    <img src={treeLight} className="image_on" /> 
-                    <img src={treeGreen} className="image_off"/>
+                    <img src={treeLight} alt='About' class="image_on" /> 
+                    <img src={treeGreen} alt='About' class="image_off"/>
                     About
                 </Link>
             </NavItems>
