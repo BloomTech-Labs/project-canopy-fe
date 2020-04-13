@@ -20,7 +20,7 @@ export const Dashboard = () => {
                 <div style={{margin:'25px 50px', display:'flex', flexWrap:'wrap', justifyContent:'space-between'}}>
                     {dummyData.map((e) => {
                         return (
-                            <AreaCard 
+                            <AreaCard key={Math.random()*99999999999999}
                             countryName={e.countryName} 
                             threatenedSpecies={e.threatenedSpecies} 
                             protectedSpecies={e.protectedSpecies} 
