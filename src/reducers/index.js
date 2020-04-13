@@ -33,7 +33,7 @@ export const reducer=(state=initialState, action)=>{
         case GET_THREATENED_COUNTS_BY_HABITAT_SUCCESS:
             return {
                 ...state,
-                threatenedCounts: action.payload
+                threatenedCountsByHabitat: action.payload
             }
         case GET_THREATENED_COUNTS_BY_HABITAT_FAILED:
             return {
@@ -46,7 +46,7 @@ export const reducer=(state=initialState, action)=>{
         case GET_THREATENED_COUNTS_BY_COUNTRY_SUCCESS:
             return {
                 ...state,
-                threatenedCounts: action.payload
+                threatenedCountsByCountry: action.payload
             }
         case GET_THREATENED_COUNTS_BY_COUNTRY_FAILED:
             return {

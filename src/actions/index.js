@@ -15,7 +15,7 @@ export const GET_THREATENED_COUNTS_BY_COUNTRY_FAILED="GET_THREATENED_COUNTS_BY_C
 
 export const getThreatenedCounts=()=>(dispatch)=>{
     dispatch({type:GET_THREATENED_COUNTS_START})
-    return axios.get("http://localhost:5000/th_s/tax/classCount")
+    return axios.get("http://localhost:5000/th_s/classCount")
     .then(response=>{
         dispatch({
             type:GET_THREATENED_COUNTS_SUCCESS,
