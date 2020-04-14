@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import 'antd/dist/antd.css';
 import { Layout, /*Table*/ } from 'antd';
-import Table from './components/Table';
+// import Table from './components/Table';
 import {Dashboard} from './components/dashboard.js';
 import {Nav} from './components/Nav'
 import { Route, Switch } from 'react-router-dom';
@@ -18,7 +18,7 @@ function App() {
         <Switch>
           <Route>
             <Dashboard />
-            <Table/>
+            {/* <Table/> */}
           </Route>
         </Switch>
       </Layout>
