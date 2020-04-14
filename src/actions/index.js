@@ -1,7 +1,7 @@
 import axios from 'axios';
 const url = process.env.REACT_APP_BACKENDURL
     ? process.env.REACT_APP_BACKENDURL
-    : "http://localhost:5000/";
+    : "http://localhost:5000";
 
 export const GET_THREATENED_COUNTS_START="GET_THREATENED_COUNTS_START";
 export const GET_THREATENED_COUNTS_SUCCESS="GET_THREATENED_COUNTS_SUCCESS"
@@ -17,6 +17,7 @@ export const GET_THREATENED_COUNTS_BY_COUNTRY_FAILED="GET_THREATENED_COUNTS_BY_C
 
 
 export const getThreatenedCounts=()=>(dispatch)=>{
+    console.log(process.env.REACT_APP_BACKENDURL)
     dispatch({type:GET_THREATENED_COUNTS_START})
     return axios.get(`${url}/th_s/tax/classCount`)
     .then(response=>{
