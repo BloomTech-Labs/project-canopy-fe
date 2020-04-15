@@ -8,7 +8,7 @@ export const Heading = () =>{
     return (
         <Row>
             <Col span={20}>
-                <StyledSpan>Overview of biodiversity in the Congo Bason Rainforest</StyledSpan>
+                <StyledSpan>Overview of biodiversity in the Congo Basin Rainforest</StyledSpan>
             </Col>
             <Col span={4}>
                 <StyledButton><span>Filter</span></StyledButton>
