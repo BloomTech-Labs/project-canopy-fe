@@ -41,6 +41,7 @@ const Chart = (props) => {
  const allThreatenedCounts = props.threatendCountsByClass.map(count => {
     return count.threatenedCount
  })
+
  console.log('allcount',props.allCountsByClass)
  console.log('count by class',props.threatendCountsByClass)
  console.log(allThreatenedCounts)

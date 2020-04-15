@@ -3,6 +3,7 @@ import { render } from '@testing-library/react';
 import { MemoryRouter, Router } from 'react-router-dom';
 import { createMemoryHistory } from 'history';
 import App from '../App';
+import { createStore } from 'redux';
 
 // test('renders learn react link', () => {
 //   const { getByText } = render(<App />, { wrapper: MemoryRouter });
@@ -10,9 +11,14 @@ import App from '../App';
 //   expect(linkElement).toBeInTheDocument();
 // });
 
-test('full app rendering/navigating', () => {
+
+// function renderWithRedux(component, {initialState, store = createStore(reducer, initialState)}
+// ) 
+// {}
+
+test('renders without crashing', () => {
     const history = createMemoryHistory()
-    const { getAllByText } = render(
+    render(
       <Router history={history}>
         <App />
       </Router>
