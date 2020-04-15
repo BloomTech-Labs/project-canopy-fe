@@ -77,7 +77,7 @@ const TableSetup = (props) => {
             dataSource={data}
             bordered
             pagination={false}
-            title={() => 'Top hotspot habitats'}
+            title={() => <h2 style={{fontSize:'1.3em'}}>Top hotspot habitats</h2>}
           />
         </div>
       )
