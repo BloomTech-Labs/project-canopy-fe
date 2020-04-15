@@ -114,9 +114,9 @@ console.log(chartConfig.data.datasets[0])
   }, [props.threatendCountsByClass]);
 
   return (
-    <div>
+    
       <canvas ref={chartContainer} />
-    </div>
+    
   );
 };
 

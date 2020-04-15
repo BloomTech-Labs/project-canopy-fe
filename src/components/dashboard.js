@@ -24,13 +24,17 @@ export const Dashboard = () => {
                 
                 <Overview />
                 
-                <Row style={{backgroundColor:'#FEFEFE', margin:'2vh 50px', borderRadius:'5px', height:'30vh'}}>
-                    <Col span={2} />
-                    <Col span={8}>
-                        <ChartSmall />
+                <Row style={{backgroundColor:'#FEFEFE', margin:'2vh 50px', borderRadius:'5px'}}>
+                    <Col span={11} style={{margin:'0 auto'}}>
+                        <div style={{padding:'2%'}}>
+                            <ChartSmall />
+                        </div>
                     </Col>
-                    <Col span={8} offset={2}>
-                        <ChartSmall />
+                    <Col span={1} style={{backgroundColor:'#F0F0F0'}}/>
+                    <Col span={11} style={{margin:'0 auto'}}>
+                        <div style={{padding:'2%'}}>
+                            <ChartSmall />
+                        </div>
                     </Col>
                 </Row>
                 <Row style={{backgroundColor:'#FEFEFE', margin:'2vh 50px', borderRadius:'5px', alignContent:'center'}}>
