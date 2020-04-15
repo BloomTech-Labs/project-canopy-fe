@@ -27,12 +27,14 @@ export const Dashboard = () => {
                 <Row style={{backgroundColor:'#FEFEFE', margin:'2vh 50px', borderRadius:'5px'}}>
                     <Col span={11} style={{margin:'0 auto'}}>
                         <div style={{padding:'2%'}}>
+                            <h2 style={{fontSize:'1.2em'}}>Threat Levels by taxonomic class</h2>
                             <ChartSmall />
                         </div>
                     </Col>
                     <Col span={1} style={{backgroundColor:'#F0F0F0'}}/>
                     <Col span={11} style={{margin:'0 auto'}}>
                         <div style={{padding:'2%'}}>
+                            <h2>Threatened vs Protected Species</h2>
                             <ChartSmall />
                         </div>
                     </Col>
