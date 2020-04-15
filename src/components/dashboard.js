@@ -5,7 +5,9 @@ import {SearchBar} from './Search';
 import {Overview} from './Overview'
 import {AreaCard} from './AreaCards';
 import {dummyData} from '../dummy';
-
+import Table from './Table'
+import Chart from './Chart'
+import ChartSmall from './ChartSmall'
 const {Header, Content} = Layout;
 
 export const Dashboard = () => {
@@ -14,7 +16,9 @@ export const Dashboard = () => {
             <Header style={{backgroundColor:'#F0F0F0'}}> 
                 <SearchBar />
             </Header>
-        
+        <Chart />
+        <ChartSmall />
+        <Table />
             <Content>
                 <Overview />
                 <div style={{margin:'25px 50px', display:'flex', flexWrap:'wrap', justifyContent:'space-between'}}>

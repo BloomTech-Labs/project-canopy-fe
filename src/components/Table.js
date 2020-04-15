@@ -21,63 +21,63 @@ const TableSetup = (props) => {
   // })
     const columns = [
         {
-          title: 'Country Name',
-          dataIndex: 'country',
+          title: 'Habitats',
+          dataIndex: 'habitats',
           key: 'CountryName',
         },
         {
-          title: 'Classes',
-          dataIndex: 'className',
+          title: 'Description',
+          dataIndex: 'totalSpeciesInCountry',
           key:'class',
         },
         {
-          title: 'Total Threatend',
+          title: 'Number of species',
           dataIndex: 'totalThreatened',
           key:'totalThreatened',
         },
       ];
       
-      const data = props.threatenedCountsByCountry.data 
-      // [
-      //   {
-      //     key: '1',
-      //     CountryName: 'Congo',
-      //     children: [
-      //         {
-      //           class: 'INSECTA',
-      //           totalThreatened:  '178',
-      //         },
-      //         {
-      //           class: "VERTEBRATE",
-      //           totalThreatened: '167',
-      //         },             
-      //     ]
-      //   },
-      //   {
-      //     key: '2',
-      //     CountryName: 'Zimbabwe',
-      //     children: [
-      //         {
-      //           class: 'APHROPODA',
-      //           totalThreatened: '300',
-      //         },
+      const data = 
+      [
+        {
+          key: '1',
+          CountryName: 'Congo',
+          children: [
+              {
+                class: 'INSECTA',
+                totalThreatened:  '178',
+              },
+              {
+                class: "VERTEBRATE",
+                totalThreatened: '167',
+              },             
+          ]
+        },
+        {
+          key: '2',
+          CountryName: 'Zimbabwe',
+          children: [
+              {
+                class: 'APHROPODA',
+                totalThreatened: '300',
+              },
 
-      //         {
-      //           class: "VERTEBRATE",
-      //           totalThreatened: '176',
-      //         },
-      //     ],
-      //   },
-      // ];
+              {
+                class: "VERTEBRATE",
+                totalThreatened: '176',
+              },
+          ],
+        },
+      ];
     
       return(
         <div>
         <Table
           columns={columns}
           dataSource={data}
-          pagination={{ pageSize: 1}}
           bordered
-          title={() => 'Total Threatend By Class'}
+          pagination={false}
+          title={() => 'Top hotspot habitats'}
         />
         </div>
       )
