@@ -48,15 +48,21 @@ var data = {
   labels: ["Amphibians", "Birds", "Mammals", "Reptiles"],
   datasets: [{
     label: "Total number of species",
-    backgroundColor: 'rgb(212, 212, 212, 0.2)',
-    borderWidth: 1,
-    data: allCountsData,
+
+    barThickness:'flex',
+    backgroundColor: '#F0F0F0',
+    borderWidth: 0,
+    order:2,
+    data: [363, 1088, 481, 72],
     xAxisID: "bar-x-axis1",
   }, {
     label: "Total Number of threatened species",
-    backgroundColor: 'rgb(255, 0, 0)',
-    borderWidth: 1,
-    data: allThreatenedCounts,
+    barThickness:'flex',
+    backgroundColor: '#EA0114',
+    borderWidth: 0,
+    order:1,
+    data: [72, 59, 73, 16],
+
     xAxisID: "bar-x-axis2",
   }]
 };
@@ -64,24 +70,21 @@ var data = {
 var options = {
   legend:{
     position: 'right',
+    labels: {
+      boxWidth:15,
+    }
   },
   scales: {
    xAxes: [{
       stacked: true,
       id: "bar-x-axis1",
-      barThickness: 100,
+      barThickness: 65,
     }, {
       display: false,
       stacked: true,
       id: "bar-x-axis2",
-      barThickness: 100,
+      barThickness: 65,
       // these are needed because the bar controller defaults set only the first x axis properties
-      type: 'category',
-      categoryPercentage: 0.8,
-      barPercentage: 0.9,
-      gridLines: {
-        offsetGridLines: true
-      },
       offset: true
     }],
     yAxes: [{
@@ -90,7 +93,8 @@ var options = {
         beginAtZero: true
       },
     }],
-  },
+
+  }, 
 };
 
 

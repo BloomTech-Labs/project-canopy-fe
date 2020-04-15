@@ -71,14 +71,14 @@ const TableSetup = (props) => {
       ];
     
       return(
-        <div>
-        <Table
-          columns={columns}
-          dataSource={data}
-          bordered
-          pagination={false}
-          title={() => 'Top hotspot habitats'}
-        />
+        <div style={{width:'100%'}}>
+          <Table
+            columns={columns}
+            dataSource={data}
+            bordered
+            pagination={false}
+            title={() => 'Top hotspot habitats'}
+          />
         </div>
       )
       

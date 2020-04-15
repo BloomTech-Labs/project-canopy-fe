@@ -1,22 +1,16 @@
 import React from 'react';
 import 'antd/dist/antd.css'
-import {Input, Button, Row, Col} from 'antd';
+import {Button, Row, Col} from 'antd';
 import styled from 'styled-components';
 
-const {Search} = Input;
 
-export const SearchBar = () =>{
+export const Heading = () =>{
     return (
         <Row>
-            <Col span={10}>
-                <Search
-                    placeholder="input search text"
-                    onSearch={value => console.log(value)}
-                    onChange={placeholder => console.log(placeholder)}
-                    style={{borderRadius:'6px'}}
-                /> 
+            <Col span={20}>
+                <StyledSpan>Overview of biodiversity in the Congo Bason Rainforest</StyledSpan>
             </Col>
-            <Col span={4} offset={10}>
+            <Col span={4}>
                 <StyledButton><span>Filter</span></StyledButton>
             </Col>  
         </Row>
@@ -38,4 +32,10 @@ const StyledButton = styled(Button)`
     vertical-align:middle;
   }
   
+`;
+
+const StyledSpan = styled.span`
+  font-size:2em;
+  font-weight:bold;
+  color:black;
 `;

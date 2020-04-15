@@ -1,42 +1,41 @@
 import React from 'react';
 import 'antd/dist/antd.css';
-import {Layout} from 'antd';
-import {SearchBar} from './Search';
+import {Layout, Row, Col} from 'antd';
+import {Heading} from './Heading';
 import {Overview} from './Overview'
 import {AreaCard} from './AreaCards';
 import {dummyData} from '../dummy';
 import Table from './Table'
-import Chart from './Chart'
+
 import ChartSmall from './ChartSmall'
 const {Header, Content} = Layout;
 
 export const Dashboard = () => {
     return(
         <div>
-            <Header style={{backgroundColor:'#F0F0F0'}}> 
-                <SearchBar />
+            <Header style={{backgroundColor:'#F0F0F0', height:'15vh'}}>
+                
+                <div>Placeholder for search bar and language select</div>
+                <Heading />
+                    
             </Header>
-        <Chart />
-        <ChartSmall />
-        <Table />
+               
             <Content>
+                
                 <Overview />
-                <div style={{margin:'25px 50px', display:'flex', flexWrap:'wrap', justifyContent:'space-between'}}>
-                    {dummyData.map((e, i) => {
-                        return (
-                            <AreaCard
-                            key={i} 
-                            countryName={e.countryName} 
-                            threatenedSpecies={e.threatenedSpecies} 
-                            protectedSpecies={e.protectedSpecies} 
-                            nonProtectedSpecies={e.nonProtectedSpecies} 
-                            knownThreats={e.knownThreats}
-                            hotspotHabitats={e.hotspotHabitats}
-                             />
-                        ) 
-                    })}
-
-                </div> 
+                
+                <Row style={{backgroundColor:'#FEFEFE', margin:'2vh 50px', borderRadius:'5px', height:'30vh'}}>
+                    <Col span={2} />
+                    <Col span={8}>
+                        <ChartSmall />
+                    </Col>
+                    <Col span={8} offset={2}>
+                        <ChartSmall />
+                    </Col>
+                </Row>
+                <Row style={{backgroundColor:'#FEFEFE', margin:'2vh 50px', borderRadius:'5px', alignContent:'center'}}>
+                   <Table /> 
+                </Row>
             </Content>  
         </div>
     )
