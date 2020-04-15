@@ -73,10 +73,10 @@ var options = {
   },
   scales: {
    xAxes: [{
-      barThickness: 100,
+      barThickness: 50,
     }, {
         display:false,
-      barThickness: 100,
+      barThickness: 50,
       // these are needed because the bar controller defaults set only the first x axis properties
       type: 'category',
       categoryPercentage: 0.8,
