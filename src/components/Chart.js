@@ -41,6 +41,7 @@ const Chart = (props) => {
  const allThreatenedCounts = props.threatendCountsByClass.map(count => {
     return count.threatenedCount
  })
+
  console.log('allcount',props.allCountsByClass)
  console.log('count by class',props.threatendCountsByClass)
  console.log(allThreatenedCounts)
@@ -53,7 +54,7 @@ var data = {
     backgroundColor: '#F0F0F0',
     borderWidth: 0,
     order:2,
-    data: [363, 1088, 481, 72],
+    data: allCountsData,
     xAxisID: "bar-x-axis1",
   }, {
     label: "Total Number of threatened species",
@@ -61,7 +62,7 @@ var data = {
     backgroundColor: '#EA0114',
     borderWidth: 0,
     order:1,
-    data: [72, 59, 73, 16],
+    data: allThreatenedCounts,
 
     xAxisID: "bar-x-axis2",
   }]
