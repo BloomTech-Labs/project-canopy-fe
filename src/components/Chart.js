@@ -4,7 +4,12 @@ import { Table } from 'antd';
 import {connect} from 'react-redux';
 import Chartjs from 'chart.js';
 
-import {getThreatenedCounts,getThreatenedCountsByHabitat,getThreatenedCountsByCountry} from '../actions/index'
+import {
+  getThreatenedCounts,
+  // getThreatenedCountsByHabitat,
+  // getThreatenedCountsByCountry,
+  // getAllSpeciesCountsByCountry
+} from '../actions/index'
 
 
 // const updateDataset = (datasetIndex, newData) => {
@@ -20,17 +25,30 @@ import {getThreatenedCounts,getThreatenedCountsByHabitat,getThreatenedCountsByCo
 const Chart = (props) => {
   useEffect(() => {
     props.getThreatenedCounts()
-    props.getThreatenedCountsByCountry()
-    props.getThreatenedCountsByHabitat()
+    // props.getThreatenedCountsByCountry()
+    // props.getThreatenedCountsByHabitat()
+    // props.getAllSpeciesCountsByCountry()
   },[])
-console.log('threat', props.threatenedCountsByCountry)
-const newData = props.threatenedCountsByCountry.map(country => {
-    return country.totalSpeciesInCountry
-})
+
+// console.log('this is all by class', props.allCountsByClass.classCount)
+
+ const allCountsData = props.allCountsByClass.map(count => {
+   return count.classCount
+ })
+
+ console.log(allCountsData)
+ 
+ const allThreatenedCounts = props.threatendCountsByClass.map(count => {
+    return count.threatenedCount
+ })
+ console.log('allcount',props.allCountsByClass)
+ console.log('count by class',props.threatendCountsByClass)
+ console.log(allThreatenedCounts)
 var data = {
   labels: ["Amphibians", "Birds", "Mammals", "Reptiles"],
   datasets: [{
     label: "Total number of species",
+
     barThickness:'flex',
     backgroundColor: '#F0F0F0',
     borderWidth: 0,
@@ -44,6 +62,7 @@ var data = {
     borderWidth: 0,
     order:1,
     data: [72, 59, 73, 16],
+
     xAxisID: "bar-x-axis2",
   }]
 };
@@ -74,11 +93,11 @@ var options = {
         beginAtZero: true
       },
     }],
-  }, 
 
+  }, 
 };
 
-console.log('newData', newData)
+
 const chartConfig = {
   type: "bar",
   data: data,
@@ -94,7 +113,7 @@ console.log(chartConfig.data.datasets[0])
       const newChartInstance = new Chartjs(chartContainer.current, chartConfig);
       setChartInstance(newChartInstance);
     }
-  }, [props.threatenedCountsByCountry,]);
+  }, [props.allCountsByClass, props.threatendCountsByClass]);
 
   return (
     <div>
@@ -106,9 +125,16 @@ console.log(chartConfig.data.datasets[0])
 
 const mapStateToProps = state => {
   return {
-    threatenedCounts:state.threatenedCounts,
-    threatenedCountsByHabitat:state.threatenedCountsByHabitat,
-    threatenedCountsByCountry:state.threatenedCountsByCountry
+    allCountsByClass:state.allCountsByClass,
+    threatendCountsByClass: state.threatendCountsByClass,
+    // threatenedCountsByHabitat:state.threatenedCountsByHabitat,
+    // threatenedCountsByCountry:state.threatenedCountsByCountry,
+    // allSpeciesCountsByCountry: state.allSpeciesCountsByCountry
   }
 }
-export default connect(mapStateToProps,{getThreatenedCounts,getThreatenedCountsByHabitat,getThreatenedCountsByCountry})(Chart);
+export default connect(mapStateToProps,{
+  getThreatenedCounts, 
+  // getThreatenedCountsByHabitat, 
+  // getThreatenedCountsByCountry, 
+  // getAllSpeciesCountsByCountry
+})(Chart);
