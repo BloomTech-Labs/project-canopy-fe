@@ -20,23 +20,23 @@ const TableSetup = (props) => {
   // })
     const columns = [
         {
-          title: 'Country Name',
-          dataIndex: 'country',
+          title: 'Habitats',
+          dataIndex: 'habitats',
           key: 'CountryName',
         },
         {
-          title: 'Classes',
-          dataIndex: 'className',
+          title: 'Description',
+          dataIndex: 'totalSpeciesInCountry',
           key:'class',
         },
         {
-          title: 'Total Threatend',
+          title: 'Number of species',
           dataIndex: 'totalThreatened',
           key:'totalThreatened',
         },
       ];
       
-      const data = props.threatenedCountsByCountry.data 
+      const data = props.threatenedCountsByCountry
       // [
       //   {
       //     key: '1',
@@ -74,9 +74,9 @@ const TableSetup = (props) => {
         <Table
           columns={columns}
           dataSource={data}
-          pagination={{ pageSize: 1}}
           bordered
-          title={() => 'Total Threatend By Class'}
+          pagination={false}
+          title={() => 'Top hotspot habitats'}
         />
         </div>
       )
