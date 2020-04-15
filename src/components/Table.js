@@ -36,38 +36,38 @@ const TableSetup = (props) => {
         },
       ];
       
-      const data = props.threatenedCountsByCountry
-      // [
-      //   {
-      //     key: '1',
-      //     CountryName: 'Congo',
-      //     children: [
-      //         {
-      //           class: 'INSECTA',
-      //           totalThreatened:  '178',
-      //         },
-      //         {
-      //           class: "VERTEBRATE",
-      //           totalThreatened: '167',
-      //         },             
-      //     ]
-      //   },
-      //   {
-      //     key: '2',
-      //     CountryName: 'Zimbabwe',
-      //     children: [
-      //         {
-      //           class: 'APHROPODA',
-      //           totalThreatened: '300',
-      //         },
+      const data = 
+      [
+        {
+          key: '1',
+          CountryName: 'Congo',
+          children: [
+              {
+                class: 'INSECTA',
+                totalThreatened:  '178',
+              },
+              {
+                class: "VERTEBRATE",
+                totalThreatened: '167',
+              },             
+          ]
+        },
+        {
+          key: '2',
+          CountryName: 'Zimbabwe',
+          children: [
+              {
+                class: 'APHROPODA',
+                totalThreatened: '300',
+              },
 
-      //         {
-      //           class: "VERTEBRATE",
-      //           totalThreatened: '176',
-      //         },
-      //     ],
-      //   },
-      // ];
+              {
+                class: "VERTEBRATE",
+                totalThreatened: '176',
+              },
+          ],
+        },
+      ];
     
       return(
         <div>

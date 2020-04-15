@@ -4,7 +4,12 @@ import { Table } from 'antd';
 import {connect} from 'react-redux';
 import Chartjs from 'chart.js';
 
-import {getThreatenedCounts,getThreatenedCountsByHabitat,getThreatenedCountsByCountry} from '../actions/index'
+import {
+  getThreatenedCounts,
+  // getThreatenedCountsByHabitat,
+  // getThreatenedCountsByCountry,
+  // getAllSpeciesCountsByCountry
+} from '../actions/index'
 
 
 // const updateDataset = (datasetIndex, newData) => {
@@ -20,12 +25,25 @@ import {getThreatenedCounts,getThreatenedCountsByHabitat,getThreatenedCountsByCo
 const ChartSmall = (props) => {
   useEffect(() => {
     props.getThreatenedCounts()
-    props.getThreatenedCountsByCountry()
-    props.getThreatenedCountsByHabitat()
+    // props.getThreatenedCountsByCountry()
+    // props.getThreatenedCountsByHabitat()
+    // props.getAllSpeciesCountsByCountry()
   },[])
-console.log('threat', props.threatenedCountsByCountry)
-const newData = props.threatenedCountsByCountry.map(country => {
-    return country.totalSpeciesInCountry
+
+console.log('all threat',props.threatendCountsByClass)
+const vulnerable = [];
+const endangered = [];
+const critically_endangered = [];
+props.threatendCountsByClass.map(item => {
+  item.threatLevels.map(threat => {
+    if(threat.rank === 'Critically Endangered'){
+      critically_endangered.push(threat.count)
+    }else if(threat.rank === 'Endangered'){
+      endangered.push(threat.count)
+    }else if(threat.rank === 'Vulnerable'){
+      vulnerable.push(threat.count)
+    }
+  })
 })
 var data = {
   labels: ["Amphibians", "Birds", "Mammals", "Reptiles"],
@@ -33,19 +51,19 @@ var data = {
     label: "Vulnerable",
     backgroundColor: 'rgb(239, 156, 73)',
     borderWidth: 1,
-    data: [363, 1088, 481, 72],
+    data: vulnerable,
    
   }, {
     label: "Endangered",
     backgroundColor: 'rgb(228, 94, 45)',
     borderWidth: 1,
-    data: [72, 600, 73, 16],
+    data: endangered,
     
   }, {
     label: "Critically Endangered",
     backgroundColor: 'rgb(255, 0, 0)',
     borderWidth: 1,
-    data: [55, 200, 77, 33],
+    data: critically_endangered,
   }]
 };
 
@@ -78,7 +96,6 @@ var options = {
 
 };
 
-console.log('newData', newData)
 const chartConfig = {
   type: "bar",
   data: data,
@@ -94,7 +111,7 @@ console.log(chartConfig.data.datasets[0])
       const newChartInstance = new Chartjs(chartContainer.current, chartConfig);
       setChartInstance(newChartInstance);
     }
-  }, [props.threatenedCountsByCountry,]);
+  }, [props.threatendCountsByClass]);
 
   return (
     <div>
@@ -106,9 +123,16 @@ console.log(chartConfig.data.datasets[0])
 
 const mapStateToProps = state => {
   return {
-    threatenedCounts:state.threatenedCounts,
-    threatenedCountsByHabitat:state.threatenedCountsByHabitat,
-    threatenedCountsByCountry:state.threatenedCountsByCountry
+    allCountsByClass:state.allCountsByClass,
+    threatendCountsByClass: state.threatendCountsByClass,
+    // threatenedCountsByHabitat:state.threatenedCountsByHabitat,
+    // threatenedCountsByCountry:state.threatenedCountsByCountry,
+    // allSpeciesCountsByCountry: state.allSpeciesCountsByCountry
   }
 }
-export default connect(mapStateToProps,{getThreatenedCounts,getThreatenedCountsByHabitat,getThreatenedCountsByCountry})(ChartSmall);
+export default connect(mapStateToProps,{
+  getThreatenedCounts, 
+  // getThreatenedCountsByHabitat, 
+  // getThreatenedCountsByCountry, 
+  // getAllSpeciesCountsByCountry
+})(ChartSmall);
