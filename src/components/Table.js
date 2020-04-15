@@ -7,6 +7,7 @@ import {getThreatenedCounts,getThreatenedCountsByHabitat,getThreatenedCountsByCo
 const TableSetup = (props) => {
   const [country, setCountry] = useState([])
   useEffect(() => {
+    console.log("HELLO FROM TABLE SET UP")
     props.getThreatenedCounts()
     props.getThreatenedCountsByCountry()
     props.getThreatenedCountsByHabitat()
@@ -14,7 +15,7 @@ const TableSetup = (props) => {
   
   console.log('This is country',country)
   console.log('this is props threat data', props.threatenedCountsByCountry.data)
-  // threats = props.threatenedCountsByCountry.data
+  // const threats = props.threatenedCountsByCountry.data
   // threats.map(country => {
   //   setCountry(country)
   // })

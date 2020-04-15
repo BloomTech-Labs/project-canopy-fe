@@ -1,4 +1,7 @@
 import axios from 'axios';
+const url = process.env.REACT_APP_BACKENDURL
+    ? process.env.REACT_APP_BACKENDURL
+    : "http://localhost:5000";
 
 export const GET_ALL_SPECIES_COUNTS_BY_COUNTRY="GET_ALL_SPECIES_COUNTS_BY_COUNTRY"
 
@@ -15,9 +18,11 @@ export const GET_THREATENED_COUNTS_BY_COUNTRY_SUCCESS="GET_THREATENED_COUNTS_BY_
 // export const GET_THREATENED_COUNTS_BY_COUNTRY_FAILED="GET_THREATENED_COUNTS_BY_COUNTRY_FAILED"
 
 
-export const getThreatenedCounts = () => (dispatch) => {
-    // dispatch({type:GET_THREATENED_COUNTS_START})
-    return axios.get("https://projectcanopybackend.herokuapp.com/th_s/classCount")
+export const getThreatenedCounts=()=>(dispatch)=>{
+    console.log(process.env.REACT_APP_BACKENDURL)
+    dispatch({type:GET_THREATENED_COUNTS_START})
+
+    return axios.get(`${url}/th_s/tax/classCount`)
     .then(response=>{
         dispatch({
             type:GET_THREATENED_COUNTS_SUCCESS,
@@ -36,9 +41,10 @@ export const getThreatenedCounts = () => (dispatch) => {
 
 
 
-export const getThreatenedCountsByHabitat = () => (dispatch) => {
-    // dispatch({type:GET_THREATENED_COUNTS_BY_HABITAT_START})
-    return axios.get("https://projectcanopybackend.herokuapp.com/th_s/habitatClassCount")
+export const getThreatenedCountsByHabitat=()=>(dispatch)=>{
+    dispatch({type:GET_THREATENED_COUNTS_BY_HABITAT_START})
+
+    return axios.get(`${url}/th_s/habitatClassCount`)
     .then(response=>{
         dispatch({
             type:GET_THREATENED_COUNTS_BY_HABITAT_SUCCESS,
@@ -57,9 +63,10 @@ export const getThreatenedCountsByHabitat = () => (dispatch) => {
 
 
 
-export const getThreatenedCountsByCountry = () => (dispatch) => {
-    // dispatch({type:GET_THREATENED_COUNTS_BY_COUNTRY_START})
-    return axios.get("https://projectcanopybackend.herokuapp.com/th_s/CountryClassCounts")
+export const getThreatenedCountsByCountry=()=>(dispatch)=>{
+    dispatch({type:GET_THREATENED_COUNTS_BY_COUNTRY_START})
+
+    return axios.get(`${url}/th_s/CountryClassCounts`)
     .then(response=>{
         dispatch({
             type:GET_THREATENED_COUNTS_BY_COUNTRY_SUCCESS,
