@@ -44,9 +44,18 @@ export const reducer=(state=initialState, action)=>{
                 ...state,
             }
         case GET_THREATENED_COUNTS_BY_COUNTRY_SUCCESS:
+
+            let threatenedCountsByCountry = action.payload.data.map((country) => {
+                return {
+                    country: country.country,
+                    totalSpeciesInCountry: country.classes.length,
+                    classes: country.classes
+                }
+            })
+               
             return {
                 ...state,
-                threatenedCountsByCountry: action.payload
+                threatenedCountsByCountry: threatenedCountsByCountry
             }
         case GET_THREATENED_COUNTS_BY_COUNTRY_FAILED:
             return {

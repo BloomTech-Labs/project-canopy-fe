@@ -19,6 +19,7 @@ export const GET_THREATENED_COUNTS_BY_COUNTRY_FAILED="GET_THREATENED_COUNTS_BY_C
 export const getThreatenedCounts=()=>(dispatch)=>{
     console.log(process.env.REACT_APP_BACKENDURL)
     dispatch({type:GET_THREATENED_COUNTS_START})
+
     return axios.get(`${url}/th_s/tax/classCount`)
     .then(response=>{
         dispatch({
@@ -40,6 +41,7 @@ export const getThreatenedCounts=()=>(dispatch)=>{
 
 export const getThreatenedCountsByHabitat=()=>(dispatch)=>{
     dispatch({type:GET_THREATENED_COUNTS_BY_HABITAT_START})
+
     return axios.get(`${url}/th_s/habitatClassCount`)
     .then(response=>{
         dispatch({
@@ -61,6 +63,7 @@ export const getThreatenedCountsByHabitat=()=>(dispatch)=>{
 
 export const getThreatenedCountsByCountry=()=>(dispatch)=>{
     dispatch({type:GET_THREATENED_COUNTS_BY_COUNTRY_START})
+
     return axios.get(`${url}/th_s/CountryClassCounts`)
     .then(response=>{
         dispatch({
