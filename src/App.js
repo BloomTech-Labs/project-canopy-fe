@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import 'antd/dist/antd.css';
 import { Layout } from 'antd';
 import {Dashboard} from './components/dashboard.js';
@@ -11,7 +11,7 @@ import { Route, Switch } from 'react-router-dom';
 function App() {
   console.log(process.env.REACT_APP_BACKENDURL)
   return (
-    <Layout>
+    <Layout style={{zIndex:2}}>
       <Nav />
       <Layout style={{ backgroundColor: '#F0F0F0', height: '100vh' }}>
         <Switch>

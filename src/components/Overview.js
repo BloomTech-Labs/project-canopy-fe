@@ -2,7 +2,6 @@ import React from 'react';
 import 'antd/dist/antd.css'
 import { PageHeader, Row, Col } from 'antd';
 import Chart from './Chart'
-import ChartSmall from './ChartSmall'
 
 export const Overview = () => {
     return (

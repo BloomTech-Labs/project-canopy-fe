@@ -26,8 +26,8 @@ export const Nav = () =>{
             }}
         >
             <LogoCont>
-                <img src={treeLogo} alt='logo'/>
-                <h1>Project Canopy</h1>
+                <h1>Project</h1>
+                <h1>Canopy</h1>
             </LogoCont>    
             <NavItems>
                 <Link to={`/`} className="navItem" id="dashboard">
@@ -60,11 +60,10 @@ export const Nav = () =>{
 
 const LogoCont = styled.div`
     display:flex;
-    height: 20%;
+    height: 15%;
     flex-direction:column;
     align-items:center;
     justify-content:center;
-    border-bottom:1px solid #D5D5D5;
     h1 {
         font-weight: bold;
         font-size: 1.7em;
