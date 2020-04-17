@@ -2,23 +2,23 @@ import React,{useEffect, useState} from 'react';
 import 'antd/dist/antd.css';
 import { Table } from 'antd';
 import {connect} from 'react-redux';
-import {getThreatenedCounts,getThreatenedCountsByHabitat,getThreatenedCountsByCountry} from '../actions/index'
+// import {getThreatenedCounts,getThreatenedCountsByHabitat,getThreatenedCountsByCountry} from '../actions/index'
 
 const TableSetup = (props) => {
-  const [country, setCountry] = useState([])
-  useEffect(() => {
-    console.log("HELLO FROM TABLE SET UP")
-    props.getThreatenedCounts()
-    props.getThreatenedCountsByCountry()
-    props.getThreatenedCountsByHabitat()
-  },[])
+  // const [country, setCountry] = useState([])
+  // useEffect(() => {
+  //   console.log("HELLO FROM TABLE SET UP")
+  //   props.getThreatenedCounts()
+  //   props.getThreatenedCountsByCountry()
+  //   props.getThreatenedCountsByHabitat()
+  // },[])
   
-  console.log('This is country',country)
-  console.log('this is props threat data', props.threatenedCountsByCountry.data)
-  // const threats = props.threatenedCountsByCountry.data
-  // threats.map(country => {
-  //   setCountry(country)
-  // })
+  // console.log('This is country',country)
+  // console.log('this is props threat data', props.threatenedCountsByCountry.data)
+  // // const threats = props.threatenedCountsByCountry.data
+  // // threats.map(country => {
+  // //   setCountry(country)
+  // // })
     const columns = [
         {
           title: 'Habitats',
@@ -86,12 +86,13 @@ const TableSetup = (props) => {
 
 const mapStateToProps = state => {
   return {
-    threatenedCounts:state.threatenedCounts,
-    threatenedCountsByHabitat:state.threatenedCountsByHabitat,
-    threatenedCountsByCountry:state.threatenedCountsByCountry
+    // threatenedCounts:state.threatenedCounts,
+    // threatenedCountsByHabitat:state.threatenedCountsByHabitat,
+    // threatenedCountsByCountry:state.threatenedCountsByCountry
   }
 }
-export default connect(mapStateToProps,{getThreatenedCounts,getThreatenedCountsByHabitat,getThreatenedCountsByCountry})(TableSetup);
+// export default connect(mapStateToProps,{getThreatenedCounts,getThreatenedCountsByHabitat,getThreatenedCountsByCountry})(TableSetup);
+export default TableSetup
 // POST ("country")
 
 // returns

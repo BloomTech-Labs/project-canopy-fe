@@ -17,8 +17,5 @@ test('full app rendering/navigating', () => {
         <App />
       </Router>
     )
-    // // verify page content for expected route
-    // // often you'd use a data-testid or role query, but this is also possible
-    // const linkElement = getAllByText(/Project Canopy/i);
-    // expect(linkElement).toBeInTheDocument();
+  
   })
