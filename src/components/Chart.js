@@ -11,6 +11,9 @@ const Chart = (props) => {
 
   useEffect(() => {
     if (chartContainer && chartContainer.current) {
+      if(chartInstance){
+        chartInstance.destroy()
+      }
       const newChartInstance = new Chartjs(chartContainer.current, chartConfig);
       setChartInstance(newChartInstance);
     }

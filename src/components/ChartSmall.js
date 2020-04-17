@@ -11,6 +11,9 @@ const ChartSmall = (props) => {
 
   useEffect(() => {
     if (chartContainer && chartContainer.current) {
+      if(chartInstance){
+        chartInstance.destroy()
+      }
       const newChartInstance = new Chartjs(chartContainer.current, chartConfig);
       setChartInstance(newChartInstance);
     }
@@ -45,10 +48,10 @@ var options = {
   },
   scales: {
    xAxes: [{
-      barThickness: 30,
+      barThickness: 18,
     }, {
         display:false,
-      barThickness: 30,
+      barThickness: 18,
       // these are needed because the bar controller defaults set only the first x axis properties
       type: 'category',
       categoryPercentage: 0.8,
