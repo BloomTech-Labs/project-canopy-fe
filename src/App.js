@@ -9,6 +9,7 @@ import { allCounts } from './actions/chart_actions.js';
 import { getAllTableData } from './actions/table_action';
 
 
+
 function App({ allCounts, getAllTableData }) {
   useEffect(() => {
     allCounts();
