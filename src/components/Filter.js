@@ -46,7 +46,7 @@ function Filter(props){
             <Menu.Item key="2" onClick={() => setCountry('Gabon')}>Gabon</Menu.Item>
             <Menu.Item key="3" onClick={() => setCountry('Congo')}>Republic of Congo</Menu.Item>
             <Menu.Item key="4" onClick={() => setCountry('Congo, The Democratic Republic of the')}>Democratic Republic of Congo (DRC)</Menu.Item>
-            <Menu.Item key="5" onClick={() => setCountry('Equitorial Guinea')}>Equitorial Guinea</Menu.Item>
+            <Menu.Item key="5" onClick={() => setCountry('Equatorial Guinea')}>Equitorial Guinea</Menu.Item>
             <Menu.Item key="6" onClick={() => setCountry('Central African Republic')}>Central African Republic (CAR)</Menu.Item>
             <Menu.Item key="7" onClick={() => setCountry('All')}>All Countries</Menu.Item>
           </Menu.ItemGroup>
