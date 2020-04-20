@@ -8,7 +8,6 @@ import Overview from '../components/Overview';
 import { AreaCard } from '../components/AreaCards';
 
 
-
 test("first test, should always return true",()=>{
   expect(true).toBe(true)
 })
@@ -38,3 +37,4 @@ describe('front end testing', function(){
       })
     })
 })
+
