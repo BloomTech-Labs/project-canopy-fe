@@ -5,30 +5,26 @@ import { createMemoryHistory } from 'history';
 import App from '../App';
 import { createStore } from 'redux';
 import Overview from '../components/Overview';
+import ReactDOM from 'react-dom'
 import { AreaCard } from '../components/AreaCards';
-
-
 
 test("first test, should always return true",()=>{
   expect(true).toBe(true)
 })
 
-test("second test, should always return true",()=>{
-  expect(true).toBe(true)
-})
 
-test("next test, should always return true",()=>{
-  expect(true).toBe(true)
-})
-
-// test("renders App.js", ()=>{
-//   const {getByText} = render(<App/>);
-//   // getByText(/hello world/i)
+// it('App.js renders without crashing', ()=>{
+//   const div=document.createElement('div');
+//   ReactDOM.render(<App/>, div)
 // })
 
-test("renders Overview",()=>{
-  const {getAllByText} =render(<AreaCard/>)
-  getAllByText(/undefined threatened species/i)
+
+
+
+
+test("AreaCard.js renders without crashing",()=>{
+  const div=document.createElement('div');
+  ReactDOM.render(<AreaCard/>, div)
 })
 
 describe('front end testing', function(){

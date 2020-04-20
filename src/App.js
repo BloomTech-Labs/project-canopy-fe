@@ -3,7 +3,7 @@ import 'antd/dist/antd.css';
 import { Layout } from 'antd';
 import {Dashboard} from './components/dashboard.js';
 import {Nav} from './components/Nav'
-import { Route, Switch, Router } from 'react-router-dom';
+import { Route, Switch, BrowserRouter as Router } from 'react-router-dom';
 
 
 //Testing dynamic ENV URL
@@ -11,6 +11,7 @@ import { Route, Switch, Router } from 'react-router-dom';
 function App() {
   console.log(process.env.REACT_APP_BACKENDURL)
   return (
+    <Router>
     <Layout>
       <Nav />
       <Layout style={{ backgroundColor: '#F0F0F0', height: '100vh' }}>
@@ -21,6 +22,7 @@ function App() {
         </Switch>
       </Layout>
     </Layout>
+    </Router>
   );
 }
 
