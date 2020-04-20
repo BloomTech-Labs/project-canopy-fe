@@ -2,7 +2,6 @@ import React from 'react';
 import 'antd/dist/antd.css'
 import { PageHeader, Row, Col } from 'antd';
 import Chart from './Chart'
-import ChartSmall from './ChartSmall'
 
 export const Overview = () => {
     return (
@@ -12,7 +11,7 @@ export const Overview = () => {
             >
                 <span style={{fontSize:'1em', color:'#9F9F9F'}}>Overview of the entire Congo Basin Rainforest</span>
                 <Row>
-                    <Col span={4}></Col>
+                    <Col span={4} />
                     <Col span={16}>
                         <Chart />
                     </Col>

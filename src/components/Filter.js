@@ -1,79 +1,78 @@
 import React, {useState} from 'react';
 import { Menu, Button } from 'antd';
-import {
-  AppstoreOutlined,
-  MenuUnfoldOutlined,
-  MenuFoldOutlined,
-  PieChartOutlined,
-  DesktopOutlined,
-  ContainerOutlined,
-  MailOutlined,
-} from '@ant-design/icons';
+import styled from 'styled-components';
 
-const { SubMenu } = Menu;
+import { connect } from 'react-redux';
+import { allCounts, countryCounts } from '../actions/chart_actions.js';
+import { getAllTableData, countryTableData } from '../actions/table_action.js';
 
-export function Filter(){
-    const [collapsed, setCollapsed] = useState([false]);
+function Filter(props){ 
 
-    function toggleCollapsed(){
-      setCollapsed(!collapsed)
+  const {
+    allCounts, 
+    countryCounts,
+    getAllTableData,
+    countryTableData
+  } = props;
+
+  const [country, setCountry] = useState(`All`);
+
+  function applyFilter(e){
+    props.toggleCollapsed()
+    if(e == 'All'){
+      allCounts(); 
+      getAllTableData();
     }
+    else{
+      countryCounts(e)
+      countryTableData(e)
+    }
+    console.log(e)
+  }  
 
-    return (
-        <div style={{ width: 256, position:'fixed', right:0 }}>
-          <Button type="primary" onClick={toggleCollapsed} style={{ marginBottom: 16 }}>
-            {React.createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined)}
-          </Button>
-          <Menu
-            defaultSelectedKeys={['1']}
-            defaultOpenKeys={['sub1']}
-            mode="inline"
-            theme="dark"
-            inlineCollapsed={collapsed}
+  return (
+        <Menu
+          mode="inline"
+          inlineCollapsed={props.collapsed}
+          selectable='true'
+          multiple='true'
+          style={{width:'20vw', height:'100vh'}}
+        >
+          <Menu.ItemGroup
+            key="sub1"
+            title={<h1>Country of Occurence</h1>}
           >
-            <Menu.Item key="1">
-              <PieChartOutlined />
-              <span>Option 1</span>
-            </Menu.Item>
-            <Menu.Item key="2">
-              <DesktopOutlined />
-              <span>Option 2</span>
-            </Menu.Item>
-            <Menu.Item key="3">
-              <ContainerOutlined />
-              <span>Option 3</span>
-            </Menu.Item>
-            <SubMenu
-              key="sub1"
-              title={
-                <span>
-                  <MailOutlined />
-                  <span>Navigation One</span>
-                </span>
-              }
-            >
-              <Menu.Item key="5">Option 5</Menu.Item>
-              <Menu.Item key="6">Option 6</Menu.Item>
-              <Menu.Item key="7">Option 7</Menu.Item>
-              <Menu.Item key="8">Option 8</Menu.Item>
-            </SubMenu>
-            <SubMenu
-              key="sub2"
-              title={
-                <span>
-                  <AppstoreOutlined />
-                  <span>Navigation Two</span>
-                </span>
-              }
-            >
-              <Menu.Item key="9">Option 9</Menu.Item>
-              <Menu.Item key="10">Option 10</Menu.Item>
-              <SubMenu key="sub3" title="Submenu">
-                <Menu.Item key="11">Option 11</Menu.Item>
-                <Menu.Item key="12">Option 12</Menu.Item>
-              </SubMenu>
-            </SubMenu>
-          </Menu>
-        </div>
-      );
+            <Menu.Item key="1" onClick={() => setCountry('Cameroon')}>Cameroon</Menu.Item>
+            <Menu.Item key="2" onClick={() => setCountry('Gabon')}>Gabon</Menu.Item>
+            <Menu.Item key="3" onClick={() => setCountry('Congo')}>Republic of Congo</Menu.Item>
+            <Menu.Item key="4" onClick={() => setCountry('Congo, The Democratic Republic of the')}>Democratic Republic of Congo (DRC)</Menu.Item>
+            <Menu.Item key="5" onClick={() => setCountry('Equitorial Guinea')}>Equitorial Guinea</Menu.Item>
+            <Menu.Item key="6" onClick={() => setCountry('Central African Republic')}>Central African Republic (CAR)</Menu.Item>
+            <Menu.Item key="7" onClick={() => setCountry('All')}>All Countries</Menu.Item>
+          </Menu.ItemGroup>
+          <StyledButton onClick={() =>
+              applyFilter(country)
+          }>
+              <span>Apply Filter</span>
+          </StyledButton>
+        </Menu>
+    );
 }
+
+export default connect(null, { allCounts, countryCounts, getAllTableData, countryTableData })(Filter);
+
+const StyledButton = styled(Button)`
+  background-color: #45735D;
+  width:50%;
+  border-radius:5px;
+  padding:0;
+  margin:0 auto;
+  span {
+    padding:0;
+    color:#FEFEFE;
+    font-weight: bold;
+    font-size: 1.5em;
+    vertical-align:middle;
+  }
+  
+`;

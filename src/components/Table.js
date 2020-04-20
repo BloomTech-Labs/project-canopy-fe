@@ -31,7 +31,7 @@ const TableSetup = ({ tableData }) => {
             dataSource={tableData}
             bordered
             pagination={false}
-            title={() => 'Top hotspot habitats'}
+            title={() => <h2 style={{fontSize:'1.3em'}}>Top hotspot habitats</h2>}
           />
         </div>
       )    
