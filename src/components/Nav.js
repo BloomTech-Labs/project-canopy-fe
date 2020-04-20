@@ -9,7 +9,6 @@ import { allCounts, countryCounts } from '../actions/chart_actions.js';
 import { getAllTableData, countryTableData } from '../actions/table_action.js';
 
 // Imports all of the image assets
-import treeLogo from './assets/treeLogo.svg';
 import dashboardLight from './assets/light/dashboard.svg';
 import mapLight from './assets/light//map.svg';
 import pawLight from './assets/light/paw.svg';
@@ -37,8 +36,8 @@ const Nav = (props) =>{
             }}
         >
             <LogoCont>
-                <img src={treeLogo} alt='logo'/>
-                <h1>Project Canopy</h1>
+                <h1>Project</h1>
+                <h1>Canopy</h1>
             </LogoCont>    
             <NavItems>
                 <Link to={`/`} className="navItem" id="dashboard">
@@ -81,11 +80,10 @@ export default connect(null, { allCounts, countryCounts, getAllTableData, countr
 
 const LogoCont = styled.div`
     display:flex;
-    height: 20%;
+    height: 15%;
     flex-direction:column;
     align-items:center;
     justify-content:center;
-    border-bottom:1px solid #D5D5D5;
     h1 {
         font-weight: bold;
         font-size: 1.7em;

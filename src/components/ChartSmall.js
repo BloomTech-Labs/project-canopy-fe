@@ -78,9 +78,9 @@ const chartConfig = {
 }
 
   return (
-    <div>
+    
       <canvas ref={chartContainer} />
-    </div>
+    
   );
 };
 

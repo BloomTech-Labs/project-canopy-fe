@@ -1,21 +1,39 @@
-import React from 'react';
+import React, {useState} from 'react';
 import 'antd/dist/antd.css'
-import {Button, Row, Col} from 'antd';
+import {Menu, Button, Row, Col} from 'antd';
 import styled from 'styled-components';
+import Filter from './Filter'
+const { SubMenu } = Menu;
 
 
 export const Heading = () =>{
-    return (
-        <Row>
-            <Col span={20}>
-                <StyledSpan>Overview of biodiversity in the Congo Bason Rainforest</StyledSpan>
-            </Col>
-            <Col span={4}>
-                <StyledButton><span>Filter</span></StyledButton>
-            </Col>  
-        </Row>
 
-    )
+  const [collapsed, setCollapsed] = useState([false]);
+  const [hidden, setHidden] = useState([true])
+  function toggleCollapsed(){
+    setHidden(!hidden)
+    setCollapsed(!collapsed)
+  }
+
+  return (
+    <div style={{position:'relative'}}>
+      <Row>
+          <Col span={20}>
+              <StyledSpan>Overview of biodiversity in the Congo Basin Rainforest</StyledSpan>
+          </Col>
+          <Col span={4}>
+              <StyledButton onClick={toggleCollapsed}><span>Filter</span></StyledButton>
+          </Col>  
+      </Row>
+      {!hidden == true &&
+        <div style={{position:'fixed', top:0, right:0, zIndex:1}}>
+          <Filter collapsed={collapsed} toggleCollapsed={toggleCollapsed}/>
+        </div>
+      }
+      
+    </div>
+
+  )
 }
 
 const StyledButton = styled(Button)`

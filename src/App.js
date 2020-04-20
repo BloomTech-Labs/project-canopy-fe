@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import 'antd/dist/antd.css';
 import { Layout } from 'antd';
 import { Dashboard } from './components/dashboard.js';
@@ -16,13 +16,16 @@ function App({ allCounts, getAllTableData }) {
   }, [])
 
   return (
-    <Layout>
+    <Layout style={{zIndex:2}}>
       <Nav />
       <Layout style={{ backgroundColor: '#F0F0F0', height: '100vh' }}>
         <Switch>
+
           <Route>
             <Dashboard />
           </Route>
+
+          
         </Switch>
       </Layout>
     </Layout>
