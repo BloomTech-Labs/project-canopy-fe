@@ -6,6 +6,7 @@ import styled from 'styled-components';
 
 import { connect } from 'react-redux';
 import { allCounts, countryCounts } from '../actions/chart_actions.js';
+import { getAllTableData, countryTableData } from '../actions/table_action.js';
 
 // Imports all of the image assets
 import treeLogo from './assets/treeLogo.svg';
@@ -20,7 +21,14 @@ import treeGreen from './assets/green/Tree.svg';
 
 const {Sider} = Layout;
 
-const Nav = ({ allCounts, countryCounts }) =>{
+const Nav = (props) =>{
+    const {
+        allCounts, 
+        countryCounts,
+        getAllTableData,
+        countryTableData
+    } = props;
+
     return (
         <Sider
             style={{
@@ -53,8 +61,14 @@ const Nav = ({ allCounts, countryCounts }) =>{
                     <img src={treeGreen} alt='About' class="image_off"/>
                     About
                 </Link>
-                <button onClick={() => countryCounts('cameroon')}>Cameroon</button>
-                <button onClick={() => allCounts()}>All</button>
+                <button onClick={() => {
+                        countryCounts('Cameroon') 
+                        countryTableData('Cameroon')
+                    }}>Cameroon</button>
+                <button onClick={() => {
+                        allCounts(); 
+                        getAllTableData();
+                    }}>All</button>
             </NavItems>
             <NavFooter>
                 <footer>© Project Canopy 2020</footer>
@@ -63,7 +77,7 @@ const Nav = ({ allCounts, countryCounts }) =>{
     )
 };
 
-export default connect(null, { allCounts, countryCounts })(Nav);
+export default connect(null, { allCounts, countryCounts, getAllTableData, countryTableData })(Nav);
 
 const LogoCont = styled.div`
     display:flex;

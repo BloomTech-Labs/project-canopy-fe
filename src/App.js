@@ -6,11 +6,13 @@ import Nav from './components/Nav.js'
 import { Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { allCounts } from './actions/chart_actions.js';
+import { getAllTableData } from './actions/table_action';
 
 
-function App({ allCounts }) {
+function App({ allCounts, getAllTableData }) {
   useEffect(() => {
     allCounts();
+    getAllTableData();
   }, [])
 
   return (
@@ -28,4 +30,4 @@ function App({ allCounts }) {
 }
 
 
-export default connect(null, { allCounts })(App);
+export default connect(null, { allCounts, getAllTableData })(App);
