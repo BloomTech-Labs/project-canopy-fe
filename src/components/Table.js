@@ -7,10 +7,11 @@ import {getThreatenedCounts,getThreatenedCountsByHabitat,getThreatenedCountsByCo
 const TableSetup = (props) => {
   const [country, setCountry] = useState([])
   useEffect(() => {
-    console.log("HELLO FROM TABLE SET UP")
-    props.getThreatenedCounts()
-    props.getThreatenedCountsByCountry()
-    props.getThreatenedCountsByHabitat()
+    // console.log("HELLO FROM TABLE SET UP")
+    // props.getThreatenedCounts()
+    // props.getThreatenedCountsByCountry()
+    // props.getThreatenedCountsByHabitat()
+    console.log(process.env.REACT_APP_BACKENDURL);
   },[])
   
   console.log('This is country',country)
