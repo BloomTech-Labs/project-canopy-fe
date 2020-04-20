@@ -8,8 +8,8 @@ const { SubMenu } = Menu;
 
 export const Heading = () =>{
 
-  const [collapsed, setCollapsed] = useState([false]);
-  const [hidden, setHidden] = useState([true])
+  const [collapsed, setCollapsed] = useState([true]);
+  const [hidden, setHidden] = useState([false])
   function toggleCollapsed(){
     setHidden(!hidden)
     setCollapsed(!collapsed)

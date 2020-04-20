@@ -2,7 +2,33 @@ import React, {useState} from 'react';
 import { Menu, Button } from 'antd';
 import styled from 'styled-components';
 
-export default function Filter(props){ 
+import { connect } from 'react-redux';
+import { allCounts, countryCounts } from '../actions/chart_actions.js';
+import { getAllTableData, countryTableData } from '../actions/table_action.js';
+
+function Filter(props){ 
+
+  const {
+    allCounts, 
+    countryCounts,
+    getAllTableData,
+    countryTableData
+  } = props;
+
+  const [country, setCountry] = useState('All');
+
+  function applyFilter(e){
+    props.toggleCollapsed()
+    if(e == 'All'){
+      allCounts(); 
+      getAllTableData();
+    }
+    else{
+      countryCounts(e)
+      countryTableData(e)
+    }   
+  }  
+
   return (
         <Menu
           mode="inline"
@@ -15,17 +41,24 @@ export default function Filter(props){
             key="sub1"
             title={<h1>Country of Occurence</h1>}
           >
-            <Menu.Item key="1">Cameroon</Menu.Item>
-            <Menu.Item key="2">Gabon</Menu.Item>
-            <Menu.Item key="3">Republic of Congo</Menu.Item>
-            <Menu.Item key="4">Democratic Republic of Congo (DRC)</Menu.Item>
-            <Menu.Item key="5">Equitorial Guinea</Menu.Item>
-            <Menu.Item key="6">Central African Republic (CAR)</Menu.Item>
+            <Menu.Item key="1" onSelect={() => setCountry('Cameroon')}>Cameroon</Menu.Item>
+            <Menu.Item key="2" onSelect={() => setCountry('Gabon')}>Gabon</Menu.Item>
+            <Menu.Item key="3" onSelect={() => setCountry('Congo')}>Republic of Congo</Menu.Item>
+            <Menu.Item key="4" onSelect={() => setCountry('Congo, The Democratic Republic of the')}>Democratic Republic of Congo (DRC)</Menu.Item>
+            <Menu.Item key="5" onSelect={() => setCountry('Equitorial Guinea')}>Equitorial Guinea</Menu.Item>
+            <Menu.Item key="6" onSelect={() => setCountry('Central African Republic')}>Central African Republic (CAR)</Menu.Item>
+            <Menu.Item key="7" onSelect={() => setCountry('All')}>All Countries</Menu.Item>
           </Menu.ItemGroup>
-          <StyledButton onClick={props.toggleCollapsed}><span>Apply Filter</span></StyledButton>
+          <StyledButton onClick={() =>
+              applyFilter(country)
+          }>
+              <span>Apply Filter</span>
+          </StyledButton>
         </Menu>
     );
 }
+
+export default connect(null, { allCounts, countryCounts, getAllTableData, countryTableData })(Filter);
 
 const StyledButton = styled(Button)`
   background-color: #45735D;

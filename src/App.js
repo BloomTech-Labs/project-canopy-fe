@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import 'antd/dist/antd.css';
 import { Layout } from 'antd';
 import { Dashboard } from './components/dashboard.js';
-import Nav from './components/Nav.js'
+import { Nav } from './components/Nav.js'
 import { Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { allCounts } from './actions/chart_actions.js';

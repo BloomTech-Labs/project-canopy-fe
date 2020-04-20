@@ -4,10 +4,6 @@ import {Layout} from 'antd';
 import 'antd/dist/antd.css';
 import styled from 'styled-components';
 
-import { connect } from 'react-redux';
-import { allCounts, countryCounts } from '../actions/chart_actions.js';
-import { getAllTableData, countryTableData } from '../actions/table_action.js';
-
 // Imports all of the image assets
 import dashboardLight from './assets/light/dashboard.svg';
 import mapLight from './assets/light//map.svg';
@@ -20,13 +16,8 @@ import treeGreen from './assets/green/Tree.svg';
 
 const {Sider} = Layout;
 
-const Nav = (props) =>{
-    const {
-        allCounts, 
-        countryCounts,
-        getAllTableData,
-        countryTableData
-    } = props;
+export const Nav = (props) =>{
+    
 
     return (
         <Sider
@@ -60,14 +51,6 @@ const Nav = (props) =>{
                     <img src={treeGreen} alt='About' class="image_off"/>
                     About
                 </Link>
-                <button onClick={() => {
-                        countryCounts('Cameroon') 
-                        countryTableData('Cameroon')
-                    }}>Cameroon</button>
-                <button onClick={() => {
-                        allCounts(); 
-                        getAllTableData();
-                    }}>All</button>
             </NavItems>
             <NavFooter>
                 <footer>© Project Canopy 2020</footer>
@@ -75,8 +58,6 @@ const Nav = (props) =>{
         </Sider>
     )
 };
-
-export default connect(null, { allCounts, countryCounts, getAllTableData, countryTableData })(Nav);
 
 const LogoCont = styled.div`
     display:flex;
