@@ -3,7 +3,7 @@ import 'antd/dist/antd.css';
 import { Layout } from 'antd';
 import {Dashboard} from './components/dashboard.js';
 import {Nav} from './components/Nav'
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Router } from 'react-router-dom';
 
 
 //Testing dynamic ENV URL
