@@ -15,7 +15,7 @@ function Filter(props){
     countryTableData
   } = props;
 
-  const [country, setCountry] = useState('All');
+  const [country, setCountry] = useState(`All`);
 
   function applyFilter(e){
     props.toggleCollapsed()
@@ -26,7 +26,8 @@ function Filter(props){
     else{
       countryCounts(e)
       countryTableData(e)
-    }   
+    }
+    console.log(e)
   }  
 
   return (
@@ -41,13 +42,13 @@ function Filter(props){
             key="sub1"
             title={<h1>Country of Occurence</h1>}
           >
-            <Menu.Item key="1" onSelect={() => setCountry('Cameroon')}>Cameroon</Menu.Item>
-            <Menu.Item key="2" onSelect={() => setCountry('Gabon')}>Gabon</Menu.Item>
-            <Menu.Item key="3" onSelect={() => setCountry('Congo')}>Republic of Congo</Menu.Item>
-            <Menu.Item key="4" onSelect={() => setCountry('Congo, The Democratic Republic of the')}>Democratic Republic of Congo (DRC)</Menu.Item>
-            <Menu.Item key="5" onSelect={() => setCountry('Equitorial Guinea')}>Equitorial Guinea</Menu.Item>
-            <Menu.Item key="6" onSelect={() => setCountry('Central African Republic')}>Central African Republic (CAR)</Menu.Item>
-            <Menu.Item key="7" onSelect={() => setCountry('All')}>All Countries</Menu.Item>
+            <Menu.Item key="1" onClick={() => setCountry('Cameroon')}>Cameroon</Menu.Item>
+            <Menu.Item key="2" onClick={() => setCountry('Gabon')}>Gabon</Menu.Item>
+            <Menu.Item key="3" onClick={() => setCountry('Congo')}>Republic of Congo</Menu.Item>
+            <Menu.Item key="4" onClick={() => setCountry('Congo, The Democratic Republic of the')}>Democratic Republic of Congo (DRC)</Menu.Item>
+            <Menu.Item key="5" onClick={() => setCountry('Equitorial Guinea')}>Equitorial Guinea</Menu.Item>
+            <Menu.Item key="6" onClick={() => setCountry('Central African Republic')}>Central African Republic (CAR)</Menu.Item>
+            <Menu.Item key="7" onClick={() => setCountry('All')}>All Countries</Menu.Item>
           </Menu.ItemGroup>
           <StyledButton onClick={() =>
               applyFilter(country)
