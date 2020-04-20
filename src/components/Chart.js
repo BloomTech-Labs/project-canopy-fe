@@ -9,7 +9,7 @@ import {
   // getThreatenedCountsByHabitat,
   // getThreatenedCountsByCountry,
   // getAllSpeciesCountsByCountry
-} from '../../actions/index'
+} from '../actions/index'
 
 
 // const updateDataset = (datasetIndex, newData) => {
@@ -22,7 +22,7 @@ import {
 //   updateDataset(0, data);
 // };
 
-const ChartSmall = (props) => {
+const Chart = (props) => {
   useEffect(() => {
     props.getThreatenedCounts()
     // props.getThreatenedCountsByCountry()
@@ -30,60 +30,62 @@ const ChartSmall = (props) => {
     // props.getAllSpeciesCountsByCountry()
   },[])
 
-console.log('all threat',props.threatendCountsByClass)
-const vulnerable = [];
-const endangered = [];
-const critically_endangered = [];
-props.threatendCountsByClass.map(item => {
-  item.threatLevels.map(threat => {
-    if(threat.rank === 'Critically Endangered'){
-      critically_endangered.push(threat.count)
-    }else if(threat.rank === 'Endangered'){
-      endangered.push(threat.count)
-    }else if(threat.rank === 'Vulnerable'){
-      vulnerable.push(threat.count)
-    }
-  })
-})
+// console.log('this is all by class', props.allCountsByClass.classCount)
+
+ const allCountsData = props.allCountsByClass.map(count => {
+   return count.classCount
+ })
+
+ console.log(allCountsData)
+ 
+ const allThreatenedCounts = props.threatendCountsByClass.map(count => {
+    return count.threatenedCount
+ })
+
+ console.log('allcount',props.allCountsByClass)
+ console.log('count by class',props.threatendCountsByClass)
+ console.log(allThreatenedCounts)
 var data = {
   labels: ["Amphibians", "Birds", "Mammals", "Reptiles"],
   datasets: [{
-    label: "Vulnerable",
-    backgroundColor: 'rgb(239, 156, 73)',
-    borderWidth: 1,
-    data: vulnerable,
-   
+    label: "Total number of species",
+
+    barThickness:'flex',
+    backgroundColor: '#F0F0F0',
+    borderWidth: 0,
+    order:2,
+    data: allCountsData,
+    xAxisID: "bar-x-axis1",
   }, {
-    label: "Endangered",
-    backgroundColor: 'rgb(228, 94, 45)',
-    borderWidth: 1,
-    data: endangered,
-    
-  }, {
-    label: "Critically Endangered",
-    backgroundColor: 'rgb(255, 0, 0)',
-    borderWidth: 1,
-    data: critically_endangered,
+    label: "Total Number of threatened species",
+    barThickness:'flex',
+    backgroundColor: '#EA0114',
+    borderWidth: 0,
+    order:1,
+    data: allThreatenedCounts,
+
+    xAxisID: "bar-x-axis2",
   }]
 };
 
 var options = {
   legend:{
-    position: 'bottom',
+    position: 'right',
+    labels: {
+      boxWidth:15,
+    }
   },
   scales: {
    xAxes: [{
-      barThickness: 50,
+      stacked: true,
+      id: "bar-x-axis1",
+      barThickness: 65,
     }, {
-        display:false,
-      barThickness: 50,
+      display: false,
+      stacked: true,
+      id: "bar-x-axis2",
+      barThickness: 65,
       // these are needed because the bar controller defaults set only the first x axis properties
-      type: 'category',
-      categoryPercentage: 0.8,
-      barPercentage: 0.9,
-      gridLines: {
-        offsetGridLines: true
-      },
       offset: true
     }],
     yAxes: [{
@@ -92,9 +94,10 @@ var options = {
         beginAtZero: true
       },
     }],
-  },
 
+  }, 
 };
+
 
 const chartConfig = {
   type: "bar",
@@ -111,12 +114,12 @@ console.log(chartConfig.data.datasets[0])
       const newChartInstance = new Chartjs(chartContainer.current, chartConfig);
       setChartInstance(newChartInstance);
     }
-  }, [props.threatendCountsByClass]);
+  }, [props.allCountsByClass, props.threatendCountsByClass]);
 
   return (
-    
+    <div>
       <canvas ref={chartContainer} />
-    
+    </div>
   );
 };
 
@@ -135,4 +138,4 @@ export default connect(mapStateToProps,{
   // getThreatenedCountsByHabitat, 
   // getThreatenedCountsByCountry, 
   // getAllSpeciesCountsByCountry
-})(ChartSmall);
+})(Chart);
