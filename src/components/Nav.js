@@ -5,7 +5,6 @@ import 'antd/dist/antd.css';
 import styled from 'styled-components';
 
 // Imports all of the image assets
-import treeLogo from './assets/treeLogo.svg';
 import dashboardLight from './assets/light/dashboard.svg';
 import mapLight from './assets/light//map.svg';
 import pawLight from './assets/light/paw.svg';
@@ -17,7 +16,9 @@ import treeGreen from './assets/green/Tree.svg';
 
 const {Sider} = Layout;
 
-export const Nav = () =>{
+export const Nav = (props) =>{
+    
+
     return (
         <Sider
             style={{
@@ -26,8 +27,8 @@ export const Nav = () =>{
             }}
         >
             <LogoCont>
-                <img src={treeLogo} alt='logo'/>
-                <h1>Project Canopy</h1>
+                <h1>Project</h1>
+                <h1>Canopy</h1>
             </LogoCont>    
             <NavItems>
                 <Link to={`/`} className="navItem" id="dashboard">
@@ -60,11 +61,10 @@ export const Nav = () =>{
 
 const LogoCont = styled.div`
     display:flex;
-    height: 20%;
+    height: 15%;
     flex-direction:column;
     align-items:center;
     justify-content:center;
-    border-bottom:1px solid #D5D5D5;
     h1 {
         font-weight: bold;
         font-size: 1.7em;

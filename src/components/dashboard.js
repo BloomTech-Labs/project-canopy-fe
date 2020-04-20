@@ -3,8 +3,6 @@ import 'antd/dist/antd.css';
 import {Layout, Row, Col} from 'antd';
 import {Heading} from './Heading';
 import {Overview} from './Overview'
-import {AreaCard} from './AreaCards';
-import {dummyData} from '../dummy';
 import Table from './Table'
 
 import ChartSmall from './ChartSmall'
