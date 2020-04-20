@@ -11,7 +11,7 @@ export const Overview = () => {
             >
                 <span style={{fontSize:'1em', color:'#9F9F9F'}}>Overview of the entire Congo Basin Rainforest</span>
                 <Row>
-                    <Col span={4}></Col>
+                    <Col span={4} />
                     <Col span={16}>
                         <Chart />
                     </Col>

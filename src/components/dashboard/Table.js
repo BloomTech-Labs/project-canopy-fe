@@ -2,7 +2,7 @@ import React,{useEffect, useState} from 'react';
 import 'antd/dist/antd.css';
 import { Table } from 'antd';
 import {connect} from 'react-redux';
-import {getThreatenedCounts,getThreatenedCountsByHabitat,getThreatenedCountsByCountry} from '../actions/index'
+import {getThreatenedCounts,getThreatenedCountsByHabitat,getThreatenedCountsByCountry} from '../../actions/index'
 
 const TableSetup = (props) => {
   const [country, setCountry] = useState([])

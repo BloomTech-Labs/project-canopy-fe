@@ -5,7 +5,6 @@ import 'antd/dist/antd.css';
 import styled from 'styled-components';
 
 // Imports all of the image assets
-import treeLogo from './assets/treeLogo.svg';
 import dashboardLight from './assets/light/dashboard.svg';
 import mapLight from './assets/light//map.svg';
 import pawLight from './assets/light/paw.svg';

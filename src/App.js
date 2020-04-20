@@ -15,9 +15,12 @@ function App() {
       <Nav />
       <Layout style={{ backgroundColor: '#F0F0F0', height: '100vh' }}>
         <Switch>
+
           <Route>
             <Dashboard />
           </Route>
+
+          
         </Switch>
       </Layout>
     </Layout>

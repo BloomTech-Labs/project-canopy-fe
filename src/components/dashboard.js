@@ -1,11 +1,11 @@
 import React from 'react';
 import 'antd/dist/antd.css';
 import {Layout, Row, Col} from 'antd';
-import {Heading} from './Heading';
-import {Overview} from './Overview'
-import Table from './Table'
+import {Heading} from './dashboard/Heading';
+import {Overview} from './dashboard/Overview'
+import Table from './dashboard/Table'
 
-import ChartSmall from './ChartSmall'
+import ChartSmall from './dashboard/ChartSmall'
 const {Header, Content} = Layout;
 
 export const Dashboard = () => {
