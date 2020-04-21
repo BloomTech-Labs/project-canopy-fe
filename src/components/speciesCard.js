@@ -4,8 +4,7 @@ import ThreatBar from './threatBar.js';
 
 // image assets
 import placeholder from './assets/image-placeholder.png'
-import arrowDown from './assets/arrow/arrowDown.svg'
-import arrowUp from './assets/arrow/arrowUp.svg'
+
 
 export const SpeciesCard = props => {
     const { redlistCategory } = props;
