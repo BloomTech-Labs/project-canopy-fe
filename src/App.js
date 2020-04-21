@@ -8,14 +8,17 @@ import { connect } from 'react-redux';
 import { allCounts } from './actions/chart_actions.js';
 import { getAllTableData } from './actions/table_action.js';
 import { getAllThreats } from './actions/threats_actions.js';
+import { allSpeciesData } from './actions/species_action.js';
 
 
 
-function App({ allCounts, getAllTableData, getAllThreats }) {
+function App(props) {
+  const { allCounts, getAllTableData, getAllThreats, allSpeciesData } = props;
   useEffect(() => {
     allCounts();
     getAllTableData();
     getAllThreats();
+    allSpeciesData();
   }, [])
 
   return (
@@ -36,4 +39,4 @@ function App({ allCounts, getAllTableData, getAllThreats }) {
 }
 
 
-export default connect(null, { allCounts, getAllTableData, getAllThreats })(App);
+export default connect(null, { allCounts, getAllTableData, getAllThreats, allSpeciesData })(App);

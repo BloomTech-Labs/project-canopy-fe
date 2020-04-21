@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import { allCounts, countryCounts } from '../actions/chart_actions.js';
 import { getAllTableData, countryTableData } from '../actions/table_action.js';
 import { getThreatsByCountry, getAllThreats } from '../actions/threats_actions.js';
+import { allSpeciesData, filterAllSpeciesByCountry } from '../actions/species_action.js';
 
 function Filter(props){ 
 
@@ -15,7 +16,9 @@ function Filter(props){
     getAllTableData,
     countryTableData,
     getThreatsByCountry,
-    getAllThreats
+    getAllThreats,
+    allSpeciesData, 
+    filterAllSpeciesByCountry
   } = props;
 
   const [country, setCountry] = useState(`All`);
@@ -26,13 +29,14 @@ function Filter(props){
       allCounts(); 
       getAllTableData();
       getAllThreats();
+      allSpeciesData();
     }
     else{
-      countryCounts(e)
-      countryTableData(e)
-      getThreatsByCountry(e)
+      countryCounts(e);
+      countryTableData(e);
+      getThreatsByCountry(e);
+      filterAllSpeciesByCountry(e);
     }
-    console.log(e)
   }  
 
   return (
@@ -70,7 +74,9 @@ export default connect(null, {
   getAllTableData, 
   countryTableData,
   getThreatsByCountry,
-  getAllThreats })(Filter);
+  getAllThreats,
+  allSpeciesData, 
+  filterAllSpeciesByCountry })(Filter);
 
 const StyledButton = styled(Button)`
   background-color: #45735D;
