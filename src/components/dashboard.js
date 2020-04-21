@@ -14,7 +14,7 @@ export const Dashboard = () => {
             <Header style={{backgroundColor:'#F0F0F0', height:'15vh'}}>
                 
                 <div style={{color:'#F0F0F0'}}>Placeholder for search bar and language select</div>
-                <Heading />
+                <Heading context={'biodiversity'}/>
                     
             </Header>
                
