@@ -14,7 +14,8 @@ function Filter(props){
     countryCounts,
     getAllTableData,
     countryTableData,
-    getThreatsByCountry
+    getThreatsByCountry,
+    getAllThreats
   } = props;
 
   const [country, setCountry] = useState(`All`);
