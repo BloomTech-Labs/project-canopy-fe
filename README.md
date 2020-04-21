@@ -13,6 +13,9 @@ You can find the deployed project at AWS Amplify (https://master.d2m0cg5et4t40w.
 |             [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/vladmog)              |
 | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) |
 
+<br>
+<br>
+
 |                                      [Chris Engel](https://github.com/)                                       |                                     [Eric Ferguson](https://github.com/)                                      |                                      [Kris Monroe](https://github.com/)                                       |                                      [Lance Smith](https://github.com/)                                       |                                     [Otabek Akbarov](https://github.com/)                                     |
 | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: |
 |                    [<img src"images/ChrisEngel.jpg" width = "200" />](https://github.com/)                    |                  [<img src="images/EricFerguson.jpg" width = "200" />](https://github.com/)                   |                   [<img src="images/KrisMonroe.jpg" width = "200" />](https://github.com/)                    |                   [<img src="images/LanceSmith.jpg" width = "200" />](https://github.com/)                    |                    [<img src="images/OTAkbarov.jpg" width = "200" />](https://github.com/)                    |
@@ -21,8 +24,6 @@ You can find the deployed project at AWS Amplify (https://master.d2m0cg5et4t40w.
 
 <br>
 <br>
-
-🚫 4️⃣ Optional examples of using images with links for your tech stack, make sure to change these to fit your project
 
 ![MIT](https://img.shields.io/packagist/l/doctrine/orm.svg)
 ![React](https://img.shields.io/badge/react-v16.7.0--alpha.2-blue.svg)
@@ -104,7 +105,7 @@ You can do anything your heart can imagine. In life you need colors. This is whe
 
 In order for the app to function correctly, the user must set up their own environment variables. There should be a .env file containing the following:
 
-    *  REACT_APP_BACKENDURL - optional for your local development server
+    *  REACT_APP_BACKENDURL - links to the backend server
 
 # 5️⃣ Content Licenses
 
@@ -115,9 +116,9 @@ In order for the app to function correctly, the user must set up their own envir
 | doodles.png    | Nicole Bennett   | [Creative Commons](https://www.toptal.com/designers/subtlepatterns/doodles/) |
 | rings.svg      | Sam Herbert      | [MIT](https://github.com/SamHerbert/SVG-Loaders)                             |
 
-# 4️⃣ Testing
+# Testing
 
-🚫Document what you used for testing and why
+We used Jest as our testing library. Jest aims to work out of the box, config free, on most JavaScript projects. Tests are parallelized by running them in their own processes to maximize performance.
 
 # 4️⃣ Installation Instructions
 
