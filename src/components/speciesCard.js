@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import ThreatBar from './threatBar.js';
 
 // image assets
 import placeholder from './assets/image-placeholder.png'
@@ -7,27 +8,37 @@ import arrowDown from './assets/arrow/arrowDown.svg'
 import arrowUp from './assets/arrow/arrowUp.svg'
 
 export const SpeciesCard = props => {
-    return (
-        <div style={{width:'25%', backgroundColor:'#FCFCFC'}}>
-            <img src={placeholder} alt={`${props.placeholder}`} style={{width:'100%'}}/>
-            <div style={{padding:'1% 5%'}}>
-                <SmallTextSpan>kingdom - phylum  prop</SmallTextSpan>
-                <CommonName>Common name  prop</CommonName>
-                <BinomialName>binomial  prop</BinomialName> 
-            </div>
-            <div style={{padding:'0 5% 0 5%', margin:'0', display:'flex', flexDirection:'row', justifyContent:'space-between'}}>
+    const { redlistCategory } = props;
+    
+    const rank = function(cat){
+        if(cat === 'Critically Endangered'){
+            return 'CT'
+        } else if (cat === 'Endangered'){
+            return 'EN'
+        } else if (cat === 'Vulnerable'){
+            return 'VU'
+        }
+    }
 
-                <div>
-                    <SmallTextSpan>Population</SmallTextSpan>
-                    <p>status prop <img src={arrowDown} /></p>  
+    return (
+        <div style={{width:'22%', backgroundColor:'#FCFCFC', margin:'25px 1.5%'}}>
+            <img src={placeholder} alt={`${props.placeholder}`} style={{width:'100%'}}/>
+                <div style={{padding:'1% 5%'}}>
+                    <SmallTextSpan>{props.kingdom} - {props.className}</SmallTextSpan>
+                    <CommonName>{props.speciesName}</CommonName>
+                    <BinomialName>{props.scientificName}</BinomialName> 
                 </div>
-                <ThreatStatus>CT</ThreatStatus>
-                
-            </div>
-            <ThreatBar />
+                <div style={{padding:'0 5% 0 5%', margin:'0', display:'flex', flexDirection:'row', justifyContent:'space-between'}}>
+                    <div>
+                        {/* <SmallTextSpan>Population</SmallTextSpan>
+                        <p>status prop <img src={arrowDown} /></p>   */}
+                    </div>
+                    <ThreatStatus>{rank(redlistCategory)}</ThreatStatus>
+                </div>
+                <ThreatBar redlistCategory={redlistCategory}/>
         </div>
     )
-}
+};
 
 const SmallTextSpan = styled.span`
     font-family: IBM Plex Sans;
@@ -60,10 +71,4 @@ const ThreatStatus = styled.span`
     font-size: 24px;
     line-height: 31px;
     color:#101212;
-`
-const ThreatBar = styled.div`
-    width:100%; 
-    height:8px; 
-    border-radius:0 0 4px 4px; 
-    background-color:red;
 `

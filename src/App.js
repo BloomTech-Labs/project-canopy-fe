@@ -7,19 +7,20 @@ import { connect } from 'react-redux';
 import { allCounts } from './actions/chart_actions.js';
 import { getAllTableData } from './actions/table_action.js';
 import { getAllThreats } from './actions/threats_actions.js';
-import { allSpeciesData } from './actions/species_action.js';
+import { allSpeciesData, getThreatenedSpecies } from './actions/species_action.js';
 
 import { Dashboard } from './components/dashboard.js';
-import { Species } from './components/species';
+import Species from './components/species';
  
 
 function App(props) {
-  const { allCounts, getAllTableData, getAllThreats, allSpeciesData } = props;
+  const { allCounts, getAllTableData, getAllThreats, allSpeciesData, getThreatenedSpecies } = props;
   useEffect(() => {
     allCounts();
     getAllTableData();
     getAllThreats();
     allSpeciesData();
+    getThreatenedSpecies();
   }, [])
 
   return (
@@ -42,4 +43,4 @@ function App(props) {
 }
 
 
-export default connect(null, { allCounts, getAllTableData, getAllThreats, allSpeciesData })(App);
+export default connect(null, { allCounts, getAllTableData, getAllThreats, allSpeciesData, getThreatenedSpecies })(App);
