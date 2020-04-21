@@ -7,18 +7,18 @@ You can find the deployed project at AWS Amplify (https://master.d2m0cg5et4t40w.
 
 ## Contributors
 
-|                            [Vladislav Mogilevskiy(Team Lead)](https://github.com/)                            |
+|                        [Vladislav Mogilevskiy(Team Lead)](https://github.com/vladmog)                         |
 | :-----------------------------------------------------------------------------------------------------------: |
-|                 [<img src"images/VladMogilevskiy.jpg" width = "200" />](https://github.com/)                  |
+|              [<img src"images/VladMogilevskiy.jpg" width = "200" />](https://github.com/vladmog)              |
 |             [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/vladmog)              |
 | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) |
 
 <br>
 <br>
 
-|                                      [Chris Engel](https://github.com/)                                       |                                     [Eric Ferguson](https://github.com/)                                      |                                      [Kris Monroe](https://github.com/)                                       |                                      [Lance Smith](https://github.com/)                                       |                                     [Otabek Akbarov](https://github.com/)                                     |
+|                                   [Chris Engel](https://github.com/Dazeman)                                   |                              [Eric Ferguson](https://github.com/EricFerguson76)                               |                                 [Kris Monroe](https://github.com/krisdmonroe)                                 |                               [Lance Smith](https://github.com/lance-smith-acc)                               |                              [Otabek Akbarov](https://github.com/otabekakbaroff)                              |
 | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: |
-|                    [<img src"images/ChrisEngel.jpg" width = "200" />](https://github.com/)                    |                  [<img src="images/EricFerguson.jpg" width = "200" />](https://github.com/)                   |                   [<img src="images/KrisMonroe.jpg" width = "200" />](https://github.com/)                    |                   [<img src="images/LanceSmith.jpg" width = "200" />](https://github.com/)                    |                    [<img src="images/OTAkbarov.jpg" width = "200" />](https://github.com/)                    |
+|                [<img src"images/ChrisEngel.jpg" width = "200" />](https://github.com/Dazeman)                 |           [<img src="images/EricFerguson.jpg" width = "200" />](https://github.com/EricFerguson76)            |              [<img src="images/KrisMonroe.jpg" width = "200" />](https://github.com/krisdmonroe)              |            [<img src="images/LanceSmith.jpg" width = "200" />](https://github.com/lance-smith-acc)            |             [<img src="images/OTAkbarov.jpg" width = "200" />](https://github.com/otabekakbaroff)             |
 |             [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/Dazeman)              |          [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/EricFerguson76)          |           [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/krisdmonroe)            |         [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/lance-smith-acc)          |          [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/otabekakbaroff)          |
 | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) |
 
@@ -30,8 +30,6 @@ You can find the deployed project at AWS Amplify (https://master.d2m0cg5et4t40w.
 ![Typescript](https://img.shields.io/npm/types/typescript.svg?style=flat)
 
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
-
-🚫 more info on using badges [here](https://github.com/badges/shields)
 
 ## Project Overview
 
@@ -120,7 +118,10 @@ In order for the app to function correctly, the user must set up their own envir
 
 # Testing
 
-We used Jest as our testing library. Jest aims to work out of the box, config free, on most JavaScript projects. Tests are parallelized by running them in their own processes to maximize performance.
+#### Jest
+
+- aims to work out of the box, config free, on most JavaScript projects
+- Tests are parallelized by running them in their own processes to maximize performance
 
 # Installation Instructions
 
