@@ -25,7 +25,7 @@ function Filter(props){
 
   function applyFilter(e){
     props.toggleCollapsed()
-    if(e == 'All'){
+    if(e === 'All'){
       allCounts(); 
       getAllTableData();
       getAllThreats();
@@ -51,6 +51,7 @@ function Filter(props){
             key="sub1"
             title={<h1>Country of Occurence</h1>}
           >
+
             <Menu.Item key="1" onClick={() => setCountry('Cameroon')}>Cameroon</Menu.Item>
             <Menu.Item key="2" onClick={() => setCountry('Gabon')}>Gabon</Menu.Item>
             <Menu.Item key="3" onClick={() => setCountry('Congo')}>Republic of Congo</Menu.Item>
@@ -58,7 +59,9 @@ function Filter(props){
             <Menu.Item key="5" onClick={() => setCountry('Equatorial Guinea')}>Equitorial Guinea</Menu.Item>
             <Menu.Item key="6" onClick={() => setCountry('Central African Republic')}>Central African Republic (CAR)</Menu.Item>
             <Menu.Item key="7" onClick={() => setCountry('All')}>All Countries</Menu.Item>
+
           </Menu.ItemGroup>
+
           <StyledButton onClick={() =>
               applyFilter(country)
           }>
