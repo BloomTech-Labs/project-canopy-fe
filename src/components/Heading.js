@@ -6,6 +6,7 @@ import Filter from './Filter'
 
 export const Heading = props =>{
 
+
   const [collapsed, setCollapsed] = useState([true]);
   const [hidden, setHidden] = useState([false])
   function toggleCollapsed(){
