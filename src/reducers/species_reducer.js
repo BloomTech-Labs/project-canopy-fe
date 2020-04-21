@@ -4,8 +4,8 @@ import {
 } from '../actions/species_action.js';
 
 const initialState = {
-    allSpecies = [],
-    filteredSpecies = []
+    allSpecies: [],
+    filteredSpecies: []
 };
 
 export const speciesReducer = (state = initialState, action) => {

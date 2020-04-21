@@ -20,7 +20,7 @@ export const getAllTableData = () => dispatch => {
 export const countryTableData = (country) => dispatch => {
     axios.get(`${url}/api/biodiversity/${country}`)
         .then(res => {
-            dispatch({ type: COUNTRY_TABLE_DATA, payload: tableDataFormatter(res.data)})
+            dispatch({ type: COUNTRY_TABLE_DATA, payload: tableDataFormatter(res.data) })
         })
         .catch(err => {
             console.log(err);

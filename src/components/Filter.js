@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import { connect } from 'react-redux';
 import { allCounts, countryCounts } from '../actions/chart_actions.js';
 import { getAllTableData, countryTableData } from '../actions/table_action.js';
+import { getThreatsByCountry, getAllThreats } from '../actions/threats_actions.js';
 
 function Filter(props){ 
 
@@ -12,7 +13,8 @@ function Filter(props){
     allCounts, 
     countryCounts,
     getAllTableData,
-    countryTableData
+    countryTableData,
+    getThreatsByCountry
   } = props;
 
   const [country, setCountry] = useState(`All`);
@@ -22,10 +24,12 @@ function Filter(props){
     if(e == 'All'){
       allCounts(); 
       getAllTableData();
+      getAllThreats();
     }
     else{
       countryCounts(e)
       countryTableData(e)
+      getThreatsByCountry(e)
     }
     console.log(e)
   }  
@@ -59,7 +63,13 @@ function Filter(props){
     );
 }
 
-export default connect(null, { allCounts, countryCounts, getAllTableData, countryTableData })(Filter);
+export default connect(null, { 
+  allCounts, 
+  countryCounts, 
+  getAllTableData, 
+  countryTableData,
+  getThreatsByCountry,
+  getAllThreats })(Filter);
 
 const StyledButton = styled(Button)`
   background-color: #45735D;

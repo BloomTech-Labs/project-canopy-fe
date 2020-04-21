@@ -18,7 +18,7 @@ export const getAllThreats = () => dispatch => {
 };
 
 export const getThreatsByCountry = (country) => dispatch => {
-    axios.get(`${url}/api/threats/country${country}`)
+    axios.get(`${url}/api/threats/country/${country}`)
         .then(res => {
             dispatch({ type: ALL_THREATS, payload: res.data })
         })

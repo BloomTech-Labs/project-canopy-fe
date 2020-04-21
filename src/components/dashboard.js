@@ -4,6 +4,7 @@ import {Layout, Row, Col} from 'antd';
 import {Heading} from './Heading';
 import {Overview} from './Overview'
 import Table from './Table'
+import ThreatTable from './ThreatsTable.js';
 
 import ChartSmall from './ChartSmall'
 const {Header, Content} = Layout;
@@ -41,6 +42,9 @@ export const Dashboard = () => {
                 </Row>
                 <Row style={{backgroundColor:'#FEFEFE', margin:'2vh 50px', borderRadius:'5px', alignContent:'center'}}>
                    <Table /> 
+                </Row>
+                <Row style={{backgroundColor:'#FEFEFE', margin:'2vh 50px', borderRadius:'5px', alignContent:'center'}}>
+                   <ThreatTable /> 
                 </Row>
             </Content>  
         </div>

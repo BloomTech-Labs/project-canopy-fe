@@ -6,14 +6,16 @@ import { Nav } from './components/Nav.js'
 import { Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { allCounts } from './actions/chart_actions.js';
-import { getAllTableData } from './actions/table_action';
+import { getAllTableData } from './actions/table_action.js';
+import { getAllThreats } from './actions/threats_actions.js';
 
 
 
-function App({ allCounts, getAllTableData }) {
+function App({ allCounts, getAllTableData, getAllThreats }) {
   useEffect(() => {
     allCounts();
     getAllTableData();
+    getAllThreats();
   }, [])
 
   return (
@@ -34,4 +36,4 @@ function App({ allCounts, getAllTableData }) {
 }
 
 
-export default connect(null, { allCounts, getAllTableData })(App);
+export default connect(null, { allCounts, getAllTableData, getAllThreats })(App);

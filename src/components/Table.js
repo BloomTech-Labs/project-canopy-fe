@@ -1,8 +1,7 @@
-import React,{useEffect, useState} from 'react';
+import React from 'react';
 import 'antd/dist/antd.css';
 import { Table } from 'antd';
 import {connect} from 'react-redux';
-// import {getThreatenedCounts,getThreatenedCountsByHabitat,getThreatenedCountsByCountry} from '../actions/index'
 
 const TableSetup = ({ tableData }) => {
 
@@ -31,6 +30,7 @@ const TableSetup = ({ tableData }) => {
             dataSource={tableData}
             bordered
             pagination={false}
+            scroll={{ y: 240 }}
             title={() => <h2 style={{fontSize:'1.3em'}}>Top hotspot habitats</h2>}
           />
         </div>
