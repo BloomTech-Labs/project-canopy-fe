@@ -15,14 +15,16 @@ export const SpeciesCard = props => {
                 <CommonName>Common name  prop</CommonName>
                 <BinomialName>binomial  prop</BinomialName> 
             </div>
-            <div style={{padding:'1% 5%', display:'flex', flexDirection:'row', justifyContent:'space-between'}}>
+            <div style={{padding:'0 5% 0 5%', margin:'0', display:'flex', flexDirection:'row', justifyContent:'space-between'}}>
+
                 <div>
                     <SmallTextSpan>Population</SmallTextSpan>
                     <p>status prop <img src={arrowDown} /></p>  
                 </div>
                 <ThreatStatus>CT</ThreatStatus>
+                
             </div>
-            <div style={{width:'100%', height:'8px', borderRadius:'0 0 4px 4px', backgroundColor:'red'}} />
+            <ThreatBar />
         </div>
     )
 }
@@ -49,6 +51,7 @@ const BinomialName = styled.p`
     font-weight: normal;
     font-size: 16px;
     color:#9F9F9F;
+    margin:0;
 `
 const ThreatStatus = styled.span`
     font-family: IBM Plex Sans;
@@ -57,4 +60,10 @@ const ThreatStatus = styled.span`
     font-size: 24px;
     line-height: 31px;
     color:#101212;
+`
+const ThreatBar = styled.div`
+    width:100%; 
+    height:8px; 
+    border-radius:0 0 4px 4px; 
+    background-color:red;
 `
