@@ -3,8 +3,6 @@ import 'antd/dist/antd.css'
 import {Menu, Button, Row, Col} from 'antd';
 import styled from 'styled-components';
 import Filter from './Filter'
-const { SubMenu } = Menu;
-
 
 export const Heading = () =>{
 
