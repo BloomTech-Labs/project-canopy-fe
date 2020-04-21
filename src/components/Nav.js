@@ -1,12 +1,15 @@
 import React from 'react';
+import { Route, Switch } from 'react-router-dom';
 import {Link} from 'react-router-dom';
 import {Layout} from 'antd';
 import 'antd/dist/antd.css';
 import styled from 'styled-components';
 
 // Imports all of the image assets
+import treeLogo from './assets/treeLogo.svg';
+import pcLogo from './assets/pcLogo.svg';
 import dashboardLight from './assets/light/dashboard.svg';
-import mapLight from './assets/light//map.svg';
+import mapLight from './assets/light/map.svg';
 import pawLight from './assets/light/paw.svg';
 import treeLight from './assets/light/Tree.svg';
 import dashboardGreen from './assets/green/dashboard.svg';
@@ -27,30 +30,16 @@ export const Nav = (props) =>{
             }}
         >
             <LogoCont>
-                <h1>Project</h1>
-                <h1>Canopy</h1>
+                <img src={treeLogo} alt='logo'/>
+                <img src={pcLogo} alt='text logo'/>
             </LogoCont>    
             <NavItems>
-                <Link to={`/`} className="navItem" id="dashboard">
-                    <img src={dashboardLight} alt='dashboard' class="image_on" /> 
-                    <img src={dashboardGreen} alt='dashboard' class="image_off"/>
-                    Dashboard
-                </Link>
-                <Link to={`/maps`} className="navItem" id="map">
-                    <img src={mapLight} alt='map' class="image_on" /> 
-                    <img src={mapGreen} alt='map' class="image_off"/>
-                    Map
-                </Link>
-                <Link to={`/species`} className="navItem" id="paw">
-                    <img src={pawLight} alt='species' class="image_on" /> 
-                    <img src={pawGreen} alt='species' class="image_off"/> 
-                    Species
-                </Link>
-                <Link to={`/about`} className="navItem" id="tree">
-                    <img src={treeLight} alt='About' class="image_on" /> 
-                    <img src={treeGreen} alt='About' class="image_off"/>
-                    About
-                </Link>
+                
+                    <NavItem context='dashboard' imgContextL={dashboardLight} imgContextG={dashboardGreen} routeContext=''/>
+                    <NavItem context='map' imgContextL={mapLight} imgContextG={mapGreen} routeContext='maps'/>
+                    <NavItem context='species' imgContextL={pawLight} imgContextG={pawGreen} routeContext='species'/>
+                    <NavItem context='about' imgContextL={treeLight} imgContextG={treeGreen} routeContext='about'/>
+                
             </NavItems>
             <NavFooter>
                 <footer>© Project Canopy 2020</footer>
@@ -59,17 +48,34 @@ export const Nav = (props) =>{
     )
 };
 
+const NavItem = props => {
+
+    return (
+        <Switch>
+            <Route exact path={`/${props.routeContext}`}>
+                <Link to={`/`} className="navItem" id={`${props.context}`}>
+                    <img src={props.imgContextG} alt={`${props.context}`} />
+                    <a className='onPage'>{`${props.context}`.charAt(0).toUpperCase()+ `${props.context}`.slice(1)}</a>
+                </Link>
+            </Route>
+            <Route>
+                <Link to={`/${props.routeContext}`} className="offPage navItem" id={`${props.context}`}>
+                    <img src={props.imgContextL} alt={`${props.context}`} class="image_on" /> 
+                    <img src={props.imgContextG} alt={`${props.context}`} class="image_off"/>
+                    {`${props.context}`.charAt(0).toUpperCase()+ `${props.context}`.slice(1)}
+                </Link>
+            </Route>    
+        </Switch>
+    )
+}
+
+
 const LogoCont = styled.div`
     display:flex;
     height: 15%;
     flex-direction:column;
     align-items:center;
     justify-content:center;
-    h1 {
-        font-weight: bold;
-        font-size: 1.7em;
-        line-height: 31px;
-    }
 `;
 
 const NavItems = styled.div`
@@ -81,14 +87,18 @@ const NavItems = styled.div`
     a {
         font-size: 1.3rem;
         line-height: 31px;
-        color:#9F9F9F;
         text-decoration:none;
         width:100%;
         text-align:left;
+        color:#9F9F9F;
+        
     }
     a:visited {
-        color:#9F9F9F;
         font-style:normal;
+    }
+    .onPage {
+        color:#45735D;
+        font-weight:bold;
     }
     .navItem {
         width:70%;
