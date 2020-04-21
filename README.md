@@ -85,21 +85,23 @@ Project Canopy's mission is to de-fragment and de-silo data relevant to the Cong
 
 #### [Back end](https://github.com/Lambda-School-Labs/project-canopy-be) built using:
 
-####
+#### Node.js
 
-- point one
-- point twos
-- point three
+- is designed to build scalable network applications
+- ease of use
 
-🚫 List the rest of the back end end features and libraries in the same format as the framework above
+#### Express.js
 
-# APIs
+- is a minimal and flexible framework
+- provides a robust set of features for web applications
+
+<!-- # APIs
 
 ## 3️⃣ Misc API here
 
 🚫Replace text below with a description of the API
 
-You can do anything your heart can imagine. In life you need colors. This is where you take out all your hostilities and frustrations. It's better than kicking the puppy dog around and all that so. I'm sort of a softy, I couldn't shoot Bambi except with a camera. Trees get lonely too, so we'll give him a little friend. We'll lay all these little funky little things in there.
+You can do anything your heart can imagine. In life you need colors. This is where you take out all your hostilities and frustrations. It's better than kicking the puppy dog around and all that so. I'm sort of a softy, I couldn't shoot Bambi except with a camera. Trees get lonely too, so we'll give him a little friend. We'll lay all these little funky little things in there. -->
 
 # Environment Variables
 
@@ -107,31 +109,33 @@ In order for the app to function correctly, the user must set up their own envir
 
     *  REACT_APP_BACKENDURL - links to the backend server
 
-# 5️⃣ Content Licenses
+<!-- # 5️⃣ Content Licenses
 
 🚫For all content - images, icons, etc, use this table to document permission of use. Remove the two placeholders and add you content to this table
 
 | Image Filename | Source / Creator | License                                                                      |
 | -------------- | ---------------- | ---------------------------------------------------------------------------- |
 | doodles.png    | Nicole Bennett   | [Creative Commons](https://www.toptal.com/designers/subtlepatterns/doodles/) |
-| rings.svg      | Sam Herbert      | [MIT](https://github.com/SamHerbert/SVG-Loaders)                             |
+| rings.svg      | Sam Herbert      | [MIT](https://github.com/SamHerbert/SVG-Loaders)                             | -->
 
 # Testing
 
 We used Jest as our testing library. Jest aims to work out of the box, config free, on most JavaScript projects. Tests are parallelized by running them in their own processes to maximize performance.
 
-# 4️⃣ Installation Instructions
+# Installation Instructions
 
-🚫explain how to install the required dependencies to get this project up and running with yarn and NPM
+- Fork and Clone Repository
+- CD into project-canopy-fe
+- run NPM install to download dependencies
 
-## Other Scripts
+<!-- ## Other Scripts
 
 🚫replace these examples with your own
 
     * typecheck - runs the TypeScript compiler
     * build - creates a build of the application
     * start - starts the production server after a build is created
-    * test - runs tests in **tests** directory \* eject - copy the configuration files and dependencies into the project so you have full control over them
+    * test - runs tests in **tests** directory \* eject - copy the configuration files and dependencies into the project so you have full control over them -->
 
 # Contributing
 
