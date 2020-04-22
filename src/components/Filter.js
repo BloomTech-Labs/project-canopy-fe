@@ -6,7 +6,10 @@ import { connect } from 'react-redux';
 import { allCounts, countryCounts } from '../actions/chart_actions.js';
 import { getAllTableData, countryTableData } from '../actions/table_action.js';
 import { getThreatsByCountry, getAllThreats } from '../actions/threats_actions.js';
-import { allSpeciesData, filterAllSpeciesByCountry } from '../actions/species_action.js';
+import { allSpeciesData, 
+  filterAllSpeciesByCountry,
+  getThreatenedSpecies,
+  filterSpeciesByCountry } from '../actions/species_action.js';
 
 function Filter(props){ 
 
@@ -18,7 +21,10 @@ function Filter(props){
     getThreatsByCountry,
     getAllThreats,
     allSpeciesData, 
-    filterAllSpeciesByCountry
+    filterAllSpeciesByCountry,
+    speciesList,
+    getThreatenedSpecies,
+    filterSpeciesByCountry
   } = props;
 
   const [country, setCountry] = useState(`All`);
@@ -30,12 +36,14 @@ function Filter(props){
       getAllTableData();
       getAllThreats();
       allSpeciesData();
+      getThreatenedSpecies();
     }
     else{
       countryCounts(e);
       countryTableData(e);
       getThreatsByCountry(e);
       filterAllSpeciesByCountry(e);
+      filterSpeciesByCountry(speciesList, e);
     }
   }  
 
@@ -69,9 +77,15 @@ function Filter(props){
           </StyledButton>
         </Menu>
     );
+};
+
+const mapStateToProps = (state) => {
+  return {
+      speciesList: state.speciesReducer.filteredThreatened
+  }
 }
 
-export default connect(null, { 
+export default connect(mapStateToProps, { 
   allCounts, 
   countryCounts, 
   getAllTableData, 
@@ -79,7 +93,9 @@ export default connect(null, {
   getThreatsByCountry,
   getAllThreats,
   allSpeciesData, 
-  filterAllSpeciesByCountry })(Filter);
+  filterAllSpeciesByCountry,
+  getThreatenedSpecies,
+  filterSpeciesByCountry })(Filter);
 
 const StyledButton = styled(Button)`
   background-color: #45735D;
