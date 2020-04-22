@@ -9,7 +9,7 @@ You can find the deployed project at AWS Amplify (https://master.d2m0cg5et4t40w.
 
 |                                     [Vlad Mogilevskiy](https://github.com/vladmog)                                      |
 | :---------------------------------------------------------------------------------------------------------------------: |
-| [<img src="https://ca.slack-edge.com/T4JUEB3ME-UHF7J4UPN-833633f70058-48" width = "100" />](https://github.com/vladmog) |
+| [<img src="https://ca.slack-edge.com/T4JUEB3ME-UHF7J4UPN-833633f70058-48" width = "200" />](https://github.com/vladmog) |
 |                  [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/vladmog)                   |
 |      [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/)      |
 
