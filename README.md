@@ -129,14 +129,12 @@ In order for the app to function correctly, the user must set up their own envir
 - CD into project-canopy-fe
 - run NPM install to download dependencies
 
-<!-- ## Other Scripts
-
-🚫replace these examples with your own
+## Other Scripts
 
     * typecheck - runs the TypeScript compiler
     * build - creates a build of the application
     * start - starts the production server after a build is created
-    * test - runs tests in **tests** directory \* eject - copy the configuration files and dependencies into the project so you have full control over them -->
+    * test - runs tests in **tests** directory \* eject - copy the configuration files and dependencies into the project so you have full control over them
 
 # Contributing
 
