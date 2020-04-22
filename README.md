@@ -3,7 +3,7 @@
 
 # Project Canopy
 
-You can find the deployed project at AWS Amplify (https://master.d2m0cg5et4t40w.amplifyapp.com/).
+You can find the deployed project at [AWS Amplify](https://master.d2m0cg5et4t40w.amplifyapp.com/).
 
 ## Contributors
 
@@ -107,11 +107,11 @@ Project Canopy's mission is to de-fragment and de-silo data relevant to the Cong
 
 # APIs
 
-## IUCN Red List
+## [IUCN Red List](https://www.iucnredlist.org/)
 
 The IUCN Red List shows us where and what actions need to be taken to save the building blocks of nature from extinction. It provides a straightforward way to factor biodiversity needs into decision-making processes by providing a wealth of useful information on species.
 
-## CITES
+## [CITES](https://www.cites.org/)
 
 CITES (the Convention on International Trade in Endangered Species of Wild Fauna and Flora) is an international agreement between governments. Its aim is to ensure that international trade in specimens of wild animals and plants does not threaten their survival.
 
@@ -121,18 +121,9 @@ In order for the app to function correctly, the user must set up their own envir
 
     *  REACT_APP_BACKENDURL - links to the backend server
 
-<!-- # 5️⃣ Content Licenses
-
-🚫For all content - images, icons, etc, use this table to document permission of use. Remove the two placeholders and add you content to this table
-
-| Image Filename | Source / Creator | License                                                                      |
-| -------------- | ---------------- | ---------------------------------------------------------------------------- |
-| doodles.png    | Nicole Bennett   | [Creative Commons](https://www.toptal.com/designers/subtlepatterns/doodles/) |
-| rings.svg      | Sam Herbert      | [MIT](https://github.com/SamHerbert/SVG-Loaders)                             | -->
-
 # Testing
 
-#### Jest
+### Jest
 
 - aims to work out of the box, config free, on most JavaScript projects
 - Tests are parallelized by running them in their own processes to maximize performance
