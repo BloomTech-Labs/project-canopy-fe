@@ -7,11 +7,11 @@ You can find the deployed project at AWS Amplify (https://master.d2m0cg5et4t40w.
 
 ## Contributors
 
-|                             [Vladislav Mogilevskiy(Team Lead)](https://github.com/vladmog)                             |
-| :--------------------------------------------------------------------------------------------------------------------: |
-| [<img src"https://ca.slack-edge.com/T4JUEB3ME-UHF7J4UPN-833633f70058-48" width = "200" />](https://github.com/vladmog) |
-|                  [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/vladmog)                  |
-|     [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/)      |
+|                                                 [Vladislav Mogilevskiy(Team Lead)](https://github.com/vladmog)                                                  |
+| :-------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| [<img src"https://avatars1.githubusercontent.com/u/47991120?s=460&u=26a787bcb6025c9933c7c23bbb72fd92a10aaa39&v=4" width = "200" />](https://github.com/vladmog) |
+|                                      [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/vladmog)                                       |
+|                          [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/)                          |
 
 <br>
 <br>
