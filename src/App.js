@@ -5,16 +5,22 @@ import { Nav } from './components/Nav.js'
 import { Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { allCounts } from './actions/chart_actions.js';
-import { getAllTableData } from './actions/table_action';
+import { getAllTableData } from './actions/table_action.js';
+import { getAllThreats } from './actions/threats_actions.js';
+import { allSpeciesData, getThreatenedSpecies } from './actions/species_action.js';
 
 import { Dashboard } from './components/dashboard.js';
-import { Species } from './components/species';
+import Species from './components/species';
  
 
-function App({ allCounts, getAllTableData }) {
+function App(props) {
+  const { allCounts, getAllTableData, getAllThreats, allSpeciesData, getThreatenedSpecies } = props;
   useEffect(() => {
     allCounts();
     getAllTableData();
+    getAllThreats();
+    allSpeciesData();
+    getThreatenedSpecies();
   }, [])
 
   return (
@@ -37,4 +43,4 @@ function App({ allCounts, getAllTableData }) {
 }
 
 
-export default connect(null, { allCounts, getAllTableData })(App);
+export default connect(null, { allCounts, getAllTableData, getAllThreats, allSpeciesData, getThreatenedSpecies })(App);
