@@ -7,6 +7,8 @@ You can find the deployed project at AWS Amplify (https://master.d2m0cg5et4t40w.
 
 ## Contributors
 
+## Team Lead
+
 |                                      [Vlad Mogilevskiy](https://github.com/vladmog)                                      |
 | :----------------------------------------------------------------------------------------------------------------------: |
 | [<img src="https://ca.slack-edge.com/T4JUEB3ME-UHF7J4UPN-833633f70058-512" width = "200" />](https://github.com/vladmog) |
@@ -15,6 +17,18 @@ You can find the deployed project at AWS Amplify (https://master.d2m0cg5et4t40w.
 
 <br>
 <br>
+
+## UX Designer
+
+|                                        Harper Atlas                                        |
+| :----------------------------------------------------------------------------------------: |
+| <img src="https://ca.slack-edge.com/T4JUEB3ME-UFNFDCRHA-ab31d15bc125-512" width = "200" /> |
+|                                                                                            |
+
+<br>
+<br>
+
+## Web Developers
 
 |                                        [Chris Engel](https://github.com/Dazeman)                                         |                                       [Eric Ferguson](https://github.com/EricFerguson76)                                        |                                        [Kris Monroe](https://github.com/krisdmonroe)                                         |                                        [Lance Smith](https://github.com/lance-smith-acc)                                         |                                       [Otabek Akbarov](https://github.com/otabekakbaroff)                                       |
 | :----------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------: |
