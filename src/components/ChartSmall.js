@@ -45,10 +45,18 @@ var data = {
 var options = {
   legend:{
     position: 'bottom',
+    labels: {
+      boxWidth:15,
+    }
   },
   scales: {
    xAxes: [{
       barThickness: 18,
+      gridLines: {
+        display:false,
+        drawBorder:false,
+        offsetGridLines: true
+      },
     }, {
         display:false,
       barThickness: 18,
@@ -57,6 +65,8 @@ var options = {
       categoryPercentage: 0.8,
       barPercentage: 0.9,
       gridLines: {
+        display:false,
+        drawBorder:false,
         offsetGridLines: true
       },
       offset: true
@@ -64,7 +74,11 @@ var options = {
     yAxes: [{
       stacked: false,
       ticks: {
-        beginAtZero: true
+        display:false,
+      },
+      gridLines: {
+        display:false,
+        drawBorder:false,
       },
     }],
   },

@@ -5,18 +5,13 @@ import { Heading } from './Heading';
 import { SpeciesCard } from './speciesCard';
 
 
-const { Header, Content } = Layout;
+const { Content } = Layout;
 
 const Species = ({ speciesList }) => {
 
     return (
         <div>
-            <Header style={{backgroundColor:'#F0F0F0', height:'15vh'}}>
-                
-                <div style={{color:'#F0F0F0'}}>Placeholder for search bar and language select</div>
-                <Heading context={'species'}/>
-                    
-            </Header>
+            <Heading context={'species'}/>
             
             <Content>
                 <Row >
