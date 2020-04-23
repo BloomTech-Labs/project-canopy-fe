@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { Menu, Button } from 'antd';
+import { Menu, Button, Divider } from 'antd';
 import styled from 'styled-components';
 
 import { connect } from 'react-redux';
@@ -39,15 +39,15 @@ function Filter(props){
         <Menu
           mode="inline"
           inlineCollapsed={props.collapsed}
-          selectable='true'
-          multiple='true'
-          style={{width:'20vw', height:'100vh'}}
+          multiple={false}
+          style={{width:'20vw', height:'100vh', borderLeft:'2px solid #F0F0F0'}}
         >
+          <h1 style={{fontWeight:'bold', fontSize:'2em', paddingLeft:'5%', margin:'0'}}>Filter</h1>
           <Menu.ItemGroup
             key="sub1"
-            title={<h1>Country of Occurence</h1>}
+            title={<h1 style={{fontWeight:'bold'}}>Country of Occurence</h1>}
           >
-
+            <StyledDiver />
             <Menu.Item key="1" onClick={() => setCountry('Cameroon')}>Cameroon</Menu.Item>
             <Menu.Item key="2" onClick={() => setCountry('Gabon')}>Gabon</Menu.Item>
             <Menu.Item key="3" onClick={() => setCountry('Congo')}>Republic of Congo</Menu.Item>
@@ -55,6 +55,7 @@ function Filter(props){
             <Menu.Item key="5" onClick={() => setCountry('Equatorial Guinea')}>Equitorial Guinea</Menu.Item>
             <Menu.Item key="6" onClick={() => setCountry('Central African Republic')}>Central African Republic (CAR)</Menu.Item>
             <Menu.Item key="7" onClick={() => setCountry('All')}>All Countries</Menu.Item>
+            <StyledDiver />
 
           </Menu.ItemGroup>
 
@@ -85,10 +86,11 @@ export default connect(mapStateToProps, {
 
 const StyledButton = styled(Button)`
   background-color: #324F7B;
-  width:50%;
+  width:75%;
   border-radius:5px;
   padding:0;
   margin:0 auto;
+  margin-left:5%;
   span {
     padding:0;
     color:#FEFEFE;
@@ -96,5 +98,10 @@ const StyledButton = styled(Button)`
     font-size: 1.5em;
     vertical-align:middle;
   }
+`;
+
+const StyledDiver = styled(Divider)`
+  background-color:#F0F0F0;
   
+  margin:0;
 `;
