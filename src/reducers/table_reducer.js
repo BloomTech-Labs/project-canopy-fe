@@ -1,21 +1,25 @@
 import { 
-    ALL_TABLE_DATA,
-    COUNTRY_TABLE_DATA
+    GET_HOTSPOT_TABLE_DATA,
+    GET_THREATS_TABLE_DATA
 } from '../actions/table_action.js';
 
 const initialState = {
-    tableData: []
+    hotspot_tableData: [],
+    threats_tableData: [],
+
 };
 
 export const tableReducer = (state = initialState, action) => {
     switch(action.type) {
-        case ALL_TABLE_DATA:
+        case GET_HOTSPOT_TABLE_DATA:
             return {
-                tableData: action.payload,
+                ...state,
+                hotspot_tableData: action.payload,
             }
-        case COUNTRY_TABLE_DATA:
+        case GET_THREATS_TABLE_DATA:
             return {
-                tableData: action.payload
+                ...state,
+                threats_tableData: action.payload
             }
         default:
             return state;

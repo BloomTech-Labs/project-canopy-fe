@@ -3,10 +3,16 @@ import { connect } from 'react-redux';
 import { Layout, Row, Col } from 'antd';
 import { Heading } from './Heading';
 import { SpeciesCard } from './speciesCard';
+<<<<<<< HEAD
 import { Modal } from 'antd';
 import axios from 'axios'
 import placeholder from './assets/image-placeholder.png'
 const { Header, Content } = Layout;
+=======
+
+
+const { Content } = Layout;
+>>>>>>> 7554f570d298e3a63272e4a4599f23f2b8b7f48a
 
 
 const Species = ({ speciesList }) => {
@@ -64,12 +70,7 @@ const Species = ({ speciesList }) => {
     }
     return (
         <div>
-            <Header style={{backgroundColor:'#F0F0F0', height:'15vh'}}>
-                
-                <div style={{color:'#F0F0F0'}}>Placeholder for search bar and language select</div>
-                <Heading context={'species'}/>
-                    
-            </Header>
+            <Heading context={'species'}/>
             
             <Content>
                 <Row >
@@ -163,7 +164,7 @@ const Species = ({ speciesList }) => {
 
 const mapStateToProps = (state) => {
     return {
-        speciesList: state.speciesReducer.filteredThreatened
+        speciesList: state.speciesReducer.threatenedSpecies
     }
 }
 

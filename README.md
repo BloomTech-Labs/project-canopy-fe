@@ -1,157 +1,150 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/acf50d3ee2833ae85f97/maintainability)](https://codeclimate.com/github/Lambda-School-Labs/project-canopy-fe/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/acf50d3ee2833ae85f97/test_coverage)](https://codeclimate.com/github/Lambda-School-Labs/project-canopy-fe/test_coverage)
-🚫 Note: All lines that start with 🚫 are instructions and should be deleted before this is posted to your portfolio. This is intended to be a guideline, feel free to add your own flare to it.
 
-🚫 The numbers 1️⃣ through 5️⃣ next to each item represent the week that part of the docs needs to be comepleted by.  Make sure to delete the numbers by the end of Labs.
+# Project Canopy
 
-🚫 Each student has a required minimum number of meaningful PRs each week per the rubric. Contributing to docs does NOT count as a PR to meet your weekly requirements.
+You can find the deployed project at [AWS Amplify](https://master.d2m0cg5et4t40w.amplifyapp.com/).
 
-# 1️⃣ Title of project goes here
+## Contributors
 
-1️⃣ You can find the deployed project at [🚫URL NAME GOES HERE](🚫copy and paste URL here).
+## Team Lead
 
-## 4️⃣ Contributors
-
-🚫Add contributor info below, make sure add images and edit the social links for each member. Add to or delete these place-holders as needed
-
-|                                       [Student 1](https://github.com/)                                        |                                       [Student 2](https://github.com/)                                        |                                       [Student 3](https://github.com/)                                        |                                       [Student 4](https://github.com/)                                        |                                       [Student 5](https://github.com/)                                        |
-| :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: |
-|                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />](https://github.com/)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-female.png" width = "200" />](https://github.com/)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />](https://github.com/)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-female.png" width = "200" />](https://github.com/)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />](https://github.com/)                       |
-|                 [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/)                 |            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/honda0306)             |           [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/Mister-Corn)            |          [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/NandoTheessen)           |            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/wvandolah)             |
-| [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) |
+|                                      [Vlad Mogilevskiy](https://github.com/vladmog)                                      |
+| :----------------------------------------------------------------------------------------------------------------------: |
+| [<img src="https://ca.slack-edge.com/T4JUEB3ME-UHF7J4UPN-833633f70058-512" width = "200" />](https://github.com/vladmog) |
+|                   [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/vladmog)                   |
 
 <br>
 <br>
 
-🚫 4️⃣ Optional examples of using images with links for your tech stack, make sure to change these to fit your project
+## UX Designer
+
+|                                        Harper Atlas                                        |
+| :----------------------------------------------------------------------------------------: |
+| <img src="https://ca.slack-edge.com/T4JUEB3ME-UFNFDCRHA-ab31d15bc125-512" width = "200" /> |
+|                                                                                            |
+
+<br>
+<br>
+
+## Web Developers
+
+|                                        [Chris Engel](https://github.com/Dazeman)                                         |                                       [Eric Ferguson](https://github.com/EricFerguson76)                                        |                                        [Kris Monroe](https://github.com/krisdmonroe)                                         |                                        [Lance Smith](https://github.com/lance-smith-acc)                                         |                                       [Otabek Akbarov](https://github.com/otabekakbaroff)                                       |
+| :----------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------: |
+| [<img src="https://ca.slack-edge.com/T4JUEB3ME-UPCKFUVR7-aa1d6f8f8bcc-512" width = "200" />](https://github.com/Dazeman) | [<img src="https://ca.slack-edge.com/T4JUEB3ME-UMR112BC6-b99cd276322f-512" width = "200" />](https://github.com/EricFerguson76) | [<img src="https://ca.slack-edge.com/T4JUEB3ME-UPLU41ANB-c4a31eef6ca3-512" width = "200" />](https://github.com/krisdmonroe) | [<img src="https://ca.slack-edge.com/T4JUEB3ME-UPLU4FPGF-0853a988c6fb-512" width = "200" />](https://github.com/lance-smith-acc) | [<img src="https://ca.slack-edge.com/T4JUEB3ME-UP88ZDMAT-ec152472b194-512" width = "200" />](https://github.com/otabekakbaroff) |
+|                   [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/Dazeman)                   |                   [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/EricFerguson76)                   |                   [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/krisdmonroe)                   |                   [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/lance-smith-acc)                   |                   [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/otabekakbaroff)                   |
+
+<br>
+<br>
+
+## Data Scientists
+
+|                                         [Ray Selent](https://github.com/rselent)                                         |                                      [James Luttringer](https://github.com/jamesluttringer2019)                                      |                                       [Jonathon Ross](https://github.com/jwross24)                                        |                                      [Rong(Julie) Wang](https://github.com/)                                      |
+| :----------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------: |
+| [<img src="https://ca.slack-edge.com/T4JUEB3ME-UPM6D4SCX-6a9946267145-512" width = "200" />](https://github.com/rselent) | [<img src="https://ca.slack-edge.com/T4JUEB3ME-UP6CYGVU5-0b0b4887da6b-512" width = "200" />](https://github.com/jamesluttringer2019) | [<img src="https://ca.slack-edge.com/T4JUEB3ME-UC5BT7GP4-30b66a7d3ba8-512" width = "200" />](https://github.com/jwross24) | [<img src="https://ca.slack-edge.com/T4JUEB3ME-UPJDFRLDA-a51c5f7382c2-512" width = "200" />](https://github.com/) |
+|                   [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/rselent)                   |                   [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/jamesluttringer2019)                   |                   [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/jwross24)                   |                   [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/)                   |
+
+<br>
+<br>
 
 ![MIT](https://img.shields.io/packagist/l/doctrine/orm.svg)
 ![React](https://img.shields.io/badge/react-v16.7.0--alpha.2-blue.svg)
 ![Typescript](https://img.shields.io/npm/types/typescript.svg?style=flat)
-[![Netlify Status](https://api.netlify.com/api/v1/badges/b5c4db1c-b10d-42c3-b157-3746edd9e81d/deploy-status)](netlify link goes in these parenthesis)
-[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
-🚫 more info on using badges [here](https://github.com/badges/shields)
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
 ## Project Overview
 
-1️⃣ [Trello Board](🚫add link to trello board here)
+[Trello Board](https://trello.com/b/VvxCqOXH/labs-22-project-canopy)
 
-1️⃣ [Product Canvas](🚫add link to product canvas here)
+[Product Canvas](https://www.notion.so/Project-Canopy-6f57a35e169540bf8cfbf026190cda6e)
 
-1️⃣ [UX Design files](🚫add link to design files here) - 🚫 delete if not applicable
+[UX Design files](https://www.figma.com/file/fS1akU2WgCOh3OwpjFdiOK/Project-Canopy%2C--Harper?node-id=177%3A6)
 
-🚫 Replace lorem ipsum with a description of your project
+### Project Description
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Project Canopy's mission is to de-fragment and de-silo data relevant to the Congo Basin rainforest, and provide the analytical tools with which to interpret that data. By making knowledge accessible to donors, governments, and the public at large, we can help policy- and decision-makers concerned with the Congo Basin to craft better laws and programs to address deforestation, biodiversity loss, and climate change.
 
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+### Key Features
 
+- Create an intuitive combination of datasets from which decisionmakers and organizations can draw conclusions based on well-formed questions
+- Provide users with interactive visualizations to answer questions, discover trends and make predictions around threats to biodiversity and deforestation
+- Create an automated workflow to provide local law enforcement agencies with updated "species ID cards", to be used in their work of regulated trade in timber and wildlife.
 
-### 4️⃣ Key Features
-
--    feature one
--    feature two
--    feature three
--    feature four
--    feature five
-
-## 1️⃣ Tech Stack
+## Tech Stack
 
 ### Front end built using:
 
-#### _Front end framework goes here_
+#### React
 
-🚫 Why did you choose this framework?
+- Supports reusable components
+- Ease of deployment and maintenance
 
--    point one
--    point two
--    point three
--    point four
+#### Redux
 
-🚫List the rest of the front end features and libraries in the same format as the framework above.
+- Integrates well with Redux
+- State management capabilities match that of application
 
-#### Front end deployed to `🚫insert service here`
+#### Chart.js
 
-#### [Back end](🚫link to back end repo here) built using:
+- Data visualization
 
-#### 🚫 back end framework goes here
+#### Ant Design
 
--    point one
--    point two
--    point three
+- Enterprise-class UI designed for web applications
+- A set of high-quality React components out of the box
+- Whole package of design resources and development tools
 
-🚫 List the rest of the back end end features and libraries in the same format as the framework above
+#### Styled Components
+
+- Automatic critical CSS
+- No class name bugs
+- Simple dynamic styling
+
+#### Front end deployed to AWS Amplify(https://master.d2m0cg5et4t40w.amplifyapp.com/)
+
+#### [Back end](https://github.com/Lambda-School-Labs/project-canopy-be) built using:
+
+#### Node.js
+
+- is designed to build scalable network applications
+- ease of use
+
+#### Express.js
+
+- is a minimal and flexible framework
+- provides a robust set of features for web applications
 
 # APIs
 
-## 2️⃣ Authentication API here
+## [IUCN Red List](https://www.iucnredlist.org/)
 
-🚫Replace text below with a description of the API
+The IUCN Red List shows us where and what actions need to be taken to save the building blocks of nature from extinction. It provides a straightforward way to factor biodiversity needs into decision-making processes by providing a wealth of useful information on species.
 
-Water's like me. It's laaazy ... Boy, it always looks for the easiest way to do things A little happy sunlight shining through there. Let all these little things happen. Don't fight them. Learn to use them. Even the worst thing we can do here is good.
+## [CITES](https://www.cites.org/)
 
-## 2️⃣ Payment API here
+CITES (the Convention on International Trade in Endangered Species of Wild Fauna and Flora) is an international agreement between governments. Its aim is to ensure that international trade in specimens of wild animals and plants does not threaten their survival.
 
-🚫Replace text below with a description of the API
-
-This is the way you take out your flustrations. Get away from those little Christmas tree things we used to make in school. Isn't it fantastic that you can change your mind and create all these happy things? Everything's not great in life, but we can still find beauty in it.
-
-## 3️⃣ Misc API here
-
-🚫Replace text below with a description of the API
-
-You can do anything your heart can imagine. In life you need colors. This is where you take out all your hostilities and frustrations. It's better than kicking the puppy dog around and all that so. I'm sort of a softy, I couldn't shoot Bambi except with a camera. Trees get lonely too, so we'll give him a little friend. We'll lay all these little funky little things in there.
-
-## 3️⃣ Misc API here
-
-🚫Replace text below with a description of the API
-
-When you do it your way you can go anywhere you choose. Let your heart take you to wherever you want to be. If I paint something, I don't want to have to explain what it is. A tree needs to be your friend if you're going to paint him. That's a son of a gun of a cloud. Even the worst thing we can do here is good.
-
-## 3️⃣ Misc API here
-
-🚫Replace text below with a description of the API
-
-Volunteering your time; it pays you and your whole community fantastic dividends. Maybe there's a happy little waterfall happening over here. You can spend all day playing with mountains. We don't have to be committed. We are just playing here. You have freedom here. The only guide is your heart. It's cold, but it's beautiful.
-
-# 3️⃣ Environment Variables
+# Environment Variables
 
 In order for the app to function correctly, the user must set up their own environment variables. There should be a .env file containing the following:
 
-🚫These are just examples, replace them with the specifics for your app
+    *  REACT_APP_BACKENDURL - links to the backend server
 
-    *  REACT_APP_apiKey - this is your Google API key, which can be generated in the Google Cloud Console
-    *  REACT_APP_authDomain - when you set up your Firebase project, this information will be in the dashboard
-    *  REACT_APP_databaseURL - in the Firebase dashboard
-    *  REACT_APP_projectID - in the Firebase dashboard
-    *  REACT_APP_storageBucket - in the Firebase dashboard
-    *  REACT_APP_messagingSenderId - in the Firebase dashboard
-    *  REACT_APP_stripe_API - this is your public Stripe API key, generated in the Stripe dashboard
-    *  REACT_APP_backendURL - optional for your local development server
-    *  REACT_APP_clientid - this is the Stripe_connect clientID, generated in Stripe_connect settings
-    *  REACT_APP_stripe_plan - this is the ID for a second Stripe subscription plan, generated under Stripe products
+# Testing
 
-# 5️⃣ Content Licenses
+### Jest
 
-🚫For all content - images, icons, etc, use this table to document permission of use. Remove the two placeholders and add you content to this table
+- aims to work out of the box, config free, on most JavaScript projects
+- Tests are parallelized by running them in their own processes to maximize performance
 
-| Image Filename | Source / Creator | License                                                                      |
-| -------------- | ---------------- | ---------------------------------------------------------------------------- |
-| doodles.png    | Nicole Bennett   | [Creative Commons](https://www.toptal.com/designers/subtlepatterns/doodles/) |
-| rings.svg      | Sam Herbert      | [MIT](https://github.com/SamHerbert/SVG-Loaders)                             |
+# Installation Instructions
 
-# 4️⃣ Testing
-
-🚫Document what you used for testing and why
-
-# 4️⃣ Installation Instructions
-
-🚫explain how to install the required dependencies to get this project up and running with yarn and NPM
+- Fork and Clone Repository
+- CD into project-canopy-fe
+- run NPM install to download dependencies
 
 ## Other Scripts
-
-🚫replace these examples with your own
 
     * typecheck - runs the TypeScript compiler
     * build - creates a build of the application
@@ -165,12 +158,13 @@ When contributing to this repository, please first discuss the change you wish t
 Please note we have a [code of conduct](./CODE_OF_CONDUCT.md). Please follow it in all your interactions with the project.
 
 ## Issue/Bug Request
-   
- **If you are having an issue with the existing project code, please submit a bug report under the following guidelines:**
- - Check first to see if your issue has already been reported.
- - Check to see if the issue has recently been fixed by attempting to reproduce the issue using the latest master branch in the repository.
- - Create a live example of the problem.
- - Submit a detailed bug report including your environment & browser, steps to reproduce the issue, actual and expected outcomes,  where you believe the issue is originating from, and any potential solutions you have considered.
+
+**If you are having an issue with the existing project code, please submit a bug report under the following guidelines:**
+
+- Check first to see if your issue has already been reported.
+- Check to see if the issue has recently been fixed by attempting to reproduce the issue using the latest master branch in the repository.
+- Create a live example of the problem.
+- Submit a detailed bug report including your environment & browser, steps to reproduce the issue, actual and expected outcomes, where you believe the issue is originating from, and any potential solutions you have considered.
 
 ### Feature Requests
 
@@ -196,4 +190,4 @@ These contribution guidelines have been adapted from [this good-Contributing.md-
 
 ## Documentation
 
-See [Backend Documentation](🚫_link to your backend readme here_) for details on the backend of our project.
+See [Backend Documentation](https://github.com/Lambda-School-Labs/project-canopy-be) for details on the backend of our project.

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import {Link} from 'react-router-dom';
-import {Layout} from 'antd';
+import {Layout, Dropdown, Menu} from 'antd';
 import 'antd/dist/antd.css';
 import styled from 'styled-components';
 
@@ -12,16 +12,15 @@ import dashboardLight from './assets/light/dashboard.svg';
 import mapLight from './assets/light/map.svg';
 import pawLight from './assets/light/paw.svg';
 import treeLight from './assets/light/Tree.svg';
-import dashboardGreen from './assets/green/dashboard.svg';
-import mapGreen from './assets/green/map.svg';
-import pawGreen from './assets/green/paw.svg';
-import treeGreen from './assets/green/Tree.svg';
+import dashboardBlue from './assets/blue/dashboard.svg';
+import mapBlue from './assets/blue/map.svg';
+import pawBlue from './assets/blue/paw.svg';
+import treeBlue from './assets/blue/Tree.svg';
 
 const {Sider} = Layout;
 
 export const Nav = (props) =>{
     
-
     return (
         <Sider
             style={{
@@ -35,10 +34,10 @@ export const Nav = (props) =>{
             </LogoCont>    
             <NavItems>
                 
-                    <NavItem context='dashboard' imgContextL={dashboardLight} imgContextG={dashboardGreen} routeContext=''/>
-                    <NavItem context='map' imgContextL={mapLight} imgContextG={mapGreen} routeContext='maps'/>
-                    <NavItem context='species' imgContextL={pawLight} imgContextG={pawGreen} routeContext='species'/>
-                    <NavItem context='about' imgContextL={treeLight} imgContextG={treeGreen} routeContext='about'/>
+                    <NavItem context='dashboard' imgContextL={dashboardLight} imgContextG={dashboardBlue} routeContext=''/>
+                    <NavItem context='map' imgContextL={mapLight} imgContextG={mapBlue} routeContext='maps'/>
+                    <NavItem context='species' imgContextL={pawLight} imgContextG={pawBlue} routeContext='species'/>
+                    <NavItem context='about' imgContextL={treeLight} imgContextG={treeBlue} routeContext='about'/>
                 
             </NavItems>
             <NavFooter>
@@ -69,7 +68,6 @@ const NavItem = props => {
     )
 }
 
-
 const LogoCont = styled.div`
     display:flex;
     height: 15%;
@@ -97,7 +95,7 @@ const NavItems = styled.div`
         font-style:normal;
     }
     .onPage {
-        color:#45735D;
+        color:#324F7B;
         font-weight:bold;
     }
     .navItem {
@@ -106,7 +104,7 @@ const NavItems = styled.div`
         justify-items:baseline;
     }
     .navItem:hover {
-        color:#45735D;
+        color:#324F7B;
         font-weight:bold;
     }
     img {
