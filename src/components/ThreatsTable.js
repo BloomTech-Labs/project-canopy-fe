@@ -34,7 +34,7 @@ const ThreatTable = ({ tableData }) => {
 
 const mapStateToProps = state => {
   return {
-    tableData: state.threatReducer.threats
+    tableData: state.tableReducer.threats_tableData
   }
 };
 

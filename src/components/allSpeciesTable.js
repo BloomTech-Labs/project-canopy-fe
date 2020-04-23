@@ -3,7 +3,7 @@ import 'antd/dist/antd.css';
 import { Table } from 'antd';
 import { connect } from 'react-redux';
 
-const AllSpeciesTable = ({ filteredAllSpecies }) => {
+const AllSpeciesTable = ({ allSpecies }) => {
 
     const columns = [
         {
@@ -27,7 +27,7 @@ const AllSpeciesTable = ({ filteredAllSpecies }) => {
         <div style={{width:'100%'}}>
           <Table
             columns={columns}
-            dataSource={filteredAllSpecies}
+            dataSource={allSpecies}
             bordered
             pagination={false}
             scroll={{ y: 240 }}
@@ -39,7 +39,7 @@ const AllSpeciesTable = ({ filteredAllSpecies }) => {
 
 const mapStateToProps = state => {
   return {
-    filteredAllSpecies: state.speciesReducer.filteredAllSpecies
+    allSpecies: state.speciesReducer.allSpecies
   }
 };
 

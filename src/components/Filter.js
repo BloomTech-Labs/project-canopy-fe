@@ -3,49 +3,37 @@ import { Menu, Button } from 'antd';
 import styled from 'styled-components';
 
 import { connect } from 'react-redux';
-import { allCounts, countryCounts } from '../actions/chart_actions.js';
-import { getAllTableData, countryTableData } from '../actions/table_action.js';
-import { getThreatsByCountry, getAllThreats } from '../actions/threats_actions.js';
-import { allSpeciesData, 
-  filterAllSpeciesByCountry,
-  getThreatenedSpecies,
-  filterSpeciesByCountry } from '../actions/species_action.js';
+import { setFilterByCountry, setFilterByAllCRB } from '../actions/filter_actions.js'
+import { allHotspots, hotspotsByCountry, setThreatsByAll, setThreatsByCountry } from '../actions/table_action.js';
 
 function Filter(props){ 
-
-  const {
-    allCounts, 
-    countryCounts,
-    getAllTableData,
-    countryTableData,
-    getThreatsByCountry,
-    getAllThreats,
-    allSpeciesData, 
-    filterAllSpeciesByCountry,
-    speciesList,
-    getThreatenedSpecies,
-    filterSpeciesByCountry
-  } = props;
-
   const [country, setCountry] = useState(`All`);
 
+  const {
+    countries,
+    allCRB,
+    setFilterByCountry, 
+    setFilterByAllCRB,
+    allHotspots, 
+    hotspotsByCountry, 
+    setThreatsByAll,
+    setThreatsByCountry
+  } = props;
+
+
   function applyFilter(e){
-    props.toggleCollapsed()
     if(e === 'All'){
-      allCounts(); 
-      getAllTableData();
-      getAllThreats();
-      allSpeciesData();
-      getThreatenedSpecies();
+      setFilterByAllCRB(allCRB);
+      allHotspots();
+      setThreatsByAll();
     }
     else{
-      countryCounts(e);
-      countryTableData(e);
-      getThreatsByCountry(e);
-      filterAllSpeciesByCountry(e);
-      filterSpeciesByCountry(speciesList, e);
+      setFilterByCountry(countries, e);
+      hotspotsByCountry(e);
+      setThreatsByCountry(e)
     }
-  }  
+    props.toggleCollapsed()
+  };
 
   return (
         <Menu
@@ -81,21 +69,19 @@ function Filter(props){
 
 const mapStateToProps = (state) => {
   return {
-      speciesList: state.speciesReducer.filteredThreatened
+      countries: state.initialReducer.countries,
+      habitats: state.initialReducer.habitats,
+      allCRB: state.initialReducer.allCRB,
   }
 }
 
 export default connect(mapStateToProps, { 
-  allCounts, 
-  countryCounts, 
-  getAllTableData, 
-  countryTableData,
-  getThreatsByCountry,
-  getAllThreats,
-  allSpeciesData, 
-  filterAllSpeciesByCountry,
-  getThreatenedSpecies,
-  filterSpeciesByCountry })(Filter);
+  setFilterByCountry, 
+  setFilterByAllCRB,
+  allHotspots, 
+  hotspotsByCountry, 
+  setThreatsByAll,
+  setThreatsByCountry })(Filter);
 
 const StyledButton = styled(Button)`
   background-color: #45735D;
