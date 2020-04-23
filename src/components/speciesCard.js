@@ -1,10 +1,10 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components';
 import ThreatBar from './threatBar.js';
 
 // image assets
 import placeholder from './assets/image-placeholder.png'
-
+import { Modal } from 'antd';
 
 export const SpeciesCard = props => {
     const { redlistCategory } = props;
@@ -18,9 +18,14 @@ export const SpeciesCard = props => {
             return 'VU'
         }
     }
-
+    
     return (
-        <div style={{width:'22%', backgroundColor:'#FCFCFC', margin:'25px 1.5%'}}>
+        <div style={{width:'22%', backgroundColor:'#FCFCFC', margin:'25px 1.5%'}} 
+        onClick={() => {props.setModal2VisibleOnClick(true); 
+        props.setSpeciesNameFunction(props.speciesName);
+        props.setRedList(redlistCategory);
+        props.setClassNameFunction(props.className)
+        }}>
             <img src={placeholder} alt={`${props.placeholder}`} style={{width:'100%'}}/>
                 <div style={{padding:'1% 5%'}}>
                     <SmallTextSpan>{props.kingdom} - {props.className}</SmallTextSpan>
@@ -38,6 +43,8 @@ export const SpeciesCard = props => {
         </div>
     )
 };
+
+
 
 const SmallTextSpan = styled.span`
     font-family: IBM Plex Sans;
