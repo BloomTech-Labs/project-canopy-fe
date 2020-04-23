@@ -1,4 +1,4 @@
-import React, {useState, useContext} from 'react';
+import React, {useState} from 'react';
 import { Menu, Button } from 'antd';
 import styled from 'styled-components';
 
@@ -84,7 +84,7 @@ export default connect(mapStateToProps, {
   setThreatsByCountry })(Filter);
 
 const StyledButton = styled(Button)`
-  background-color: #45735D;
+  background-color: #324F7B;
   width:50%;
   border-radius:5px;
   padding:0;
