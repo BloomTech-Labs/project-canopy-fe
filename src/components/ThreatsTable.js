@@ -1,23 +1,18 @@
 import React from 'react';
 import 'antd/dist/antd.css';
 import { Table } from 'antd';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 
-const TableSetup = ({ tableData }) => {
+const ThreatTable = ({ tableData }) => {
 
     const columns = [
         {
-          title: 'Habitats',
-          dataIndex: 'habitat',
+          title: 'Threat',
+          dataIndex: 'name',
           key: 'CountryName',
         },
         {
-          title: 'Description',
-          dataIndex: 'description',
-          key:'class',
-        },
-        {
-          title: 'Number of species',
+          title: 'Number of occurances',
           dataIndex: 'count',
           key:'totalThreatened',
         },
@@ -31,7 +26,7 @@ const TableSetup = ({ tableData }) => {
             bordered
             pagination={false}
             scroll={{ y: 240 }}
-            title={() => <h2 style={{fontSize:'1.3em'}}>Top hotspot habitats</h2>}
+            title={() => <h2 style={{fontSize:'1.3em'}}>Human caused threats</h2>}
           />
         </div>
       )    
@@ -39,9 +34,8 @@ const TableSetup = ({ tableData }) => {
 
 const mapStateToProps = state => {
   return {
-    tableData: state.tableReducer.hotspot_tableData
+    tableData: state.tableReducer.threats_tableData
   }
 };
 
-export default connect(mapStateToProps,{})(TableSetup);
-
+export default connect(mapStateToProps,{})(ThreatTable);

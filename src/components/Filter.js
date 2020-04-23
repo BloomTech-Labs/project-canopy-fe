@@ -3,32 +3,37 @@ import { Menu, Button } from 'antd';
 import styled from 'styled-components';
 
 import { connect } from 'react-redux';
-import { allCounts, countryCounts } from '../actions/chart_actions.js';
-import { getAllTableData, countryTableData } from '../actions/table_action.js';
+import { setFilterByCountry, setFilterByAllCRB } from '../actions/filter_actions.js'
+import { allHotspots, hotspotsByCountry, setThreatsByAll, setThreatsByCountry } from '../actions/table_action.js';
 
 function Filter(props){ 
-
-  const {
-    allCounts, 
-    countryCounts,
-    getAllTableData,
-    countryTableData
-  } = props;
-
   const [country, setCountry] = useState(`All`);
 
+  const {
+    countries,
+    allCRB,
+    setFilterByCountry, 
+    setFilterByAllCRB,
+    allHotspots, 
+    hotspotsByCountry, 
+    setThreatsByAll,
+    setThreatsByCountry
+  } = props;
+
+
   function applyFilter(e){
-    props.toggleCollapsed()
-    if(e == 'All'){
-      allCounts(); 
-      getAllTableData();
+    if(e === 'All'){
+      setFilterByAllCRB(allCRB);
+      allHotspots();
+      setThreatsByAll();
     }
     else{
-      countryCounts(e)
-      countryTableData(e)
+      setFilterByCountry(countries, e);
+      hotspotsByCountry(e);
+      setThreatsByCountry(e)
     }
-    console.log(e)
-  }  
+    props.toggleCollapsed()
+  };
 
   return (
         <Menu
@@ -42,14 +47,17 @@ function Filter(props){
             key="sub1"
             title={<h1>Country of Occurence</h1>}
           >
+
             <Menu.Item key="1" onClick={() => setCountry('Cameroon')}>Cameroon</Menu.Item>
             <Menu.Item key="2" onClick={() => setCountry('Gabon')}>Gabon</Menu.Item>
             <Menu.Item key="3" onClick={() => setCountry('Congo')}>Republic of Congo</Menu.Item>
             <Menu.Item key="4" onClick={() => setCountry('Congo, The Democratic Republic of the')}>Democratic Republic of Congo (DRC)</Menu.Item>
-            <Menu.Item key="5" onClick={() => setCountry('Equitorial Guinea')}>Equitorial Guinea</Menu.Item>
+            <Menu.Item key="5" onClick={() => setCountry('Equatorial Guinea')}>Equitorial Guinea</Menu.Item>
             <Menu.Item key="6" onClick={() => setCountry('Central African Republic')}>Central African Republic (CAR)</Menu.Item>
             <Menu.Item key="7" onClick={() => setCountry('All')}>All Countries</Menu.Item>
+
           </Menu.ItemGroup>
+
           <StyledButton onClick={() =>
               applyFilter(country)
           }>
@@ -57,9 +65,23 @@ function Filter(props){
           </StyledButton>
         </Menu>
     );
+};
+
+const mapStateToProps = (state) => {
+  return {
+      countries: state.initialReducer.countries,
+      habitats: state.initialReducer.habitats,
+      allCRB: state.initialReducer.allCRB,
+  }
 }
 
-export default connect(null, { allCounts, countryCounts, getAllTableData, countryTableData })(Filter);
+export default connect(mapStateToProps, { 
+  setFilterByCountry, 
+  setFilterByAllCRB,
+  allHotspots, 
+  hotspotsByCountry, 
+  setThreatsByAll,
+  setThreatsByCountry })(Filter);
 
 const StyledButton = styled(Button)`
   background-color: #45735D;
