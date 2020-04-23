@@ -39,7 +39,7 @@ const TableSetup = ({ tableData }) => {
 
 const mapStateToProps = state => {
   return {
-    tableData: state.tableReducer.tableData
+    tableData: state.tableReducer.hotspot_tableData
   }
 };
 

@@ -43,7 +43,7 @@ const Species = ({ speciesList }) => {
 
 const mapStateToProps = (state) => {
     return {
-        speciesList: state.speciesReducer.filteredThreatened
+        speciesList: state.speciesReducer.threatenedSpecies
     }
 }
 
