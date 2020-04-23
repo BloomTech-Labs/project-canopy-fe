@@ -10,7 +10,7 @@ export const Overview = () => {
                 style={{backgroundColor:'#FEFEFE', margin:'0 50px', borderRadius:'5px'}}
             >
                 <span style={{fontSize:'1em', color:'#9F9F9F'}}>Overview of the entire Congo Basin Rainforest</span>
-                <Row>
+                <Row style={{margin:'2% 0 1% 0'}}>
                     <Col span={4} />
                     <Col span={16}>
                         <Chart />

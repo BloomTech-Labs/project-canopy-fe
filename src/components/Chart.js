@@ -49,27 +49,42 @@ const Chart = (props) => {
         boxWidth:15,
       }
     },
-    scales: {
-    xAxes: [{
-        stacked: true,
-        id: "bar-x-axis1",
-        barThickness: 65,
-      }, {
-        display: false,
-        stacked: true,
-        id: "bar-x-axis2",
-        barThickness: 65,
-        // these are needed because the bar controller defaults set only the first x axis properties
-        offset: true
-      }],
-      yAxes: [{
-        stacked: false,
-        ticks: {
-          beginAtZero: true
-        },
-      }],
+      scales: {
+        xAxes: [{
+            stacked: true,
+            id: "bar-x-axis1",
+            barThickness: 65,
+            gridLines: {
+              display:false,
+              drawBorder:false,
+            }
+          }, 
+          {
+            display: false,
+            stacked: true,
+            id: "bar-x-axis2",
+            barThickness: 65,
+            // these are needed because the bar controller defaults set only the first x axis properties
+            offset: true,
+            gridLines: {
+              display:false,
+              drawBorder:false,
+            }
+          }],
+        yAxes: [{
+          stacked: false,
+          ticks: {
+            maxTicksLimit:5,
+            beginAtZero: true
+          },
+          gridLines: {
+            zeroLineColor:'#FFFFFF',
+            borderDash:[2],
+            drawBorder:false,
+          }
+        }],
 
-    }, 
+    },
   };
 
   const chartConfig = {

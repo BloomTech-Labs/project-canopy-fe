@@ -9,16 +9,14 @@ import ThreatTable from './ThreatsTable.js';
 import AllSpeciesTable from './allSpeciesTable';
 import ChartSmall from './ChartSmall'
 
-const {Header, Content} = Layout;
+const { Content} = Layout;
 
 export const Dashboard = () => {
     return(
         <div>
-            <Header style={{backgroundColor:'#F0F0F0', height:'15vh'}}>
-                
-                <Heading context={'biodiversity'}/>
+   
+            <Heading context={'biodiversity'}/>
 
-            </Header>
                
             <Content>
                 
@@ -27,7 +25,7 @@ export const Dashboard = () => {
                 <Row style={{backgroundColor:'#FEFEFE', margin:'2vh 50px', borderRadius:'5px'}}>
                     <SmallChartComponent TitleContext={'Threat Levels by taxonomic class'}/>
                     <Col span={1} style={{backgroundColor:'#F0F0F0'}}/>
-                    <SmallChartComponent context={'Threatened vs Protected Species'}/>
+                    <SmallChartComponent TitleContext={'Threatened vs Protected Species'}/>
                 </Row>
                 <Row style={{backgroundColor:'#FEFEFE', margin:'2vh 50px', borderRadius:'5px', alignContent:'center'}}>
                    <Table /> 

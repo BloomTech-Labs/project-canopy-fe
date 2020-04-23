@@ -37,6 +37,16 @@ You can find the deployed project at [AWS Amplify](https://master.d2m0cg5et4t40w
 <br>
 <br>
 
+## Data Scientists
+
+|                                         [Ray Selent](https://github.com/rselent)                                         |                                      [James Luttringer](https://github.com/jamesluttringer2019)                                      |                                       [Jonathon Ross](https://github.com/jwross24)                                        |                                      [Rong(Julie) Wang](https://github.com/)                                      |
+| :----------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------: |
+| [<img src="https://ca.slack-edge.com/T4JUEB3ME-UPM6D4SCX-6a9946267145-512" width = "200" />](https://github.com/rselent) | [<img src="https://ca.slack-edge.com/T4JUEB3ME-UP6CYGVU5-0b0b4887da6b-512" width = "200" />](https://github.com/jamesluttringer2019) | [<img src="https://ca.slack-edge.com/T4JUEB3ME-UC5BT7GP4-30b66a7d3ba8-512" width = "200" />](https://github.com/jwross24) | [<img src="https://ca.slack-edge.com/T4JUEB3ME-UPJDFRLDA-a51c5f7382c2-512" width = "200" />](https://github.com/) |
+|                   [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/rselent)                   |                   [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/jamesluttringer2019)                   |                   [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/jwross24)                   |                   [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/)                   |
+
+<br>
+<br>
+
 ![MIT](https://img.shields.io/packagist/l/doctrine/orm.svg)
 ![React](https://img.shields.io/badge/react-v16.7.0--alpha.2-blue.svg)
 ![Typescript](https://img.shields.io/npm/types/typescript.svg?style=flat)
