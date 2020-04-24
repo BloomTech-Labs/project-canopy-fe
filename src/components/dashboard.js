@@ -63,7 +63,7 @@ const SmallChartComponent = props => {
         <Col span={11} style={{margin:'0 auto'}}>
             <div style={{padding:'2%'}}>
                 <ChartTitle>{`${props.TitleContext}`}</ChartTitle>
-                <ChartSubTitle>Overview of the {`${props.title}`}</ChartSubTitle>
+                <ChartSubTitle>Overview of {`${props.title}`}</ChartSubTitle>
                 <ChartSmall />
             </div>
         </Col>
