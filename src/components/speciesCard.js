@@ -9,48 +9,21 @@ import arrowUp from './assets/arrow/arrowUp.svg'
 
 export const SpeciesCard = props => {
     const { redlistCategory, populationTrend, className, commonName, scientificName, kingdom } = props;
-
-    const arrow = function(trend){
-        if(trend === 'Decreasing'){
-            return arrowDown;
-        } else if(trend === 'Increasing'){
-            return arrowUp;
-        } else {
-            return null;
-        }
-    };
-    
-    const rank = function(cat){
-        if(cat === 'Critically Endangered'){
-            return 'CT'
-        } else if (cat === 'Endangered'){
-            return 'EN'
-        } else if (cat === 'Vulnerable'){
-            return 'VU'
-        }
-    };
     
     let threatColor = '';
     
     if(redlistCategory === 'Critically Endangered'){
-        threatColor = '#EE404E'
+        threatColor = '10px solid #EE404E'
     } else if (redlistCategory === 'Endangered'){
-        threatColor = '#FEA482'
+        threatColor = '10px solid #FEA482'
     } else if (redlistCategory === 'Vulnerable'){
-        threatColor = '#FED0A3'
+        threatColor = '10px solid #FED0A3'
     }
     
-    const Card = styled.div`
-        width: 22%;
-        min-width: 260px;
-        background-color: #FCFCFC;
-        margin: 25px 1.5%;
-        border-bottom: 10px solid ${threatColor};
-        border-radius:0 0 4px 4px;
-    `;
+    
 
     return (
-        <Card>
+        <Card threatColor={threatColor}>
             <img src={placeholder} alt='placeholder' style={{width:'100%'}}/>
                 <div style={{padding:'1% 5%', height:'130px'}}>
                     <SmallTextSpan>{kingdom} - {className}</SmallTextSpan>
@@ -68,6 +41,37 @@ export const SpeciesCard = props => {
         </Card>
     )
 };
+
+const rank = function(cat){
+    if(cat === 'Critically Endangered'){
+        return 'CT'
+    } else if (cat === 'Endangered'){
+        return 'EN'
+    } else if (cat === 'Vulnerable'){
+        return 'VU'
+    }
+};
+
+const arrow = function(trend){
+    if(trend === 'Decreasing'){
+        return arrowDown;
+    } else if(trend === 'Increasing'){
+        return arrowUp;
+    } else {
+        return null;
+    }
+};
+
+const Card = styled.div.attrs(props => ({
+    threatColor: props.threatColor
+}))`
+        width: 22%;
+        min-width: 260px;
+        background-color: #FCFCFC;
+        margin: 25px 1.5%;
+        border-bottom: ${props => props.threatColor};
+        border-radius:0 0 4px 4px;
+    `;
 
 const SmallTextSpan = styled.span`
     font-family: IBM Plex Sans;

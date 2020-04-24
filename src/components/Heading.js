@@ -3,19 +3,36 @@ import 'antd/dist/antd.css'
 import { Layout, Button, Row, Col, Input} from 'antd';
 import styled from 'styled-components';
 import Filter from './Filter'
+import Fuse from 'fuse.js';
 
 const { Header } = Layout;
 const { Search } = Input;
 
+const options = {
+  shouldSort: true,
+  includeScore: true,
+  threshold: 0.6,
+  location: 0,
+  distance: 100,
+  minMatchCharLength: 4,
+  keys: [
+    "className",
+    "scientificName",
+    "commonName",
+    "populationTrend",
+    "redlistCategory"
+  ]
+};
+
 export const Heading = props =>{
-
-
   const [collapsed, setCollapsed] = useState([true]);
   const [hidden, setHidden] = useState([false])
   function toggleCollapsed(){
     setHidden(!hidden)
     setCollapsed(!collapsed)
-  }
+  };
+
+  const fuse = new Fuse(props.speciesList, options)
 
   return (
     <Header style={{backgroundColor:'#F0F0F0', height:'15vh'}}>
@@ -23,12 +40,12 @@ export const Heading = props =>{
       <div style={{position:'relative'}}>
         <Row>
           <Col span={20}>
+           { props.context === 'species' &&(
             <Search
               placeholder='Search...'
-              onChange={value => console.log(value)} // Placeholder for search value functionality
-              onSearch={value => console.log(value)} // Placeholder for search functionality, activates on either 'Enter' or clicking icon
+              onSearch={value => { props.setResults(fuse.search(value)); }}
               style={{ width:'50%', borderRadius:'5px', borderColor:'#F0F0F0' }}
-            />
+            /> )}
           </Col>
           <Col span={4}>
                 <StyledButton onClick={toggleCollapsed}><span>Filter</span></StyledButton>
