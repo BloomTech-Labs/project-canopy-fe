@@ -26,7 +26,7 @@ const ThreatTable = ({ tableData }) => {
             bordered
             pagination={false}
             scroll={{ y: 240 }}
-            title={() => <h2 style={{fontSize:'1.3em'}}>Human caused threats</h2>}
+            title={() => <h2 style={{fontSize:'1.3em'}}>Threats to species</h2>}
           />
         </div>
       )    

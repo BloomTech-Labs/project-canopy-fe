@@ -9,11 +9,9 @@ import styled from 'styled-components';
 import treeLogo from './assets/treeLogo.svg';
 import pcLogo from './assets/pcLogo.svg';
 import dashboardLight from './assets/light/dashboard.svg';
-import mapLight from './assets/light/map.svg';
 import pawLight from './assets/light/paw.svg';
 import treeLight from './assets/light/Tree.svg';
 import dashboardBlue from './assets/blue/dashboard.svg';
-import mapBlue from './assets/blue/map.svg';
 import pawBlue from './assets/blue/paw.svg';
 import treeBlue from './assets/blue/Tree.svg';
 
@@ -35,7 +33,6 @@ export const Nav = (props) =>{
             <NavItems>
                 
                     <NavItem context='dashboard' imgContextL={dashboardLight} imgContextG={dashboardBlue} routeContext=''/>
-                    <NavItem context='map' imgContextL={mapLight} imgContextG={mapBlue} routeContext='maps'/>
                     <NavItem context='species' imgContextL={pawLight} imgContextG={pawBlue} routeContext='species'/>
                     <NavItem context='about' imgContextL={treeLight} imgContextG={treeBlue} routeContext='about'/>
                 

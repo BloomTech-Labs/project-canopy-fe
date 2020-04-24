@@ -89,6 +89,10 @@ Project Canopy's mission is to de-fragment and de-silo data relevant to the Cong
 
 - Data visualization
 
+#### Fuse.js
+
+- An easy to use and customizable fuzzy search library
+
 #### Ant Design
 
 - Enterprise-class UI designed for web applications

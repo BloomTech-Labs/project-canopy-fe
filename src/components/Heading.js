@@ -1,21 +1,43 @@
 import React, {useState} from 'react';
+import { connect } from 'react-redux';
 import 'antd/dist/antd.css'
 import { Layout, Button, Row, Col, Input} from 'antd';
 import styled from 'styled-components';
 import Filter from './Filter'
+import Fuse from 'fuse.js';
 
 const { Header } = Layout;
 const { Search } = Input;
 
-export const Heading = props =>{
+const options = {
+  shouldSort: true,
+  includeScore: true,
+  threshold: 0.6,
+  location: 0,
+  distance: 100,
+  minMatchCharLength: 4,
+  keys: [
+    "className",
+    "scientificName",
+    "commonName",
+    "populationTrend",
+    "redlistCategory"
+  ]
+};
 
-
+const Heading = props =>{
   const [collapsed, setCollapsed] = useState([true]);
   const [hidden, setHidden] = useState([false])
   function toggleCollapsed(){
     setHidden(!hidden)
     setCollapsed(!collapsed)
-  }
+  };
+
+  let fuse = [];
+
+  if(props.context === 'species'){
+    fuse = new Fuse(props.speciesList, options)
+  };
 
   return (
     <Header style={{backgroundColor:'#F0F0F0', height:'15vh'}}>
@@ -23,12 +45,12 @@ export const Heading = props =>{
       <div style={{position:'relative'}}>
         <Row>
           <Col span={20}>
+           { props.context === 'species' &&(
             <Search
               placeholder='Search...'
-              onChange={value => console.log(value)} // Placeholder for search value functionality
-              onSearch={value => console.log(value)} // Placeholder for search functionality, activates on either 'Enter' or clicking icon
+              onSearch={value => { props.setResults(fuse.search(value)); }}
               style={{ width:'50%', borderRadius:'5px', borderColor:'#F0F0F0' }}
-            />
+            /> )}
           </Col>
           <Col span={4}>
                 <StyledButton onClick={toggleCollapsed}><span>Filter</span></StyledButton>
@@ -36,7 +58,7 @@ export const Heading = props =>{
         </Row>
         <Row>
             <Col span={22}>
-                <StyledSpan>Overview of {`${props.context}`} in the Congo Basin Rainforest</StyledSpan>
+                <StyledSpan>Overview of {`${props.context}`} in {props.title}</StyledSpan>
             </Col>
         </Row>
         {!hidden === true &&
@@ -48,7 +70,15 @@ export const Heading = props =>{
       </div>
     </Header>
   )
+};
+
+const mapStateToProps = (state) => {
+  return {
+    title: state.filterReducer.filterTitle
+  }
 }
+
+export default connect(mapStateToProps,{})(Heading)
 
 const StyledButton = styled(Button)`
   background-color: #324F7B;

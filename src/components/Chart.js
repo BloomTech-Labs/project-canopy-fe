@@ -105,6 +105,7 @@ const mapStateToProps = state => {
   return {
     threatenedCounts: state.chartReducer.threatenedCounts,
     allCounts: state.chartReducer.allCounts,
+    
   }
 }
 export default connect(mapStateToProps,{})(Chart);
