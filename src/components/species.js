@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { Layout, Row, Col } from 'antd';
-import { Heading } from './Heading';
+import Heading from './Heading';
 import { SpeciesCard } from './speciesCard';
 
 

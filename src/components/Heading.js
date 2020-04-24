@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import { connect } from 'react-redux';
 import 'antd/dist/antd.css'
 import { Layout, Button, Row, Col, Input} from 'antd';
 import styled from 'styled-components';
@@ -24,7 +25,7 @@ const options = {
   ]
 };
 
-export const Heading = props =>{
+const Heading = props =>{
   const [collapsed, setCollapsed] = useState([true]);
   const [hidden, setHidden] = useState([false])
   function toggleCollapsed(){
@@ -57,7 +58,7 @@ export const Heading = props =>{
         </Row>
         <Row>
             <Col span={22}>
-                <StyledSpan>Overview of {`${props.context}`} in the Congo Basin Rainforest</StyledSpan>
+                <StyledSpan>Overview of {`${props.context}`} in {props.title}</StyledSpan>
             </Col>
         </Row>
         {!hidden === true &&
@@ -69,7 +70,15 @@ export const Heading = props =>{
       </div>
     </Header>
   )
+};
+
+const mapStateToProps = (state) => {
+  return {
+    title: state.filterReducer.filterTitle
+  }
 }
+
+export default connect(mapStateToProps,{})(Heading)
 
 const StyledButton = styled(Button)`
   background-color: #324F7B;

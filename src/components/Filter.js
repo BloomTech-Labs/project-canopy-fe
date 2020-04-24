@@ -3,7 +3,7 @@ import { Menu, Button } from 'antd';
 import styled from 'styled-components';
 
 import { connect } from 'react-redux';
-import { setFilterByCountry, setFilterByAllCRB } from '../actions/filter_actions.js'
+import { setFilterByCountry, setFilterByAllCRB } from '../actions/filter_actions.js';
 import { allHotspots, hotspotsByCountry, setThreatsByAll, setThreatsByCountry } from '../actions/table_action.js';
 
 function Filter(props){ 
@@ -17,18 +17,19 @@ function Filter(props){
     allHotspots, 
     hotspotsByCountry, 
     setThreatsByAll,
-    setThreatsByCountry
+    setThreatsByCountry,
   } = props;
 
 
   function applyFilter(e){
+    // console.log({title:countryTitles[e]})
     if(e === 'All'){
-      setFilterByAllCRB(allCRB);
+      setFilterByAllCRB(allCRB, countryTitles[e]);
       allHotspots();
       setThreatsByAll();
     }
     else{
-      setFilterByCountry(countries, e);
+      setFilterByCountry(countries, e, countryTitles[e]);
       hotspotsByCountry(e);
       setThreatsByCountry(e)
     }
@@ -81,7 +82,7 @@ export default connect(mapStateToProps, {
   allHotspots, 
   hotspotsByCountry, 
   setThreatsByAll,
-  setThreatsByCountry })(Filter);
+  setThreatsByCountry,})(Filter);
 
 const StyledButton = styled(Button)`
   background-color: #324F7B;
@@ -98,3 +99,13 @@ const StyledButton = styled(Button)`
   }
   
 `;
+
+const countryTitles = {
+  'Cameroon': 'Cameroon',
+  'Gabon': 'Gabon',
+  'Congo': 'Republic of Congo',
+  'Congo, The Democratic Republic of the': 'Democratic Republic of Congo (DRC)',
+  'Equatorial Guinea': 'Equitorial Guinea',
+  'Central African Republic': 'Central African Republic (CAR)',
+  'All': 'the Congo Basin Rainforest'
+};
