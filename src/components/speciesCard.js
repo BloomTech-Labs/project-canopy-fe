@@ -25,6 +25,7 @@ export const SpeciesCard = props => {
         props.setSpeciesNameFunction(props.speciesName);
         props.setRedList(redlistCategory);
         props.setClassNameFunction(props.className)
+        props.setScientificNameFunction(props.scientificName)
         }}>
             <img src={placeholder} alt={`${props.placeholder}`} style={{width:'100%'}}/>
                 <div style={{padding:'1% 5%'}}>

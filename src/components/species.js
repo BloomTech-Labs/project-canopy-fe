@@ -3,16 +3,10 @@ import { connect } from 'react-redux';
 import { Layout, Row, Col } from 'antd';
 import { Heading } from './Heading';
 import { SpeciesCard } from './speciesCard';
-<<<<<<< HEAD
 import { Modal } from 'antd';
 import axios from 'axios'
 import placeholder from './assets/image-placeholder.png'
-const { Header, Content } = Layout;
-=======
-
-
 const { Content } = Layout;
->>>>>>> 7554f570d298e3a63272e4a4599f23f2b8b7f48a
 
 
 const Species = ({ speciesList }) => {
@@ -21,15 +15,18 @@ const Species = ({ speciesList }) => {
     const [redlistCategory, setRedlistCategory] = useState('')
     const [className, setClassName] = useState('')
     const [cardData, setCardData] = useState([])
+    const [scientificName, setScientificName]= useState('')
 
     useEffect(() => {
-        axios.post(`http://localhost:5000"/api/species`)
-        .then(response => {
-            console.log(response)
-            setCardData(response)
+        axios.post(`http://localhost:5000"/api/species/`, scientificName)
+        .then(res => {
+            console.log('res', res)
+            setCardData(res.data)
         })
     },[])
-    console.log(cardData)
+
+    console.log('cardData',cardData)
+
     function setModal2VisibleOnClick(modal2Visible) {
         setModal2Visible( modal2Visible );
       }
@@ -45,6 +42,10 @@ const Species = ({ speciesList }) => {
       function setClassNameFunction(data){
         setClassName(data)
       }
+      function setScientificNameFunction(data){
+        setScientificName(data)
+      }
+
 
       function threatColor(redlistCategory){
       if(redlistCategory === 'Critically Endangered'){
@@ -88,6 +89,7 @@ const Species = ({ speciesList }) => {
                                         setSpeciesNameFunction={setSpeciesNameFunction}
                                         setRedList={setRedList}
                                         setClassNameFunction={setClassNameFunction}
+                                        setScientificNameFunction={setScientificNameFunction}
                                     />
                         })}
                     </Col>
