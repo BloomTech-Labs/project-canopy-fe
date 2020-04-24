@@ -32,7 +32,11 @@ export const Heading = props =>{
     setCollapsed(!collapsed)
   };
 
-  const fuse = new Fuse(props.speciesList, options)
+  let fuse = [];
+
+  if(props.context === 'species'){
+    fuse = new Fuse(props.speciesList, options)
+  };
 
   return (
     <Header style={{backgroundColor:'#F0F0F0', height:'15vh'}}>
