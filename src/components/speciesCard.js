@@ -1,13 +1,24 @@
 import React from 'react';
 import styled from 'styled-components';
-import ThreatBar from './threatBar.js';
+
 
 // image assets
-import placeholder from './assets/image-placeholder.png'
-
+import placeholder from './assets/image-placeholder.png';
+import arrowDown from './assets/arrow/arrowDown.svg'
+import arrowUp from './assets/arrow/arrowUp.svg'
 
 export const SpeciesCard = props => {
-    const { redlistCategory } = props;
+    const { redlistCategory, populationTrend, className, commonName, scientificName, kingdom } = props;
+
+    const arrow = function(trend){
+        if(trend === 'Decreasing'){
+            return arrowDown;
+        } else if(trend === 'Increasing'){
+            return arrowUp;
+        } else {
+            return null;
+        }
+    };
     
     const rank = function(cat){
         if(cat === 'Critically Endangered'){
@@ -17,25 +28,44 @@ export const SpeciesCard = props => {
         } else if (cat === 'Vulnerable'){
             return 'VU'
         }
+    };
+    
+    let threatColor = '';
+    
+    if(redlistCategory === 'Critically Endangered'){
+        threatColor = '#EE404E'
+    } else if (redlistCategory === 'Endangered'){
+        threatColor = '#FEA482'
+    } else if (redlistCategory === 'Vulnerable'){
+        threatColor = '#FED0A3'
     }
+    
+    const Card = styled.div`
+        width: 22%;
+        min-width: 260px;
+        background-color: #FCFCFC;
+        margin: 25px 1.5%;
+        border-bottom: 10px solid ${threatColor};
+        border-radius:0 0 4px 4px;
+    `;
 
     return (
-        <div style={{width:'22%', backgroundColor:'#FCFCFC', margin:'25px 1.5%'}}>
-            <img src={placeholder} alt={`${props.placeholder}`} style={{width:'100%'}}/>
-                <div style={{padding:'1% 5%'}}>
-                    <SmallTextSpan>{props.kingdom} - {props.className}</SmallTextSpan>
-                    <CommonName>{props.speciesName}</CommonName>
-                    <BinomialName>{props.scientificName}</BinomialName> 
+        <Card>
+            <img src={placeholder} alt='placeholder' style={{width:'100%'}}/>
+                <div style={{padding:'1% 5%', height:'130px'}}>
+                    <SmallTextSpan>{kingdom} - {className}</SmallTextSpan>
+                    <CommonName>{commonName ? commonName : props.speciesName}</CommonName>
+                    <BinomialName>{scientificName}</BinomialName> 
                 </div>
                 <div style={{padding:'0 5% 0 5%', margin:'0', display:'flex', flexDirection:'row', justifyContent:'space-between'}}>
+                    {/* <Spacer/> */}
                     <div>
-                        {/* <SmallTextSpan>Population</SmallTextSpan>
-                        <p>status prop <img src={arrowDown} /></p>   */}
+                        <SmallTextSpan>Population</SmallTextSpan>
+                        <p> {populationTrend} <img src={arrow(populationTrend)} /></p>  
                     </div>
                     <ThreatStatus>{rank(redlistCategory)}</ThreatStatus>
                 </div>
-                <ThreatBar redlistCategory={redlistCategory}/>
-        </div>
+        </Card>
     )
 };
 

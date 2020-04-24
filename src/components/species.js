@@ -25,6 +25,8 @@ const Species = ({ speciesList }) => {
                                         scientificName={species.scientificName}
                                         kingdom={species.kingdomName}
                                         phylum={species.phylumName}
+                                        populationTrend={species.populationTrend}
+                                        commonName={species.commonName}
                                     />
                              
                         })}
