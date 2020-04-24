@@ -191,9 +191,9 @@ const Species = ({ speciesList }) => {
             </div>
             <div style={{width:'50%'}}>
                 <p style={bolded}>Class: <div style={inlineBlock}>{className}</div></p>
-                    <p>
+                    <p style={bolded}> Habitat:
                         {habitat.map((habitat) => {
-                                return <div>{habitat.name}</div>
+                                return <div style={{ fontWeight: 'normal', display:'inline-block' }}>{habitat.name}</div>
                             })}
                     </p>
             </div>
