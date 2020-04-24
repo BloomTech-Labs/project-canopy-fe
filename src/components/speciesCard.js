@@ -1,17 +1,12 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
 
-<<<<<<< HEAD
-// image assets
-import placeholder from './assets/image-placeholder.png'
 import { Modal } from 'antd';
-=======
 
 // image assets
 import placeholder from './assets/image-placeholder.png';
 import arrowDown from './assets/arrow/arrowDown.svg'
 import arrowUp from './assets/arrow/arrowUp.svg'
->>>>>>> aa30bf5902cfee93068664996a55e34285e397c9
 
 export const SpeciesCard = props => {
     const { redlistCategory, populationTrend, className, commonName, scientificName, kingdom } = props;
@@ -25,32 +20,18 @@ export const SpeciesCard = props => {
     } else if (redlistCategory === 'Vulnerable'){
         threatColor = '10px solid #FED0A3'
     }
-    
-<<<<<<< HEAD
     return (
-        <div style={{width:'22%', backgroundColor:'#FCFCFC', margin:'25px 1.5%'}} 
-        onClick={() => {props.setModal2VisibleOnClick(true); 
+        <Card threatColor={threatColor} onClick={() => {props.setModal2VisibleOnClick(true); 
         props.setSpeciesNameFunction(props.speciesName);
         props.setRedList(redlistCategory);
-        props.setClassNameFunction(props.className)
-        props.setScientificNameFunction(props.scientificName)
-        }}>
-            <img src={placeholder} alt={`${props.placeholder}`} style={{width:'100%'}}/>
-                <div style={{padding:'1% 5%'}}>
-                    <SmallTextSpan>{props.kingdom} - {props.className}</SmallTextSpan>
-                    <CommonName>{props.speciesName}</CommonName>
-                    <BinomialName>{props.scientificName}</BinomialName> 
-=======
-    
+        props.setClassNameFunction(className)
+        props.setScientificNameFunction(scientificName)}}>
 
-    return (
-        <Card threatColor={threatColor}>
             <img src={placeholder} alt='placeholder' style={{width:'100%'}}/>
                 <div style={{padding:'1% 5%', height:'130px'}}>
                     <SmallTextSpan>{kingdom} - {className}</SmallTextSpan>
                     <CommonName>{commonName ? commonName : props.speciesName}</CommonName>
                     <BinomialName>{scientificName}</BinomialName> 
->>>>>>> aa30bf5902cfee93068664996a55e34285e397c9
                 </div>
                 <div style={{padding:'0 5% 0 5%', margin:'0', display:'flex', flexDirection:'row', justifyContent:'space-between'}}>
                     {/* <Spacer/> */}
@@ -64,9 +45,6 @@ export const SpeciesCard = props => {
     )
 };
 
-<<<<<<< HEAD
-
-=======
 const rank = function(cat){
     if(cat === 'Critically Endangered'){
         return 'CT'
@@ -97,7 +75,6 @@ const Card = styled.div.attrs(props => ({
         border-bottom: ${props => props.threatColor};
         border-radius:0 0 4px 4px;
     `;
->>>>>>> aa30bf5902cfee93068664996a55e34285e397c9
 
 const SmallTextSpan = styled.span`
     font-family: IBM Plex Sans;
