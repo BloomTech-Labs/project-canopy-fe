@@ -8,7 +8,7 @@ import { getCountries, getAllCRB, getHabitats } from './actions/initial_actions.
 import { chartCounts } from './actions/chart_actions.js';
 import { setSpeciesData } from './actions/species_action.js';
 import { allHotspots, setThreatsByAll } from './actions/table_action.js';
-import { Dashboard } from './components/dashboard.js';
+import Dashboard from './components/dashboard.js';
 import Species from './components/species';
 
  

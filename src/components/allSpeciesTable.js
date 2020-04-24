@@ -31,7 +31,7 @@ const AllSpeciesTable = ({ allSpecies }) => {
             bordered
             pagination={false}
             scroll={{ y: 240 }}
-            title={() => <h2 style={{fontSize:'1.3em'}}>All Species List</h2>}
+            title={() => <h2 style={{fontSize:'1.3em'}}>Species List</h2>}
           />
         </div>
       )    

@@ -1,7 +1,8 @@
 import React from 'react';
 import 'antd/dist/antd.css';
 import {Layout, Row, Col} from 'antd';
-import {Heading} from './Heading';
+import { connect } from 'react-redux';
+import Heading from './Heading';
 import {Overview} from './Overview';
 import styled from 'styled-components'
 import Table from './Table';
@@ -11,7 +12,7 @@ import ChartSmall from './ChartSmall'
 
 const { Content} = Layout;
 
-export const Dashboard = () => {
+const Dashboard = (props) => {
     return(
         <div>
    
@@ -20,12 +21,12 @@ export const Dashboard = () => {
                
             <Content>
                 
-                <Overview />
+                <Overview title={props.title}/>
                 
                 <Row style={{backgroundColor:'#FEFEFE', margin:'2vh 50px', borderRadius:'5px'}}>
-                    <SmallChartComponent TitleContext={'Threat Levels by taxonomic class'}/>
+                    <SmallChartComponent TitleContext={'Threat Levels by taxonomic class'} title={props.title}/>
                     <Col span={1} style={{backgroundColor:'#F0F0F0'}}/>
-                    <SmallChartComponent TitleContext={'Threatened vs Protected Species'}/>
+                    <SmallChartComponent TitleContext={'Threatened vs Protected Species'} title={props.title}/>
                 </Row>
                 <Row style={{backgroundColor:'#FEFEFE', margin:'2vh 50px', borderRadius:'5px', alignContent:'center'}}>
                    <Table /> 
@@ -41,6 +42,14 @@ export const Dashboard = () => {
     )
 };
 
+const mapStateToProps = (state) => {
+    return {
+      title: state.filterReducer.filterTitle
+    }
+  }
+
+export default connect(mapStateToProps, {})(Dashboard)
+
 const ChartTitle = styled.h2`
     margin:0;
     font-size:1.3em;
@@ -54,7 +63,7 @@ const SmallChartComponent = props => {
         <Col span={11} style={{margin:'0 auto'}}>
             <div style={{padding:'2%'}}>
                 <ChartTitle>{`${props.TitleContext}`}</ChartTitle>
-                <ChartSubTitle>Overview of the entire Congo Basin Rainforest</ChartSubTitle>
+                <ChartSubTitle>Overview of {`${props.title}`}</ChartSubTitle>
                 <ChartSmall />
             </div>
         </Col>

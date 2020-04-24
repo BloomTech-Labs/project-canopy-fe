@@ -1,7 +1,11 @@
+<<<<<<< HEAD
 import React, {useState, useEffect} from 'react';
+=======
+import React, { useState, useEffect } from 'react';
+>>>>>>> aa30bf5902cfee93068664996a55e34285e397c9
 import { connect } from 'react-redux';
 import { Layout, Row, Col } from 'antd';
-import { Heading } from './Heading';
+import Heading from './Heading';
 import { SpeciesCard } from './speciesCard';
 import { Modal } from 'antd';
 import axios from 'axios'
@@ -10,6 +14,7 @@ const { Content } = Layout;
 
 
 const Species = ({ speciesList }) => {
+<<<<<<< HEAD
     const [modal2Visible, setModal2Visible] = useState(false);
     const [speciesName, setSpeciesName] = useState('')
     const [redlistCategory, setRedlistCategory] = useState('')
@@ -30,6 +35,18 @@ const Species = ({ speciesList }) => {
     function setModal2VisibleOnClick(modal2Visible) {
         setModal2Visible( modal2Visible );
       }
+=======
+    const [ species, setSpecies ] = useState(speciesList)
+    const [ results, setResults ] = useState([])
+
+    useEffect(() => {
+        if(results.length > 0){
+            setSpecies(results.map(result => result.item))
+        } else {
+            setSpecies(speciesList)
+        }
+    }, [speciesList, results])
+>>>>>>> aa30bf5902cfee93068664996a55e34285e397c9
 
       function setSpeciesNameFunction(data){
         setSpeciesName(data)
@@ -71,12 +88,15 @@ const Species = ({ speciesList }) => {
     }
     return (
         <div>
-            <Heading context={'species'}/>
+            <Heading 
+                context={'species'} 
+                setResults={setResults} 
+                speciesList={speciesList} />
             
             <Content>
                 <Row >
-                    <Col  style={{ display:'flex', flexWrap:'wrap'}} offset={1} span={22}>
-                        {speciesList.map((species, i )=> {
+                    <Col style={{ display:'flex', flexWrap:'wrap'}} offset={1} span={22}>
+                        {species.map((species, i )=> {
                             return <SpeciesCard 
                                         key={i}
                                         className={species.className}
@@ -85,12 +105,18 @@ const Species = ({ speciesList }) => {
                                         scientificName={species.scientificName}
                                         kingdom={species.kingdomName}
                                         phylum={species.phylumName}
+<<<<<<< HEAD
                                         setModal2VisibleOnClick={setModal2VisibleOnClick}
                                         setSpeciesNameFunction={setSpeciesNameFunction}
                                         setRedList={setRedList}
                                         setClassNameFunction={setClassNameFunction}
                                         setScientificNameFunction={setScientificNameFunction}
                                     />
+=======
+                                        populationTrend={species.populationTrend}
+                                        commonName={species.commonName}
+                                    />   
+>>>>>>> aa30bf5902cfee93068664996a55e34285e397c9
                         })}
                     </Col>
                 </Row>
