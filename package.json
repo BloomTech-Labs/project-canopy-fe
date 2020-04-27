@@ -13,6 +13,7 @@
     "fuse.js": "^5.0.10-beta",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-ga": "^2.7.0",
     "react-map-gl": "^5.2.3",
     "react-redux": "^7.2.0",
     "react-router-dom": "^5.1.2",

@@ -10,9 +10,15 @@ import { setSpeciesData } from './actions/species_action.js';
 import { allHotspots, setThreatsByAll } from './actions/table_action.js';
 import Dashboard from './components/dashboard.js';
 import Species from './components/species';
+import ReactGA from 'react-ga';
  
 
+
 function App(props) {
+  useEffect(()=>{
+    ReactGA.initialize("UA-164674288-1");
+    ReactGA.pageview(window.location.pathname+window.location.search);
+  })
   const { 
     filterBy, 
     getCountries, 
