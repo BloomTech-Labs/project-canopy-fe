@@ -16,20 +16,20 @@ import ReactGA from 'react-ga';
 
 function App(props) {
   useEffect(()=>{
-    ReactGA.initialize("UA-164674288-1",{
+    ReactGA.initialize("UA-164674288-1")/*,{
       debug:true,
       gaOptions: {
         userId: 123,
         name:'tracker1',
         siteSpeedSampleRate: 100
       }
-    });
-    ReactGA.pageview(window.location.pathname+window.location.search);
-    ReactGA.event({
-      category:'UserFlow',
-      action:"UserLeft"
-    })
-  })
+    })*/
+    ReactGA.pageview(window.location.pathname+window.location.search)
+    // ReactGA.event({
+    //   category:'UserFlow',
+    //   action:"UserLeft"
+    // })
+  },[])
   const { 
     filterBy, 
     getCountries, 
