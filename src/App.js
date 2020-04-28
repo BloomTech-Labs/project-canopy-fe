@@ -24,7 +24,8 @@ function App(props) {
         siteSpeedSampleRate: 100
       }
     })*/
-    ReactGA.pageview(window.location.pathname+window.location.search)
+    //window.location.pathname+window.location.search
+    ReactGA.pageview("/")
     // ReactGA.event({
     //   category:'UserFlow',
     //   action:"UserLeft"
