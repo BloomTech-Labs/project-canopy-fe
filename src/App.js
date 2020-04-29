@@ -10,10 +10,27 @@ import { setSpeciesData } from './actions/species_action.js';
 import { allHotspots, setThreatsByAll } from './actions/table_action.js';
 import Dashboard from './components/dashboard.js';
 import Species from './components/species';
-
+import ReactGA from 'react-ga';
  
 
+
 function App(props) {
+  useEffect(()=>{
+    ReactGA.initialize("UA-164674288-1")/*,{
+      debug:true,
+      gaOptions: {
+        userId: 123,
+        name:'tracker1',
+        siteSpeedSampleRate: 100
+      }
+    })*/
+    //window.location.pathname+window.location.search
+    ReactGA.pageview("/")
+    // ReactGA.event({
+    //   category:'UserFlow',
+    //   action:"UserLeft"
+    // })
+  },[])
   const { 
     filterBy, 
     getCountries, 
