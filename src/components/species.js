@@ -6,6 +6,10 @@ import { SpeciesCard } from './speciesCard';
 import { Modal } from 'antd';
 import axios from 'axios'
 import placeholder from './assets/image-placeholder.png'
+const url = process.env.REACT_APP_BACKENDURL
+    ? process.env.REACT_APP_BACKENDURL
+    : "http://localhost:5000";
+
 const { Content } = Layout;
 
 
@@ -21,7 +25,7 @@ const Species = ({ speciesList }) => {
     const [habitat ,setHabitat] = useState([])
 
     useEffect(() => {
-        axios.post(`http://localhost:5000/api/species/`, scientificName)
+        axios.post(`${url}/api/species/`, scientificName)
         .then(res => {
             console.log('res', res)
             setCardData(res.data)
