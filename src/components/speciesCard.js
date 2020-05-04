@@ -1,6 +1,7 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components';
 
+import { Modal } from 'antd';
 
 // image assets
 import placeholder from './assets/image-placeholder.png';
@@ -19,11 +20,13 @@ export const SpeciesCard = props => {
     } else if (redlistCategory === 'Vulnerable'){
         threatColor = '10px solid #FED0A3'
     }
-    
-    
-
     return (
-        <Card threatColor={threatColor}>
+        <Card threatColor={threatColor} onClick={() => {props.setModal2VisibleOnClick(true); 
+        props.setSpeciesNameFunction(props.speciesName);
+        props.setRedList(redlistCategory);
+        props.setClassNameFunction(className)
+        props.setScientificNameFunction({scientificName:scientificName})}}>
+
             <img src={placeholder} alt='placeholder' style={{width:'100%'}}/>
                 <div style={{padding:'1% 5%', height:'130px'}}>
                     <SmallTextSpan>{kingdom} - {className}</SmallTextSpan>
